@@ -43,7 +43,7 @@ html, body {
             width: 0;
       }
       to {
-            width: 19em;
+            width: 15em;
       }
 }
 
@@ -53,7 +53,7 @@ html, body {
                   width: 0;
             }
             to {
-                  width: 18em;
+                  width: 14em;
             }
       }
 }
@@ -300,7 +300,8 @@ h6 {
 }
 
 .project1 {
-      background: url(https://images.unsplash.com/photo-1540349220179-09d3866f2e74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2600&q=80) no-repeat 50% 50%;
+      /*background: url(https://images.unsplash.com/photo-1540349220179-09d3866f2e74?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMDd9&auto=format&fit=crop&w=2600&q=80) no-repeat 50% 50%;*/
+      background: url(/prova1.JPG) no-repeat 50% 50%;
       background-size: cover;
 }
 
@@ -383,7 +384,7 @@ h6 {
 
       .project1::after, .project2::after, .project3::after, .project4::after {
             display: none;
-      }
+      } 
 }
 
 /*--------------- footer section --------------- */
