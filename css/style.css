@@ -40,9 +40,9 @@ html, body {
       text-align: center;
       white-space: nowrap;
       overflow: hidden;
-      transform: translateY(-50%);
-      
+      transform: translateY(-50%);  
 }
+
 
 .anim-typewriter {
       animation: typewriter 4s steps(40) 1s 1 normal both,
@@ -69,15 +69,10 @@ html, body {
       }
 
       .line{
-            font-size: 25px !important;
+            font-size: 6.5vw !important;
       }
 }
 
-@media(max-width: 375px) {
-      .line {
-            font-size: 19px !important;
-      }
-}
 
 @keyframes blinkTextCussor {
       from {
