@@ -41,6 +41,7 @@ html, body {
       white-space: nowrap;
       overflow: hidden;
       transform: translateY(-50%);
+      
 }
 
 .anim-typewriter {
@@ -53,7 +54,7 @@ html, body {
             width: 0;
       }
       to {
-            width: 15em;
+            width: 100%;
       }
 }
 
@@ -63,8 +64,18 @@ html, body {
                   width: 0;
             }
             to {
-                  width: 14em;
+                  width: 100%;
             }
+      }
+
+      .line{
+            font-size: 25px !important;
+      }
+}
+
+@media(max-width: 375px) {
+      .line {
+            font-size: 19px !important;
       }
 }
 
