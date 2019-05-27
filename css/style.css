@@ -15,6 +15,16 @@ html, body {
       height: 100px;
 }
 
+.no-dec {
+      text-decoration: none;
+      color: white;
+      text-decoration: underline;
+}
+
+.no-dec:hover {
+      color: #cccccc;
+}
+
 @media(max-width: 768px) {
       .whitespace {
             display: none;
@@ -372,6 +382,19 @@ h6 {
       bottom: 0;
 }
 
+
+.project-list-item {
+      font-family: "Roboto Mono";
+      text-align: center;
+}
+
+.project-list-item-description {
+      font-weight: lighter;
+      width: 700px;
+      margin: auto;
+      color: #cccccc;
+}
+
 @media(max-width: 768px) {
       .project {
             width: 90% !important;
@@ -384,7 +407,13 @@ h6 {
 
       .project1::after, .project2::after, .project3::after, .project4::after {
             display: none;
-      } 
+      }
+      
+      .project-list-item-description {
+            width: 100%;
+            padding-right: 10px;
+            padding-left: 10px;
+      }
 }
 
 /*--------------- footer section --------------- */
