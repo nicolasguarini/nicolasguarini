@@ -49,6 +49,12 @@ html, body {
       blinkTextCussor 500ms steps(40) infinite normal;
 }
 
+.after { /*codice per ritardare l'animazione del typewriter*/
+      -webkit-animation-delay: 5s; /* Chrome, Safari, Opera */
+      animation-delay: 5s;
+      width: 100%;
+}
+
 @keyframes typewriter {
       from {
             width: 0;
@@ -70,7 +76,7 @@ html, body {
 
       .line{
             font-size: 6.5vw !important;
-      }
+      }   
 }
 
 
