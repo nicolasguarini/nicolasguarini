@@ -1,0 +1,25 @@
+backend:
+  name: git-gateway
+  repo: nicolasguarini/nicolasguarini
+  branch: master # Branch to update (optional; defaults to master)
+
+collections:
+  ###----PAGINE---###
+  #PROGETTI
+  - name: 'progetti'
+    label: 'Progetti'
+    folder: 'content/projects'
+    create: true
+    slug: '{{year}}-{{month}}-{{day}}-{{slug}}'
+    fields:
+      - { label: 'Title', name: 'title', widget: 'string' }
+      - {label: 'isAProject', name: "isAProject", widget: "hidden", default: "true"}
+      - {label: 'type', name: 'type', widget: "hidden", default: "page"}
+      - {label: "layout", name: "layout", widget: hidden", default: "project"}
+      - {label: "Service", name: "service", widget: "string"}
+      - {label: "Started", name: "started", widget: "string"}
+      - {label: "Completed", name: "completed", widget: "string"}
+      - {label: "Github link", name: "github", widget: "string"}
+      - {label: "Project link", name: "projectLink", widget: "string"}
+      - {label: "Preview", name: "preview", widget: "string"}
+      - {label: "Description", name: "descrition", widget: "string"} 
