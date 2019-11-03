@@ -1,0 +1,51 @@
+{{ partial "header.html" . }}
+
+            <!--------------- hero section starts here --------------->
+            <div class="hero">
+                  <div class="header">
+                        <h1 class="line anim-typewriter">Web and desktop developer.</h1>
+                  </div>  
+            </div>
+
+            <div class="scroll-down"></div>
+            <!--------------- hero section ends here --------------->
+
+
+
+            <!--------------- projects section starts here --------------->
+            <div class="container-fluid">
+                  <br><br><br>
+
+                  <h6>My projects:</h6>
+
+                  <div class="vertical"></div>
+                  <br>
+
+                  <div class="whitespace"></div>
+                  <div class="whitespace"></div>
+                  
+                  {{range .Site.Pages}}
+                        {{if eq "true" .Params.isAProject}}
+                       <!-- <div class="project-list" onclick="location.href='{{.Permalink}}'">-->
+                        <a href="{{.Permalink}}" class="project-list" style="text-decoration: none; color: white;">
+                              <h4 class="project-list-item wow fadeInUp">{{.Params.title}}</h4>
+                              <br>
+                              <h6 class="project-list-item-description wow fadeInUp">
+                                    {{.Params.preview}}
+                              </h6>
+                        </a>
+                       <!-- </div>  -->
+
+                        <br><br><br>
+                        {{end}}
+                  {{end}}
+                  
+
+                  <div class="whitespace"></div>
+            </div>
+            <!--------------- projects section ends here --------------->
+
+
+
+
+{{partial "footer.html" .}}
