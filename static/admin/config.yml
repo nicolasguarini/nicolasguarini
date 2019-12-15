@@ -3,7 +3,6 @@ backend:
   repo: nicolasguarini/nicolasguarini
 
 media_folder: static/img
-public_folder: /img
 
 collections:
   ###----PAGINE---###
