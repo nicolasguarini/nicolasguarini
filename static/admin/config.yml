@@ -2,7 +2,7 @@ backend:
   name: github
   repo: nicolasguarini/nicolasguarini
 
-media_folder: static/img
+media_folder: static/images
 
 collections:
   ###----PAGINE---###
@@ -24,10 +24,3 @@ collections:
       - {label: "Project link", name: "projectLink", widget: "string"}
       - {label: "Preview", name: "preview", widget: "string"}
       - {label: "Description", name: "description", widget: "string"} 
-      - label: "Featured Image"
-        name: "thumbnail"
-        widget: "image"
-        default: "/images/default.jpg"
-        media_library:
-          config:
-            multiple: false
