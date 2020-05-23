@@ -4,7 +4,7 @@ service: "Web Development (Hugo)"
 date: "01/09/2019"
 started: "01/09/2019"
 completed: "19/09/2019"
-projectLink: "www.ralpholtreilpub.it"
+projectLink: "https://ralpholtreilpub.it"
 preview: "Ralph is a very convivial place where you can be enveloped by the sparkling poolside atmosphere on summer evenings accompanied by music, cocktails and excellent pizzas created for you with high quality ingredients."
 ---
 
