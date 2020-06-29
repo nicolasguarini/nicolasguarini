@@ -6,7 +6,7 @@ const Projects = () => {
     const data = useStaticQuery(
       graphql`
       query {
-        allMarkdownRemark {
+        allMarkdownRemark(sort: {order: DESC, fields: frontmatter___started}) {
           edges {
             node {
               excerpt
