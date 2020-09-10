@@ -26,7 +26,7 @@ const Footer = () => {
                         <div className="row">
                                 <div className="col-lg-4" id="personal">
                                     <p className="wow fadeInUp">connect with me</p>
-                                    <h4 className="wow fadeInUp" data-wow-delay="0.2s">ig @<a href="https://www.instagram.com/guaro.dat/" className="no-dec">guaro.dat</a> </h4>
+                                    <h4 className="wow fadeInUp" data-wow-delay="0.2s">ig @<a href="https://www.instagram.com/nicolas.guarini/" className="no-dec">nicolas.guarini</a> </h4>
                                     <br /><br />
                                 </div>
 
@@ -35,8 +35,8 @@ const Footer = () => {
 
                                     <ul>
                                             <li id="fb" className="wow fadeInUp" data-wow-delay="0.4s"> <a href="https://www.facebook.com/guaro.py" className="no-dec">fb</a></li>
-                                            <li id="ig" className="wow fadeInUp" data-wow-delay="0.6s"><a href="https://www.instagram.com/guaro.dat/" className="no-dec">ig</a></li>
-                                            <li id="tw" className="wow fadeInUp" data-wow-delay="0.8s"><a href="https://twitter.com/Nicolas_Guarini" className="no-dec">tw</a></li>
+                                            <li id="ig" className="wow fadeInUp" data-wow-delay="0.6s"><a href="https://www.instagram.com/nicolas.guarini/" className="no-dec">ig</a></li>
+                                            <li id="tw" className="wow fadeInUp" data-wow-delay="0.8s"><a href="https://twitter.com/guaro_dat" className="no-dec">tw</a></li>
                                             <li id="yt" className="wow fadeInUp" data-wow-delay="1s"><a href="" className="no-dec">yt</a></li>
                                     </ul>
 
