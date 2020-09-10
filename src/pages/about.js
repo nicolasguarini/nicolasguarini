@@ -17,7 +17,7 @@ const About = () => {
                         <div className="col-lg-12">
                             <h3 className="wow fadeInUp" data-wow-delay="0.3s">about me.</h3> <br />
                             <p className="wow fadeInUp">
-                                Hi, I'm Nicolas and I'm a 18 years old developer.
+                                Hi, I'm Nicolas and I'm a 19 years old developer.
                                 I have always been passionate about computer science, ever since I was a child, I tried the historic Atari 2600, and love broke out.
                                 Now I am studying at I.S.I.S. J.M. Keynes in Varese.
                             </p>

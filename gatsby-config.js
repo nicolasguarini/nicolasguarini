@@ -1,7 +1,7 @@
 module.exports = {
   siteMetadata: {
     title: `Nicolas Guarini`,
-    description: `Hi! I'm a 18 years old Web and Desktop developer from Varese(IT)! You have and interesting project? I can help you!`,
+    description: `Hi! I'm a 19 years old Web and Desktop developer from Varese(IT)! You have and interesting project? I can help you!`,
     author: `Nicolas Guarini`,
   },
   pathPrefix: `/`,
