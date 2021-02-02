@@ -1,5 +1,6 @@
 import React from 'react'
 import Link from 'gatsby-link'
+import ReactWOW from 'react-wow'
 
 class Navbar extends React.Component {
     constructor(){
@@ -19,15 +20,25 @@ class Navbar extends React.Component {
           <>
         <nav>
             <span id="brand">
-                <Link to="/" className="wow fadeInUp">nicolas guarini</Link>
+                <ReactWOW animation="fadeInUp">
+                    <Link to="/">nicolas guarini</Link>
+                </ReactWOW>
+                
             </span>
 
             <ul id="menu">
-                <li><Link to="/" title="Home" className="wow fadeInUp">home<span>/</span></Link></li>
-
-                <li><Link to="/about" title="About" className="wow fadeInUp">about me<span>/</span></Link></li>
-
-                <li><Link to="/contact" title="Contact" className="wow fadeInUp">contact me<span>/</span></Link></li>
+                <ReactWOW animation="fadeInUp">
+                    <li><Link to="/" title="Home">home<span>/</span></Link></li>
+                </ReactWOW>
+                
+                <ReactWOW animation="fadeInUp" delay="0.2s">
+                    <li><Link to="/about" title="About">about_me<span>/</span></Link></li>
+                </ReactWOW>
+                
+                <ReactWOW animation="fadeInUp" delay="0.4s">
+                    <li><Link to="/contact" title="Contact">contact_me<span>/</span></Link></li>
+                </ReactWOW>
+                
             </ul>
 
             <div id="toggle" onClick={this.handleClickBtnMenu}>

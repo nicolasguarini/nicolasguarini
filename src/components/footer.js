@@ -1,4 +1,5 @@
 import React from 'react'
+import ReactWOW from 'react-wow'
 
 const Footer = () => {
     return(
@@ -9,7 +10,10 @@ const Footer = () => {
                     <div className="collab">
                         <div className="row">
                                 <div className="col-lg-12">
-                                    <p className="wow fadeInUp">Got an interesting project? I can help you.</p>
+                                    <ReactWOW animation="fadeInUp">
+                                        <p>Got an interesting project? I can help you.</p>
+                                    </ReactWOW>
+                                    
                                 </div>
                         </div>
                     </div>
@@ -25,8 +29,14 @@ const Footer = () => {
                     <div className="info">
                         <div className="row">
                                 <div className="col-lg-4" id="personal">
-                                    <p className="wow fadeInUp">connect with me</p>
-                                    <h4 className="wow fadeInUp" data-wow-delay="0.2s">ig @<a href="https://www.instagram.com/nicolas.guarini/" className="no-dec">nicolas.guarini</a> </h4>
+                                    <ReactWOW animation="fadeInUp">
+                                        <p>connect with me</p>
+                                    </ReactWOW>
+                                        
+                                    <ReactWOW animation="fadeInUp" delay="0.3s">
+                                        <h4 >ig @<a href="https://www.instagram.com/nicolas.guarini/" className="no-dec">nicolas.guarini</a> </h4>
+                                    </ReactWOW>
+                                    
                                     <br /><br />
                                 </div>
 
@@ -34,18 +44,28 @@ const Footer = () => {
                                     <p className="wow fadeInUp" data-wow-delay="0s">follow me</p>
 
                                     <ul>
-                                            <li id="fb" className="wow fadeInUp" data-wow-delay="0.4s"> <a href="https://www.facebook.com/guaro.py" className="no-dec">fb</a></li>
-                                            <li id="ig" className="wow fadeInUp" data-wow-delay="0.6s"><a href="https://www.instagram.com/nicolas.guarini/" className="no-dec">ig</a></li>
-                                            <li id="tw" className="wow fadeInUp" data-wow-delay="0.8s"><a href="https://twitter.com/guaro_dat" className="no-dec">tw</a></li>
-                                            <li id="yt" className="wow fadeInUp" data-wow-delay="1s"><a href="" className="no-dec">yt</a></li>
+                                        <ReactWOW animation="fadeInUp" delay="0.2s">
+                                            <li id="fb"> <a href="https://www.facebook.com/guaro.py" className="no-dec">fb</a></li>
+                                        </ReactWOW>
+                                        <ReactWOW animation="fadeInUp" delay="0.4s">
+                                            <li id="ig" ><a href="https://www.instagram.com/nicolas.guarini/" className="no-dec">ig</a></li>
+                                        </ReactWOW>
+                                        <ReactWOW animation="fadeInUp" delay="0.6s">
+                                            <li id="tw"><a href="https://twitter.com/guaro_dat" className="no-dec">tw</a></li>
+                                        </ReactWOW>
+                                        
+                                        
+                                            
                                     </ul>
 
                                     <br /><br />
                                 </div>
 
                                 <div className="col-lg-4" id="address">
-                                    <p className="wow fadeInUp" data-wow-delay="0s">say hello</p>
-                                    <h4 className="wow fadeInUp" data-wow-delay="0.2s"> <a href="mailto:nicolasguarini.py@gmail.com" style={{color: "white", textDecoration: "none"}}>nicolasguarini.py@gmail.com</a></h4>
+                                    <ReactWOW animation="fadeInUp" delay="0.3s">
+                                        <p>say hello</p>
+                                        <h4> <a href="mailto:nicolasguarini.py@gmail.com" style={{color: "white", textDecoration: "none"}}>nicolasguarini.py@gmail.com</a></h4>
+                                    </ReactWOW>
                                     <br /><br />
                                 </div>
                         </div>

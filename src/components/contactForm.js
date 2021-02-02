@@ -1,5 +1,6 @@
 import React from 'react'
 import NetlifyForm from 'react-netlify-form'
+import ReactWOW from 'react-wow'
 
 const encode = (data) => {
     return Object.keys(data)
@@ -41,49 +42,52 @@ class ContactForm extends React.Component {
     })
 
     render(){
-        const style={
-            textAlign: "center",
-            color: "white",
-            width: "auto",
-            margin: "auto",
-            fontSize: "100%"
-        }
-
         return(
-                    <form name="Contact Form" id="contact-form" method="post" onSubmit={this.handleSubmit} data-netlify="true">
-                        <div className="container-fluid">
-                            <div className="row">
-                                <div className="col-lg-8" style={{margin: "auto"}}>
-                                    <ul>
-                                        <li className="wow fadeInUp" data-wow-delay="1.4s">
-                                            <label for="contact-name">Name :</label>
-                                            <div className="textarea">
-                                                <input type="text" name="name" id="contact-name" value={this.state.name} onChange={this.handleChange}></input>
-                                            </div>
-                                        </li>
-    
-                                        <li className="wow fadeInUp" data-wow-delay="1.4s">
-                                            <label for="contact-email">Email :</label>
-                                            <div className="textarea">
-                                                <input type="email" name="email" id="contact-email" value={this.state.email} onChange={this.handleChange}></input>
-                                            </div>
-                                        </li>
-    
-                                        <li className="wow fadeInUp" data-wow-delay="1.4s">
-                                            <label for="contact-project">Message :</label>
-                                            <div className="textarea">
-                                                <textarea name="message" id="contact-project" rows="6" value={this.state.message} onChange={this.handleChange}>
+            <form name="Contact Form" id="contact-form" method="post" onSubmit={this.handleSubmit} data-netlify="true">
+                <div className="container-fluid">
+                    <div className="row">
+                        <div className="col-lg-8" style={{margin: "auto"}}>
+                            <ul>
+                                <ReactWOW animation="fadeInUp" delay="0.1s">
+                                    <li>
+                                        <label for="contact-name">Name :</label>
+                                        <div className="textarea">
+                                            <input type="text" name="name" id="contact-name" value={this.state.name} onChange={this.handleChange}></input>
+                                        </div>
+                                    </li>
+                                </ReactWOW>
+                                
+                                <ReactWOW animation="fadeInUp" delay="0.3s">
+                                    <li>
+                                        <label for="contact-email">Email :</label>
+                                        <div className="textarea">
+                                            <input type="email" name="email" id="contact-email" value={this.state.email} onChange={this.handleChange}></input>
+                                        </div>
+                                    </li>
+                                </ReactWOW>
+                                <ReactWOW animation="fadeInUp" delay="0.5s">
+                                    <li>
+                                        <label for="contact-project">Message :</label>
+                                        <div className="textarea">
+                                            <textarea name="message" id="contact-project" rows="6" value={this.state.message} onChange={this.handleChange}>
 
-                                                </textarea>
-                                            </div>
-                                        </li>
-                                    </ul>
-    
-                                    <button type="submit" name="contact-submit" id="contact-submit" className="send wow fadeInUp">Send Message</button>
-                                </div>
-                            </div>
+                                            </textarea>
+                                        </div>
+                                    </li>
+                                </ReactWOW>
+                                
+
+                                
+                            </ul>
+                            <ReactWOW animation="fadeInUp" delay="0.7s">
+                                <button type="submit" name="contact-submit" id="contact-submit" className="send">Send Message</button>
+                            </ReactWOW>
+
+                            
                         </div>
-                        </form>
+                    </div>
+                </div>
+            </form>
         )
     }
     

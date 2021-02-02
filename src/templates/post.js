@@ -1,5 +1,7 @@
 import React from 'react'
 import Layout from '../components/layout'
+import { graphql } from 'gatsby'
+import ReactWOW from 'react-wow'
 
 const Post = ({data}) => {
     const post = data.markdownRemark
@@ -13,34 +15,48 @@ const Post = ({data}) => {
                     <div className="col-lg-12">
                       <br />
 
-                      <h1 className="wow fadeInUp" data-wow-delay="1s">
-                        <a href={post.frontmatter.projectLink} style={{textDecoration: "none", color: "white"}}>
-                          {post.frontmatter.title}
-                        </a>
-                      </h1>
+                      <ReactWOW animation="fadeInUp" delay="0.3">
+                        <h1>
+                          <a href={post.frontmatter.projectLink} style={{textDecoration: "none", color: "white"}}>
+                            {post.frontmatter.title}
+                          </a>
+                        </h1>
+                      </ReactWOW>
+                      
 
                       <br /><br />
                       
+                      
                       <div className="row">
-                        <div className="col-lg-4">
-                          <p className="wow fadeInUp" data-wow-delay="0.5s">service :</p>
-                          <h6 className="wow fadeInUp" data-wow-delay="0.6s">{post.frontmatter.service}</h6>
-                        </div>
+                        <ReactWOW animation="fadeInUp" delay="0.4s">
+                          <div className="col-lg-4">
+                            <p>service :</p>
+                            <h6>{post.frontmatter.service}</h6>
+                          </div>
+                        </ReactWOW>
+                       
+                        <ReactWOW animation="fadeInUp" delay="0.6s">
+                          <div className="col-lg-4">
+                            <p>started :</p>
+                            <h6>{post.frontmatter.started}</h6>
+                          </div>
+                        </ReactWOW>
+                        
 
-                        <div className="col-lg-4">
-                          <p className="wow fadeInUp" data-wow-delay="0.5s">started :</p>
-                          <h6 className="wow fadeInUp" data-wow-delay="0.6s">{post.frontmatter.started}</h6>
-                        </div>
-
-                        <div className="col-lg-4">
-                          <p className="wow fadeInUp" data-wow-delay="0.5s">completed :</p>
-                          <h6 className="wow fadeInUp" data-wow-delay="0.6s">{post.frontmatter.completed}</h6>
-                        </div>
+                        <ReactWOW animation="fadeInUp" delay="0.8s">
+                          <div className="col-lg-4">
+                            <p >completed :</p>
+                            <h6 >{post.frontmatter.completed}</h6>
+                          </div>
+                        </ReactWOW>
                       </div>
 
                       <br />
 
-                      <p className="wow fadeInUp" data-wow-delay="1.1s"><div dangerouslySetInnerHTML={{__html: post.html}} /></p>
+                      <ReactWOW animation="fadeInUp" delay="1.0s">
+                        <p><div dangerouslySetInnerHTML={{__html: post.html}} /></p>
+                      </ReactWOW>
+                      
 
                     </div>
                   </div>
