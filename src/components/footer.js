@@ -11,7 +11,7 @@ const Footer = () => {
                         <div className="row">
                                 <div className="col-lg-12">
                                     <ReactWOW animation="fadeInUp">
-                                        <p>Got an interesting project? I can help you.</p>
+                                        <p>Got an interesting project? I can help you!</p>
                                     </ReactWOW>
                                     
                                 </div>
