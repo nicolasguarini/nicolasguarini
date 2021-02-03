@@ -2,11 +2,18 @@ import React from 'react'
 import Layout from '../components/layout'
 import { graphql } from 'gatsby'
 import ReactWOW from 'react-wow'
+import SEO from '../components/seo'
 
 const Post = ({data}) => {
     const post = data.markdownRemark
+    const seoTitle = post.frontmatter.title
+
     return(
         <Layout>
+            <SEO 
+              title={seoTitle}
+              description={post.frontmatter.preview}
+            />
             <div className="container">
                 <div className="whitespace" />
                 <div className="hero-content">
@@ -17,7 +24,7 @@ const Post = ({data}) => {
 
                       <ReactWOW animation="fadeInUp" delay="0.3">
                         <h1>
-                          <a href={post.frontmatter.projectLink} style={{textDecoration: "none", color: "white"}}>
+                          <a href={post.frontmatter.projectLink} className="project-title" style={{textDecoration: "none", color: "white"}}>
                             {post.frontmatter.title}
                           </a>
                         </h1>
@@ -46,7 +53,7 @@ const Post = ({data}) => {
                         <ReactWOW animation="fadeInUp" delay="0.8s">
                           <div className="col-lg-4">
                             <p >completed :</p>
-                            <h6 >{post.frontmatter.completed}</h6>
+                            <h6 >{post.frontmatter.finished}</h6>
                           </div>
                         </ReactWOW>
                       </div>
@@ -76,8 +83,9 @@ query($slug: String!) {
       title
       projectLink
       started
-      completed
+      finished
       service
+      preview
     }
   }
 }

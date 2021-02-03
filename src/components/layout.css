@@ -650,4 +650,26 @@ textarea:focus {
       text-align: right;
 }
 
+.project-title{
+      text-decoration: underline !important;
+      color: "white";
+}
+
+@media(max-width: 1000px){
+      .project-title{
+            font-size: 40px;
+      }
+}
+
+@media(max-width: 770px){
+      .project-title{
+            font-size: 30px;
+      }
+}
+
+@media(max-width: 470px){
+      .project-title{
+            font-size: 25px;
+      }
+}
 

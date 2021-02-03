@@ -9,6 +9,7 @@ html, body {
       font-family: 'Roboto Mono', monospace !important;
       background: #0f0f0f !important;
       color: #fff !important;
+      overflow: hidden;
 }
 
 .whitespace {
@@ -650,4 +651,9 @@ textarea:focus {
       text-align: right;
 }
 
+.project-title{
+      text-decoration: none;
+      color: "white";
+}
 
+@media(max-width: )

@@ -25,7 +25,7 @@ const About = () => {
                                 <p>
                                     Hi, I'm Nicolas and I'm a 19 years old developer.
                                     I have always been passionate about computer science, ever since I was a child, I tried the historic Atari 2600, and love broke out.
-                                    I studied at I.S.I.S. J.M. Keynes in Varese, and now i'm studying Computer Science at Università degli Studi dell'Insubria.
+                                    I studied at I.S.I.S. J.M. Keynes in Varese, and now i'm studying Computer Science at "Università degli Studi dell'Insubria".
                                 </p> 
                             </ReactWOW>
                             

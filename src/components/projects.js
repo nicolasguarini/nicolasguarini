@@ -17,7 +17,7 @@ const Projects = () => {
                 service
                 projectLink
                 preview
-                completed
+                finished
                 date
               }
               fields {
