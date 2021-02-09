@@ -1,2 +1,4 @@
-# Nicolas Guarini's web portfolio
-A simple web-app built with Gatsby.js (React) where you can find my latest projects!
+# Nicolas Guarini
+Hi, I'm Nicolas and I'm a 19 years old developer. I have always been passionate about computer science, ever since I was a child, I tried the historic Atari 2600, and love broke out. I studied at I.S.I.S. J.M. Keynes in Varese, and now i'm studying Computer Science at "Università degli Studi dell'Insubria".
+
+I studied the latest web technologies like react, vue.js, django, node.js, express.js, flask and other static site generators such Gatsby.js and Hugo. While in the desktop environment I am still studying C ++ with the Qt library, C # and python. Lately I've also been entering the world of mobile, with java, react-native and flutter.
