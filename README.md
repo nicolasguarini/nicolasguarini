@@ -1,23 +1,15 @@
-<h1 align="center">Hi 👋, I'm Nicolas Guarini</h1>
-<h3 align="center">I'm Nicolas Guarini, a 19-year old IT enthusiast who does web development, security research, design and speedcubing. Passionate to learn new things and create challenging projects.</h3>
+<h1  align="center">Hi 👋, I'm Nicolas Guarini</h1>
+<h3  align="center">I'm Nicolas Guarini, a 19-year old IT enthusiast who does web development, security research, design and speedcubing. Passionate to learn new things and create challenging projects.</h3>
 
-<p align="left"> <img src="https://komarev.com/ghpvc/?username=nicolasguarini" alt="nicolasguarini" /> </p>
+<p  align="left">  <img  src="https://komarev.com/ghpvc/?username=nicolasguarini"  alt="nicolasguarini"  />  </p>
 
 - 🔭 I’m currently working on [drums-maker](https://github.com/nicolasguarini/drums-maker)
-
 - 🌱 I’m currently learning **React and Express.js**
-
 - 👨‍💻 All of my projects are available at [nicolasguarini.it ](https://nicolasguarini.it)
+- 📫 How to reach me: **nicolasguarini.py@gmail.com**
 
-- 📫 How to reach me **nicolasguarini.py@gmail.com**
-
-
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nicolasguarini&layout=compact&hide=html" alt="nicolasguarini" />
-
-&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=nicolasguarini&show_icons=true" alt="nicolasguarini" /></p>
-
+<img  align="left"  src="https://github-readme-stats.vercel.app/api/top-langs/?username=nicolasguarini&layout=compact&hide=html"  alt="nicolasguarini"  />
+&nbsp; <img  src="https://github-readme-stats.vercel.app/api?username=nicolasguarini&show_icons=true"  alt="nicolasguarini"  />
 ----
-
 Credit: [Nicolas Guarini](https://github.com/nicolasguarini)
-
 Last Edited on: 18/03/2021
