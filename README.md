@@ -12,9 +12,9 @@
 - 📫 How to reach me **nicolasguarini.py@gmail.com**
 
 
-<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nicolasguarini&layout=compact&hide=html" alt="nicolasguarini" /></p>
+<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nicolasguarini&layout=compact&hide=html" alt="nicolasguarini" />
 
-<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=nicolasguarini&show_icons=true" alt="nicolasguarini" /></p>
+&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=nicolasguarini&show_icons=true" alt="nicolasguarini" /></p>
 
 ----
 
