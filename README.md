@@ -1,4 +1,23 @@
-# Nicolas Guarini
-Hi, I'm Nicolas and I'm a 19 years old developer. I have always been passionate about computer science, ever since I was a child, I tried the historic Atari 2600, and love broke out. I studied at I.S.I.S. J.M. Keynes in Varese, and now i'm studying Computer Science at "Università degli Studi dell'Insubria".
+<h1 align="center">Hi 👋, I'm Nicolas Guarini</h1>
+<h3 align="center">I'm Nicolas Guarini, a 19-year old IT enthusiast who does web development, security research, design and speedcubing. Passionate to learn new things and create challenging projects.</h3>
 
-I studied the latest web technologies like react, vue.js, django, node.js, express.js, flask and other static site generators such Gatsby.js and Hugo. While in the desktop environment I am still studying C ++ with the Qt library, C # and python. Lately I've also been entering the world of mobile, with java, react-native and flutter.
+<p align="left"> <img src="https://komarev.com/ghpvc/?username=nicolasguarini" alt="nicolasguarini" /> </p>
+
+- 🔭 I’m currently working on [drums-maker](https://github.com/nicolasguarini/drums-maker)
+
+- 🌱 I’m currently learning **React and Express.js**
+
+- 👨‍💻 All of my projects are available at [nicolasguarini.it ](https://nicolasguarini.it)
+
+- 📫 How to reach me **nicolasguarini.py@gmail.com**
+
+
+<p><img align="left" src="https://github-readme-stats.vercel.app/api/top-langs/?username=nicolasguarini&layout=compact&hide=html" alt="nicolasguarini" /></p>
+
+<p>&nbsp;<img align="center" src="https://github-readme-stats.vercel.app/api?username=nicolasguarini&show_icons=true" alt="nicolasguarini" /></p>
+
+----
+
+Credit: [Nicolas Guarini](https://github.com/nicolasguarini)
+
+Last Edited on: 18/03/2021
