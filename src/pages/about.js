@@ -36,6 +36,12 @@ const About = () => {
                                     Lately I've also been entering the world of mobile, with java, react-native and flutter.
                                 </p>
                             </ReactWOW>
+
+                            <ReactWOW animation="fadeInUp" delay="0.9s">
+                                <p>
+                                    Currently i'm studying the MERN Stack (MongoDB, Express, React, Node.js), which I am finding extremely interesting and is making me passionate about the world of the backend
+                                </p>
+                            </ReactWOW>
                             
                             <div className="whitespace"></div>
                         </div>
