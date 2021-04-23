@@ -3,7 +3,7 @@
 
 <p  align="left">  <img  src="https://komarev.com/ghpvc/?username=nicolasguarini"  alt="nicolasguarini"  />  </p>
 
-- 🔭 I’m currently working on [drums-maker](https://github.com/nicolasguarini/drums-maker)
+- 🔭 I’m currently working on [vax-centers](https://github.com/nicolasguarini/vax-centers)
 - 🌱 I’m currently learning **React and Express.js**
 - 👨‍💻 All of my projects are available at [nicolasguarini.it ](https://nicolasguarini.it)
 - 📫 How to reach me: **nicolasguarini.py@gmail.com**
