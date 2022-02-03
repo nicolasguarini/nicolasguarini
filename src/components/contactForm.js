@@ -1,5 +1,4 @@
 import React from 'react'
-import NetlifyForm from 'react-netlify-form'
 import ReactWOW from 'react-wow'
 
 const encode = (data) => {
@@ -50,7 +49,7 @@ class ContactForm extends React.Component {
                             <ul>
                                 <ReactWOW animation="fadeInUp" delay="0.1s">
                                     <li>
-                                        <label for="contact-name">Name :</label>
+                                        <label htmlFor="contact-name">Name :</label>
                                         <div className="textarea">
                                             <input type="text" name="name" id="contact-name" value={this.state.name} onChange={this.handleChange}></input>
                                         </div>
@@ -59,7 +58,7 @@ class ContactForm extends React.Component {
                                 
                                 <ReactWOW animation="fadeInUp" delay="0.3s">
                                     <li>
-                                        <label for="contact-email">Email :</label>
+                                        <label htmlFor="contact-email">Email :</label>
                                         <div className="textarea">
                                             <input type="email" name="email" id="contact-email" value={this.state.email} onChange={this.handleChange}></input>
                                         </div>
@@ -67,7 +66,7 @@ class ContactForm extends React.Component {
                                 </ReactWOW>
                                 <ReactWOW animation="fadeInUp" delay="0.5s">
                                     <li>
-                                        <label for="contact-project">Message :</label>
+                                        <label htmlFor="contact-project">Message :</label>
                                         <div className="textarea">
                                             <textarea name="message" id="contact-project" rows="6" value={this.state.message} onChange={this.handleChange}>
 
