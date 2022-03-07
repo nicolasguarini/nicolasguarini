@@ -26,16 +26,6 @@ export default function HTML(props) {
 
       new WOW().init();
     </script>
-
-    <!-- Global site tag (gtag.js) - Google Analytics -->
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7NCLBN4M2M"></script>
-    <script>
-      window.dataLayer = window.dataLayer || [];
-      function gtag(){dataLayer.push(arguments);}
-      gtag('js', new Date());
-
-      gtag('config', 'G-7NCLBN4M2M');
-    </script>
   `
   return (
     <html {...props.htmlAttributes}>
@@ -52,6 +42,20 @@ export default function HTML(props) {
         <link href="https://fonts.googleapis.com/css?family=Roboto+Mono:100,100i,300,300i,400,400i,500,500i,700,700i" rel="stylesheet" />
 
         <link rel="stylesheet" href="/css/animate.css" />
+
+        <script async src="https://www.googletagmanager.com/gtag/js?id=G-7NCLBN4M2M"></script>
+
+        <script
+        dangerouslySetInnerHTML={{
+            __html: `
+              window.dataLayer = window.dataLayer || [];
+              function gtag(){dataLayer.push(arguments);}
+              gtag('js', new Date());
+        
+              gtag('config', 'G-7NCLBN4M2M');
+            `,
+          }}
+        />
 
         {props.headComponents}
       </head>
