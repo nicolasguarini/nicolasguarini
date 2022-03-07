@@ -27,13 +27,14 @@ export default function HTML(props) {
       new WOW().init();
     </script>
 
-    <script async src="https://www.googletagmanager.com/gtag/js?id=G-HDRMGTPSES"></script>
+    <!-- Global site tag (gtag.js) - Google Analytics -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-7NCLBN4M2M"></script>
     <script>
       window.dataLayer = window.dataLayer || [];
       function gtag(){dataLayer.push(arguments);}
       gtag('js', new Date());
 
-      gtag('config', 'G-HDRMGTPSES');
+      gtag('config', 'G-7NCLBN4M2M');
     </script>
   `
   return (
