@@ -3,8 +3,8 @@
 
 <p  align="left">  <img  src="https://komarev.com/ghpvc/?username=nicolasguarini"  alt="nicolasguarini"  />  </p>
 
-- 🔭 I’m currently working on [vax-centers](https://github.com/nicolasguarini/vax-centers)
-- 🌱 I’m currently learning **React and Express.js**
+- 🔭 I’m currently working on [benztrack](https://github.com/nicolasguarini/benztrack)
+- 🌱 I’m currently learning **Next.js and Kotlin (Android Development)**
 - 👨‍💻 All of my projects are available at [nicolasguarini.it ](https://nicolasguarini.it)
 - 📫 How to reach me: **nicolasguarini.py@gmail.com**
 
@@ -15,4 +15,4 @@
 
 Credit: [Nicolas Guarini](https://github.com/nicolasguarini)
 
-Last Edited on: 18/03/2021
+Last Edited on: 24/04/2022
