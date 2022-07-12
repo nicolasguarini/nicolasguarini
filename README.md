@@ -8,7 +8,7 @@
 - 👨‍💻 All of my projects are available at [nicolasguarini.it ](https://nicolasguarini.it)
 - 📫 How to reach me: **nicolasguarini.py@gmail.com**
 
-<img  align="left"  src="https://github-readme-stats.vercel.app/api/top-langs/?username=nicolasguarini&layout=compact&hide=html"  alt="nicolasguarini"/>
+<img  align="left"  src="https://github-readme-stats.vercel.app/api/top-langs/?username=nicolasguarini&layout=compact&hide=html,jupyter%20notebook"  alt="nicolasguarini"/>
 <img  src="https://github-readme-stats.vercel.app/api?username=nicolasguarini&show_icons=true" width="425px"  alt="nicolasguarini"  />
 
 ----
