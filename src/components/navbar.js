@@ -41,14 +41,14 @@ class Navbar extends React.Component {
                 
             </ul>
 
-            <div id="toggle" onClick={this.handleClickBtnMenu}>
+            <div id="toggle" role='button' tabIndex="0" onKeyDown={this.handleClickBtnMenu} onClick={this.handleClickBtnMenu}>
                 <div className="span">menu</div>
             </div>
 
         </nav>
 
         <div id="resize">
-            <div className="close-btn" onClick={this.handleClickBtnMenu}>close</div>
+            <div className="close-btn" role='button' tabIndex="0" onKeyDown={this.handleClickBtnMenu} onClick={this.handleClickBtnMenu}>close</div>
 
             <ul id="menu">
                 <li><Link to="/" title="Home" onClick={this.handleClickBtnMenu}>home<span>/</span></Link></li>
