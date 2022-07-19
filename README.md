@@ -4,7 +4,7 @@
 <p  align="left">  <img  src="https://komarev.com/ghpvc/?username=nicolasguarini"  alt="nicolasguarini"  />  </p>
 
 - 🔭 I’m currently working on [benztrack](https://github.com/nicolasguarini/benztrack)
-- 🌱 I’m currently learning **Next.js and Kotlin (Android Development)**
+- 🌱 I’m currently learning **Next.js and Flutter**
 - 👨‍💻 All of my projects are available at [nicolasguarini.it ](https://nicolasguarini.it)
 - 📫 How to reach me: **nicolasguarini.py@gmail.com**
 
