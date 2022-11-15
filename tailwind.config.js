@@ -6,7 +6,17 @@ module.exports = {
     "./components/**/*.{js,ts,jsx,tsx}",
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        robotomono: ["Roboto Mono"]
+      }
+    },
+    colors: {
+      'black': '#0F0F0F',
+      'white': '#EDEDED',
+      'gray': '#CCCCCC',
+      'lightgray': '#808080'
+    }
   },
   plugins: [],
 }
