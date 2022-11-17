@@ -1,7 +1,11 @@
+import Layout from "../components/Layout";
+
 export default function Home() {
   return (
-    <h1 className="text-3xl font-bold text-center pt-14 font-robotomono">
-      Work in progress :)
-    </h1>
+    <>
+      <Layout>
+        {/* TODO: create hero section */}
+      </Layout>
+    </>
   )
 }
