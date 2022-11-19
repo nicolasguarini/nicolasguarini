@@ -20,7 +20,7 @@ const MobileMenu = ({open, setOpen, navigation}: Props) => {
           <div className="w-[100%] mt-[50%] text-center">
             <ul>
                 {navigation.map((item) => (
-                    <li className="mb-14">
+                    <li className="mb-14" key={item.name}>
                         <Link href={item.to} className="">{item.name}</Link>
                     </li>
                 ))}

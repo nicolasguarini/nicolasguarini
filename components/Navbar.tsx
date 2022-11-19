@@ -18,7 +18,7 @@ const Navbar = () => {
   const [open, setOpen] = useState(false)
 
   return (
-    <nav className="bg-black py-5 px-6 md:py-3 fixed min-w-full">
+    <nav className="bg-black py-5 px-6 md:py-3 fixed min-w-full z-50">
         <div className="container flex flex-wrap items-center justify-between mx-auto font-bold">
           <Link href="/" className="flex items-center">nicolas guarini</Link>
         
@@ -34,7 +34,7 @@ const Navbar = () => {
           <div className="hidden w-full md:block md:w-auto">
             <ul className="flex flex-col p-4 mt-4 md:flex-row  md:mt-0 ">
               {navigation.map((item) => (
-                <li>
+                <li key={item.name}>
                   <Link href={item.to} className="block py-1 px-8 font-normal" >{item.name}</Link>
                 </li>
               ))}
