@@ -3,8 +3,8 @@ import React from 'react'
 const Whoami = () => {
   return (
     <div className='max-w-xl md:max-w-2xl lg:max-w-4xl m-auto p-7 mb-5'>
-        <h1 className='text-2xl text-center pb-2'>whoami</h1>
-        <p className='text-left text-sm text-lightgray'>
+        <h1 className='text-2xl text-center pb-2'>whoami:</h1>
+        <p className='text-left text-lightgray'>
             Computer Science student at University of Insubria, private teacher of
             programming and data analysis for university students, and freelance developer
             of web solutions for small and medium-sized companies and freelancers. 
