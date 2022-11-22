@@ -4,7 +4,8 @@ const ScrollDownIcon = () => {
   return (
     <div className="
         absolute
-        left-2/4
+        left-1/2
+        translate-x-[-50%]
         bottom-[85px]
         w-[13px]
         h-[13px]
