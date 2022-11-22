@@ -1,6 +1,7 @@
 import Layout from "../components/Layout"
 import TypeWriter, { TypewriterClass } from 'typewriter-effect'
 import ScrollDownIcon from "../components/icons/ScrollDownIcon"
+import Whoami from "../components/Whoami"
 
 export default function Home() {
   return (
@@ -14,8 +15,10 @@ export default function Home() {
           />
         </div>
 
-        <ScrollDownIcon />
+        <ScrollDownIcon />  
       </div>
+
+      <Whoami />
     </Layout>
   )
 }
