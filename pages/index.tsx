@@ -1,4 +1,4 @@
-import Layout from "../components/Layout"
+import Layout from "../components/layout/Layout"
 import TypeWriter, { TypewriterClass } from 'typewriter-effect'
 import ScrollDownIcon from "../components/icons/ScrollDownIcon"
 import Whoami from "../components/Whoami"

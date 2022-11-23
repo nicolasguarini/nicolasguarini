@@ -1,6 +1,6 @@
 import Link from "next/link"
 import { useState } from "react"
-import GitHubIcon from "./icons/GitHubIcon"
+import GitHubIcon from "../icons/GitHubIcon"
 import MobileMenu from "./MobileMenu"
 
 export type Navigation = {
