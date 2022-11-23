@@ -3,6 +3,7 @@ import TypeWriter, { TypewriterClass } from 'typewriter-effect'
 import ScrollDownIcon from "../components/icons/ScrollDownIcon"
 import Whoami from "../components/Whoami"
 import PersonalProjects from "../components/PersonalProjects"
+import ClientProjects from "../components/ClientProjects"
 
 export default function Home() {
   return (
@@ -22,6 +23,7 @@ export default function Home() {
       <Whoami />
 
       <PersonalProjects />
+      <ClientProjects />
     </Layout>
   )
 }

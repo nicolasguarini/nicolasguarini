@@ -7,7 +7,7 @@ import Project from './Project'
 
 const PersonalProjects = () => {
   return (
-    <div className='max-w-6xl m-auto p-7 mb-10'>
+    <div className='max-w-6xl m-auto p-7 mb-16'>
         <h1 className='text-xl text-center font-semibold'>personal projects:</h1>
 
         <VerticalDivider />
