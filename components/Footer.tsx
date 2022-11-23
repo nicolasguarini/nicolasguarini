@@ -1,7 +1,7 @@
 
 const Footer = () => {
   return (
-    <footer className="container md:max-w-[80%] font-extralight m-auto inset-x-0 bottom-0 w-full p-3">
+    <footer className="container md:max-w-[80%] font-extralight m-auto inset-x-0 bottom-0 w-full p-3 mt-40">
       <div className="font-extralight text-gray text-center md:text-right mb-10">
         Got an Interesting project? I can help you!
       </div>
