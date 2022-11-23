@@ -1,4 +1,7 @@
+import Link from 'next/link'
 import React from 'react'
+import BlockGitHubIcon from './icons/BlockGitHubIcon'
+import RightArrowIcon from './icons/RightArrowIcon'
 import VerticalDivider from './icons/VerticalDivider'
 import Project from './Project'
 
@@ -16,6 +19,15 @@ const PersonalProjects = () => {
             <Project />
             <Project />
             <Project />
+        </div>
+
+      <BlockGitHubIcon />
+
+        <div className="flex justify-center">
+          <Link className='text-sm pt-3' href="https://github.com/nicolasguarini">
+            <span className='underline'>complete list</span>
+            <RightArrowIcon />
+          </Link>
         </div>
     </div>
   )
