@@ -2,6 +2,7 @@ import Layout from "../components/Layout"
 import TypeWriter, { TypewriterClass } from 'typewriter-effect'
 import ScrollDownIcon from "../components/icons/ScrollDownIcon"
 import Whoami from "../components/Whoami"
+import PersonalProjects from "../components/PersonalProjects"
 
 export default function Home() {
   return (
@@ -19,6 +20,8 @@ export default function Home() {
       </div>
 
       <Whoami />
+
+      <PersonalProjects />
     </Layout>
   )
 }
