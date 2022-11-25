@@ -3,9 +3,12 @@ import React from 'react'
 import BlockGitHubIcon from './icons/BlockGitHubIcon'
 import RightArrowIcon from './icons/RightArrowIcon'
 import VerticalDivider from './icons/VerticalDivider'
-import Project from './Project'
 
-const PersonalProjects = () => {
+type Props = {
+  children: React.ReactNode
+}
+
+const PersonalProjects = ({ children }: Props) => {
   return (
     <div className='max-w-6xl m-auto p-7 mb-16'>
         <h1 className='text-xl text-center font-semibold'>personal projects:</h1>
@@ -13,12 +16,7 @@ const PersonalProjects = () => {
         <VerticalDivider />
 
         <div className='grid grid-cols-1 md:grid-cols-2 md:gap-x-10 lg:gap-x-20 gap-y-12'>
-            <Project />
-            <Project />
-            <Project />
-            <Project />
-            <Project />
-            <Project />
+            {children}
         </div>
 
       <BlockGitHubIcon />

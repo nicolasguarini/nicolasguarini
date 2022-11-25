@@ -4,8 +4,17 @@ import ScrollDownIcon from "../components/icons/ScrollDownIcon"
 import Whoami from "../components/Whoami"
 import PersonalProjects from "../components/PersonalProjects"
 import ClientProjects from "../components/ClientProjects"
+import ProjectType from "../interfaces/project"
+import { getAllProjects } from "../lib/api"
+import Project from "../components/Project"
 
-export default function Home() {
+type Props = {
+  allProjects: ProjectType[]
+}
+
+export default function Home({ allProjects }: Props) {
+  const personalProjects = allProjects.filter((project) => project.type == 'personal')
+  const clientProjects = allProjects.filter((project) => project.type == 'client')
   return (
     <Layout>
       <div className="h-screen text-center">
@@ -22,8 +31,40 @@ export default function Home() {
 
       <Whoami />
 
-      <PersonalProjects />
-      <ClientProjects />
+      <PersonalProjects>
+        {personalProjects.map((project) => 
+          <Project 
+            key={project.title}
+            title={project.title}
+            slug={project.slug}
+            excerpt={project.excerpt}
+          />
+        )}
+      </PersonalProjects>
+
+      <ClientProjects>
+        {clientProjects.map((project) => 
+          <Project 
+            key={project.title}
+            title={project.title}
+            slug={project.slug}
+            excerpt={project.excerpt}
+          />
+        )}
+      </ClientProjects>
     </Layout>
   )
+}
+
+export const getStaticProps = async () => {
+  const allProjects = getAllProjects([
+    'slug',
+    'title',
+    'excerpt',
+    'type'
+  ])
+
+  return {
+    props: { allProjects }
+  }
 }

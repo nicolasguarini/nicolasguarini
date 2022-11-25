@@ -1,15 +1,19 @@
 import Link from 'next/link'
 import React from 'react'
 
-const Project = () => {
+type Props = {
+  title: string
+  excerpt: string
+  slug: string
+}
+
+const Project = ({ title, excerpt, slug }: Props) => {
   return (
     <div>
-        <Link href='/projects/nicolasguarini'>
-          <h2 className='text-lg pb-2'>nicolasguarini.it</h2>
+        <Link href={`/projects/${slug}`}>
+          <h2 className='text-lg pb-2'>{title}</h2>
           <p className='text-lightgray text-sm'>
-              Data analysis report about Internet adoption
-              around the world and how the price, speed and
-              country's development affects this data.
+              {excerpt}
           </p>
         </Link>
     </div>
