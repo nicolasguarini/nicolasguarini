@@ -43,6 +43,7 @@ export const getAllProjects = (fields: string[] = []) => {
     const projects = slugs
         .map((slug) => getProjectBySlug(slug, fields))
         // sort projects by date in descending ordeer
-        .sort((project1, project2) => (project1.started > project2.started ? -1 : 1))
+        .sort((project1, project2) => (Date.parse(project1.started) > Date.parse(project2.started) ? -1 : 1))
+    console.log(projects)
     return projects
 }
