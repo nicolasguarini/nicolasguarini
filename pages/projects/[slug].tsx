@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
+import Container from '../../components/layout/Container'
 import Layout from '../../components/layout/Layout'
 import ProjectType from '../../interfaces/project'
 import { getAllProjects, getProjectBySlug } from '../../lib/api'
@@ -20,7 +21,7 @@ export default function Post({ project }: Props){
 
     return (
         <Layout>
-            <div className='container md:max-w-[80%] pt-32 m-auto p-5'>
+            <Container>
                 <h1 className='text-4xl font-bold mt-10'>
                     <Link href={project.link} className='underline'>{project.title}</Link>
                 </h1>
@@ -46,7 +47,7 @@ export default function Post({ project }: Props){
                         dangerouslySetInnerHTML={{__html: project.content}}
                     />
                 </div>
-            </div>
+            </Container>
         </Layout>
     )
 }

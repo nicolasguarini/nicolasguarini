@@ -1,10 +1,11 @@
 import React from 'react'
+import Container from '../components/layout/Container'
 import Layout from '../components/layout/Layout'
 
 const contact = () => {
   return (
     <Layout>
-        <div className="container md:max-w-[80%] pt-32 m-auto p-5">
+        <Container>
             <h1 className='text-2xl font-bold'>say hello 👋</h1>
             <div className='max-w-full md:max-w-[80%] lg:max-w-[60%]'>
                 <p className='text-lightgray pt-5'>
@@ -26,7 +27,7 @@ const contact = () => {
 
                 <button type="submit" className='tracking-widest uppercase border py-4 px-6 mt-8'>send message</button>
             </form>
-        </div>
+        </Container>
     </Layout>
   )
 }

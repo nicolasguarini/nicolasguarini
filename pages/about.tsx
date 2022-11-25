@@ -1,10 +1,11 @@
 import React from 'react'
+import Container from '../components/layout/Container'
 import Layout from '../components/layout/Layout'
 
 const about = () => {
   return (
     <Layout>
-        <div className="container md:max-w-[80%] pt-32 m-auto p-5">
+        <Container>
             <h1 className='text-2xl font-bold'>about me</h1>
             <p className='pt-6 text-lightgray'>
                 Hi, I'm Nicolas and I'm a 21 years old developer. I have always been passionate about computer science, ever since I was a
@@ -19,7 +20,7 @@ const about = () => {
                 making me passionate about the world of the backend, in particular the development from scratch of ecommerce websites using
                 these technologies.
             </p>
-        </div>
+        </Container>
     </Layout>
   )
 }
