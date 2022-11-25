@@ -1,5 +1,5 @@
 ---
-title: 'worldwide-internet-adoption-study'
+title: 'internet-adoption-study'
 excerpt: 'Data analysis report about Internet adoption
 around the world and how the price, speed and
 country s development affects this data.'
