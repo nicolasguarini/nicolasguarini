@@ -18,5 +18,7 @@ module.exports = {
       'lightgray': '#808080'
     }
   },
-  plugins: [],
+  plugins: [
+    require('@tailwindcss/typography'),
+  ],
 }

@@ -6,7 +6,6 @@ import ProjectType from '../../interfaces/project'
 import { getAllProjects, getProjectBySlug } from '../../lib/api'
 import markdownToHtml from '../../lib/markdownToHtml'
 import FourOhFour from '../404'
-import markdownStyles from '../../components/markdown-styles.module.css'
 
 type Props = {
     project: ProjectType
@@ -43,7 +42,7 @@ export default function Post({ project }: Props){
     
                 <div className='text-lightgray mt-8'>
                     <div 
-                        className={markdownStyles['markdown']}
+                        className='prose prose-invert max-w-none m-auto text-gray'
                         dangerouslySetInnerHTML={{__html: project.content}}
                     />
                 </div>
