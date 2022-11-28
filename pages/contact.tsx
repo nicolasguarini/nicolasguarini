@@ -14,7 +14,7 @@ const contact = () => {
                         but you don't know where to start, if you want to ask me anything, or if
                         you just want to say hello, contact me!" 
             />
-            
+
             <meta name='og:title' content='Contact | Nicolas Guarini'/>
             <meta 
                 name='og:description' 
@@ -27,9 +27,9 @@ const contact = () => {
             <h1 className='text-2xl font-bold'>say hello 👋</h1>
             <div className='max-w-full md:max-w-[80%] lg:max-w-[60%]'>
                 <p className='text-lightgray pt-5'>
-                    If you have an interesting idea, a project that you would like to start
+                    {`If you have an interesting idea, a project that you would like to start
                     but you don't know where to start, if you want to ask me anything, or if
-                    you just want to say hello, contact me!
+                    you just want to say hello, contact me!`}
                 </p>
             </div>
 
