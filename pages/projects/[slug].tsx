@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import Link from 'next/link'
 import { useRouter } from 'next/router'
 import React from 'react'
@@ -21,6 +22,13 @@ export default function Post({ project }: Props){
 
     return (
         <Layout>
+            <Head>
+                <title>{project.title} | Nicolas Guarini</title>
+                <meta name="description" content={project.excerpt} />
+
+                <meta name="og:title" content={project.title + " | Nicolas Guarini"} />
+                <meta name="og:description" content={project.excerpt} />
+            </Head>
             <Container>
                 <h1 className='text-4xl font-bold mt-10'>
                     <Link href={project.link} className='underline'>{project.title}</Link>

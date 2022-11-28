@@ -1,3 +1,4 @@
+import Head from 'next/head'
 import React from 'react'
 import Container from '../components/layout/Container'
 import Layout from '../components/layout/Layout'
@@ -5,6 +6,23 @@ import Layout from '../components/layout/Layout'
 const contact = () => {
   return (
     <Layout>
+        <Head>
+            <title>Contact | Nicolas Guarini</title>
+            <meta 
+                name="description" 
+                content="If you have an interesting idea, a project that you would like to start
+                        but you don't know where to start, if you want to ask me anything, or if
+                        you just want to say hello, contact me!" 
+            />
+            
+            <meta name='og:title' content='Contact | Nicolas Guarini'/>
+            <meta 
+                name='og:description' 
+                content="If you have an interesting idea, a project that you would like to start
+                        but you don't know where to start, if you want to ask me anything, or if
+                        you just want to say hello, contact me!" 
+            />
+        </Head>
         <Container>
             <h1 className='text-2xl font-bold'>say hello 👋</h1>
             <div className='max-w-full md:max-w-[80%] lg:max-w-[60%]'>
