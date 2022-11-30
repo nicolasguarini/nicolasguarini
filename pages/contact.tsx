@@ -33,7 +33,14 @@ const contact = () => {
                 </p>
             </div>
 
-            <form action="POST" className='mt-10'>
+            <form 
+                method="POST"
+                action="/success"
+                name='contact' 
+                data-netlify='true' 
+                className='mt-10'
+            >
+                <input type="hidden" name="form-name" value="contact" />
                 <div className='wow fadeInUp' data-wow-delay='0s'>
                     <label htmlFor="name" className='text-lightgray font-normal block'>Name:</label>
                     <input type="text" name='name' className='border-b-2 border-white bg-black w-full block h-10 p-2 mt-2'/>
