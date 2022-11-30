@@ -23,10 +23,10 @@ export default function Post({ project }: Props){
     return (
         <Layout>
             <Head>
-                <title>{project.title} | Nicolas Guarini</title>
+                <title>{`${project.title} | Nicolas Guarini`}</title>
                 <meta name="description" content={project.excerpt} />
 
-                <meta name="og:title" content={project.title + " | Nicolas Guarini"} />
+                <meta name="og:title" content={`${project.title} | Nicolas Guarini`} />
                 <meta name="og:description" content={project.excerpt} />
             </Head>
             <Container>
