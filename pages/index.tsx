@@ -13,8 +13,11 @@ type Props = {
 }
 
 export default function Home({ allProjects }: Props) {
-  const personalProjects = allProjects.filter((project) => project.type == 'personal')
-  const clientProjects = allProjects.filter((project) => project.type == 'client')
+  const personalProjects: ProjectType[] = allProjects.filter((project) => project.type == 'personal')
+  const clientProjects: ProjectType[] = allProjects.filter((project) => project.type == 'client')
+  let delayPersonalProjects: number = 0
+  let delayClientProjects: number = 0
+
   return (
     <Layout>
       <div className="h-screen text-center">
@@ -32,25 +35,35 @@ export default function Home({ allProjects }: Props) {
       <Whoami />
 
       <PersonalProjects>
-        {personalProjects.map((project) => 
-          <Project 
-            key={project.title}
-            title={project.title}
-            slug={project.slug}
-            excerpt={project.excerpt}
-          />
-        )}
+        {personalProjects.map((project) => {
+          delayPersonalProjects += 0.08
+          return(
+            <div className="wow fadeInUp" data-wow-delay={delayPersonalProjects + 's'}>
+              <Project 
+                key={project.title}
+                title={project.title}
+                slug={project.slug}
+                excerpt={project.excerpt}
+              />
+            </div>
+          )
+        })}
       </PersonalProjects>
 
       <ClientProjects>
-        {clientProjects.map((project) => 
-          <Project 
-            key={project.title}
-            title={project.title}
-            slug={project.slug}
-            excerpt={project.excerpt}
-          />
-        )}
+        {clientProjects.map((project) => {
+          delayClientProjects += 0.08
+          return(
+            <div className="wow fadeInUp" data-wow-delay={delayClientProjects + 's'}>
+              <Project 
+                key={project.title}
+                title={project.title}
+                slug={project.slug}
+                excerpt={project.excerpt}
+              />
+            </div>
+          )
+        })}
       </ClientProjects>
     </Layout>
   )

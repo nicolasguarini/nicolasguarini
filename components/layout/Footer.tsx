@@ -9,12 +9,12 @@ const Footer = () => {
       <div className="w-full border-t border-lightgray"></div>
       
       <div className="p-12 pb-12 md:pb-3 px-0 grid gird-cols-1 lg:grid-cols-5">
-        <div className="pb-10 text-center md:text-left lg:col-span-2">
+        <div className="pb-10 text-center md:text-left lg:col-span-2 wow fadeInUp" data-wow-delay='0.08s'>
           <div className="text-lightgray mb-1">connect with me</div>
           <div>in @nicolasguarini</div>
         </div>
 
-        <div className="pb-12 text-center md:text-right">
+        <div className="pb-12 text-center md:text-right wow fadeInUp" data-wow-delay='0.16s'>
           <div className="text-lightgray mb-1">follow me</div>
           <div>
             <ul>
@@ -25,7 +25,7 @@ const Footer = () => {
           </div>
         </div>
 
-        <div className="pb-0 text-center md:text-right lg:col-span-2">
+        <div className="pb-0 text-center md:text-right lg:col-span-2 wow fadeInUp" data-wow-delay='0.24s'>
           <div className="text-lightgray mb-1">say hello</div>
           <div>nicolasguarini.py@gmail.com</div>
         </div>

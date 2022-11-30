@@ -30,26 +30,26 @@ export default function Post({ project }: Props){
                 <meta name="og:description" content={project.excerpt} />
             </Head>
             <Container>
-                <h1 className='text-4xl font-bold mt-10'>
+                <h1 className='text-4xl font-bold mt-10 wow fadeInUp'>
                     <Link href={project.link} className='underline'>{project.title}</Link>
                 </h1>
     
                 <div className="grid grid-cols-2 md:grid-cols-4 mt-10">
-                    <div className='col-span-2 mb-4 md:mb-0'>
+                    <div className='col-span-2 mb-4 md:mb-0 wow fadeInUp' data-wow-delay='0.08s'>
                         <div className='text-lightgray'>service :</div>
                         <div className='mt-2'>{project.service}</div>
                     </div>
-                    <div className='col-span-1'>
+                    <div className='col-span-1 wow fadeInUp' data-wow-delay='0.16s'>
                         <div className='text-lightgray'>started :</div>
                         <div className='mt-2'>{project.started}</div>
                     </div>
-                    <div className='col-span-1'>
+                    <div className='col-span-1 wow fadeInUp' data-wow-delay='0.24s'>
                         <div className='text-lightgray'>finished :</div>
                         <div className='mt-2'>{project.finished}</div>
                     </div>
                 </div>
     
-                <div className='text-lightgray mt-8'>
+                <div className='text-lightgray mt-8 wow fadeInUp' data-wow-delay='0.32s'>
                     <div 
                         className='prose prose-invert max-w-none m-auto text-gray'
                         dangerouslySetInnerHTML={{__html: project.content}}

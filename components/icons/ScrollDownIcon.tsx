@@ -13,7 +13,9 @@ const ScrollDownIcon = () => {
         border-r-2
         border-white
         rotate-45
-    "></div>
+        wow
+        fadeInUp
+    " data-wow-duration='0.8s' data-wow-delay='0.18s'></div>
   )
 }
 
