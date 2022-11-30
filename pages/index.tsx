@@ -38,9 +38,8 @@ export default function Home({ allProjects }: Props) {
         {personalProjects.map((project) => {
           delayPersonalProjects += 0.08
           return(
-            <div className="wow fadeInUp" data-wow-delay={delayPersonalProjects + 's'}>
+            <div className="wow fadeInUp" data-wow-delay={delayPersonalProjects + 's'} key={project.title}>
               <Project 
-                key={project.title}
                 title={project.title}
                 slug={project.slug}
                 excerpt={project.excerpt}
@@ -54,9 +53,8 @@ export default function Home({ allProjects }: Props) {
         {clientProjects.map((project) => {
           delayClientProjects += 0.08
           return(
-            <div className="wow fadeInUp" data-wow-delay={delayClientProjects + 's'}>
+            <div className="wow fadeInUp" data-wow-delay={delayClientProjects + 's'} key={project.title}>
               <Project 
-                key={project.title}
                 title={project.title}
                 slug={project.slug}
                 excerpt={project.excerpt}
