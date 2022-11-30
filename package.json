@@ -17,7 +17,8 @@
     "react-dom": "18.2.0",
     "remark": "^14.0.2",
     "remark-html": "^15.0.1",
-    "typewriter-effect": "^2.19.0"
+    "typewriter-effect": "^2.19.0",
+    "wow.js": "^1.2.2"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.8",
