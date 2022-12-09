@@ -60,7 +60,7 @@ const contact = () => {
 
                 <button type="submit" className='tracking-widest uppercase border py-4 px-6 mt-8 wow fadeInUp' data-wow-delay='0.3s'>send message</button>
                 <div className='pt-5 text-lightgray wow fadeInUp' data-wow-delay='0.3s'>
-                    By continuing, you accept the terms and conditions contained in our <Link className='underline' href="/privacy-policy">Privacy Policy</Link>
+                    By continuing, you accept the terms and conditions contained in my <Link className='underline' href="/privacy-policy">Privacy Policy</Link>
                 </div>
             </form>
         </Container>

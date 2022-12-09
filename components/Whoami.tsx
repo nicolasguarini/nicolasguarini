@@ -8,11 +8,12 @@ const Whoami = () => {
             <p className='wow fadeInUp py-2' data-wow-delay='0.1s'>
               Computer Science student at University of Insubria, private teacher of
               programming and data analysis for university students, and freelance developer
-              of web solutions for small and medium-sized companies and freelancers. 
+              of web solutions for small and medium-sized companies and freelancers.
             </p>
             <p className='wow fadeInUp py-2' data-wow-delay='0.15s'>
               Always passionate about IT and cybersecurity, I have developed several projects
               in the mobile field, fullstack webapps, desktop, and data analysis.
+              Although it is not often mentioned, I have also taken care of the UI/UX design of all my projects.
             </p>
             <p className='wow fadeInUp py-2' data-wow-delay='0.2s'>
               I am also fond of music, guitars, chess, and I can solve rubiks cubes in under
