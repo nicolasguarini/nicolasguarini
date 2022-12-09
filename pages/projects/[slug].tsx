@@ -30,7 +30,7 @@ export default function Post({ project }: Props){
                 <meta name="og:description" content={project.excerpt} />
             </Head>
             <Container>
-                <h1 className='text-4xl font-bold mt-10 wow fadeInUp'>
+                <h1 className='text-4xl font-medium mt-10 wow fadeInUp text-clip' style={{'overflowWrap': 'anywhere'}}>
                     <Link href={project.link} className='underline'>{project.title}</Link>
                 </h1>
     

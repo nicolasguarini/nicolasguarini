@@ -20,8 +20,8 @@ const Navbar = () => {
 
   return (
     <nav className="bg-black py-5 px-6 md:py-3 fixed min-w-full z-50">
-        <div className="container flex flex-wrap items-center justify-between mx-auto font-bold">
-          <Link href="/" className="flex items-center wow fadeIn">nicolas guarini</Link>
+        <div className="container flex flex-wrap items-center justify-between mx-auto">
+          <Link href="/" className="flex items-center wow fadeIn font-bold">nicolas guarini</Link>
         
           <button 
             type="button" 
