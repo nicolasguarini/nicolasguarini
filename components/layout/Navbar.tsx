@@ -11,7 +11,8 @@ export type Navigation = {
 const navigation: Navigation= [
   {name: 'home/', to: '/'},
   {name: 'about/', to: '/about'},
-  {name: 'contact/', to: '/contact'}
+  {name: 'contact/', to: '/contact'},
+  {name: 'resume/', to: 'https://www.linkedin.com/in/nicolasguarini/'}
 ]
 
 const Navbar = () => {
