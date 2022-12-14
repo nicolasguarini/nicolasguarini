@@ -12,7 +12,7 @@ type Props = {
     page: PageContentType
 }
 
-export default ({ page }: Props) => {
+const PrivacyPolicy = ({ page }: Props) => {
     const router = useRouter()
 
     if (!router.isFallback && !page?.slug) {
@@ -55,3 +55,5 @@ export async function getStaticProps(){
         }
     }
 }
+
+export default PrivacyPolicy
