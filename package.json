@@ -9,8 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
+    "@types/fs-extra": "^11.0.1",
     "eslint": "8.27.0",
     "eslint-config-next": "13.0.3",
+    "fs-extra": "^11.1.0",
     "gray-matter": "^4.0.3",
     "next": "^13.1.6",
     "react": "^18.2.0",
