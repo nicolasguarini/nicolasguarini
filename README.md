@@ -3,7 +3,7 @@
 
 <p  align="left">  <img  src="https://komarev.com/ghpvc/?username=nicolasguarini"  alt="nicolasguarini"  />  </p>
 
-- 🔭 I’m currently working on [encryptia](https://github.com/nicolasguarini/encryptia)
+- 🔭 I’m currently working on [milechain](https://github.com/nicolasguarini/milechain)
 - 🌱 I’m currently learning **Solidity and Next.js**
 - 👨‍💻 All of my projects are available at [nicolasguarini.it ](https://nicolasguarini.it)
 - 📫 How to reach me: **nicolasguarini.py@gmail.com**
