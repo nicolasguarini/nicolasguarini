@@ -47,6 +47,12 @@ export default {
             title: 'URL',
         },
         {
+            name: 'images',
+            title: 'Images',
+            type: 'array',
+            of: [{type: 'image'}]
+        },
+        {
             name: 'content',
             type: 'array', 
             title: 'Content', 
