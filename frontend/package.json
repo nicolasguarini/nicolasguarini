@@ -11,6 +11,7 @@
   "dependencies": {
     "@portabletext/react": "^3.0.7",
     "@sanity/client": "^6.4.11",
+    "@sanity/image-url": "^1.0.2",
     "@tailwindcss/typography": "^0.5.10",
     "@types/node": "20.6.0",
     "@types/react": "18.2.21",

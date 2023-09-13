@@ -1,6 +1,7 @@
 import Container from '@/components/layout/Container';
 import Layout from '@/components/layout/Layout';
 import { fetchProjectSlugs, fetchProjetBySlug } from '@/lib/fetch';
+import { urlFor } from '@/lib/utils';
 import { Project } from '@/types/project';
 import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
@@ -48,6 +49,16 @@ export default async function Page({ params }: { params: { slug: string } }) {
 					<div className="prose prose-invert max-w-none m-auto text-gray mt-14">
 						<PortableText value={project?.content} />
 					</div>
+				</div>
+
+				<div className="mt-20">
+					{project?.images.map((image) => {
+						return (
+							<div className="mb-14" key={image._id}>
+								<img src={urlFor(image).url()} alt={project?.name} />
+							</div>
+						);
+					})}
 				</div>
 			</Container>
 		</Layout>

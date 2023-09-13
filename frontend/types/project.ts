@@ -7,6 +7,6 @@ export type Project = {
 	startedDate: string;
 	finishedDate: string | null;
 	url: string;
-	images: string[];
+	images: any[];
 	content: any[];
 };
