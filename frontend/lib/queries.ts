@@ -13,13 +13,13 @@ export const projectBySlugQuery = `*[_type == "project" && slug.current == $slug
     content
 }`;
 
-export const personalProjectsQuery = `*[_type == "project" && type == "personal"] {
+export const personalProjectsQuery = `*[_type == "project" && type == "personal"] | order(startedDate desc) {
     name,
     "slug": slug.current,
     excerpt
 }`;
 
-export const clientProjectsQuery = `*[_type == "project" && type == "client"] {
+export const clientProjectsQuery = `*[_type == "project" && type == "client"] | order(startedDate desc) {
     name,
     "slug": slug.current,
     excerpt
