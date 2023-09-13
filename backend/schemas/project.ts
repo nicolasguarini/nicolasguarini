@@ -9,6 +9,17 @@ export default {
             title: 'Name'
         },
         {
+            name: 'slug',
+            title: 'Slug',
+            type: 'slug',
+            options: {
+                source: 'name',
+                maxLength: 96,
+                isUnique: (value: string, context: any) => context.defaultIsUnique(value, context),
+            },
+            validation: (rule: any) => rule.required(),
+        },
+        {
             name: 'excerpt',
             type: 'string',
             title: 'Excerpt',
