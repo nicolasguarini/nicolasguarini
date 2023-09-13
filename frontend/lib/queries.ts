@@ -1,4 +1,4 @@
-import { groq } from "next-sanity";
+import { groq } from 'next-sanity';
 
 export const projectsSlugsQuery = `*[_type == "project" && slug.current != null].slug.current`;
 

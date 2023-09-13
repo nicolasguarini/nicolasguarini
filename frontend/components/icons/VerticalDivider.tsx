@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 const VerticalDivider = () => {
-  return (
-    <div className='
+	return (
+		<div
+			className="
         border-l
         border-lightgray
         w-1
@@ -10,8 +11,8 @@ const VerticalDivider = () => {
         relative
         left-1/2
         my-6
-    '></div>
-  )
-}
+    "></div>
+	);
+};
 
-export default VerticalDivider
+export default VerticalDivider;

@@ -1,8 +1,6 @@
 import Container from '@/components/layout/Container';
 import Layout from '@/components/layout/Layout';
-import { client } from '@/lib/client';
 import { fetchProjectSlugs, fetchProjetBySlug } from '@/lib/fetch';
-import { projectBySlugQuery, projectsSlugsQuery } from '@/lib/queries';
 import { PortableText } from '@portabletext/react';
 import Link from 'next/link';
 

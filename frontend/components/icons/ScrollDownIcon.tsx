@@ -1,8 +1,9 @@
-import React from 'react'
+import React from 'react';
 
 const ScrollDownIcon = () => {
-  return (
-    <div className="
+	return (
+		<div
+			className="
         absolute
         left-1/2
         translate-x-[-50%]
@@ -15,8 +16,10 @@ const ScrollDownIcon = () => {
         rotate-45
         wow
         fadeInUp
-    " data-wow-duration='0.8s' data-wow-delay='0.18s'></div>
-  )
-}
+    "
+			data-wow-duration="0.8s"
+			data-wow-delay="0.18s"></div>
+	);
+};
 
-export default ScrollDownIcon
+export default ScrollDownIcon;
