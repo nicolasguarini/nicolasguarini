@@ -57,6 +57,9 @@ export default function RootLayout({
 }) {
 	return (
 		<html lang="en">
+			<head>
+				<link rel="icon" href="/assets/icon.png" type="image/x-icon" />
+			</head>
 			<body className="bg-black text-white font-robotomono">{children}</body>
 		</html>
 	);
