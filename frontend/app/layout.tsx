@@ -48,6 +48,7 @@ export const metadata: Metadata = {
 		locale: 'en-US',
 		type: 'website',
 	},
+	metadataBase: new URL('https://nicolasguarini.it'),
 };
 
 export default function RootLayout({

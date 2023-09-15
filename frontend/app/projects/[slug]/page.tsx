@@ -10,6 +10,7 @@ import { Project } from '@/types/project';
 import { ProjectCard } from '@/types/projectCard';
 import { PortableText } from '@portabletext/react';
 import { Metadata, ResolvingMetadata } from 'next';
+import Image from 'next/image';
 import Link from 'next/link';
 
 type Props = { params: { slug: string } };
@@ -73,10 +74,10 @@ export default async function Page({ params }: Props) {
 				</div>
 
 				<div className="mt-20">
-					{project?.images.map((image) => {
+					{project?.images?.map((image) => {
 						return (
 							<div className="mb-14" key={image._id}>
-								<img src={urlFor(image).url()} alt={project?.name} />
+								<Image src={urlFor(image).url()} alt={project?.name} />
 							</div>
 						);
 					})}
