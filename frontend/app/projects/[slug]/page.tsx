@@ -77,7 +77,7 @@ export default async function Page({ params }: Props) {
 					{project?.images?.map((image) => {
 						return (
 							<div className="mb-14" key={image._id}>
-								<Image src={urlFor(image).url()} alt={project?.name} />
+								<img src={urlFor(image).url()} alt={project?.name} />
 							</div>
 						);
 					})}
