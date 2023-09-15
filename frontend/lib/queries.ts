@@ -24,3 +24,9 @@ export const clientProjectsQuery = `*[_type == "project" && type == "client"] | 
     "slug": slug.current,
     excerpt
 }`;
+
+export const projectCardQuery = `*[_type == "project" && slug.current == $slug][0] {
+    name,
+    "slug": slug.current,
+    excerpt
+} `;

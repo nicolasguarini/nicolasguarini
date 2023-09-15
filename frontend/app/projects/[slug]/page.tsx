@@ -1,17 +1,38 @@
 import Container from '@/components/layout/Container';
 import Layout from '@/components/layout/Layout';
-import { fetchProjectSlugs, fetchProjetBySlug } from '@/lib/fetch';
+import {
+	fetchProjectCardBySlug,
+	fetchProjectSlugs,
+	fetchProjetBySlug,
+} from '@/lib/fetch';
 import { urlFor } from '@/lib/utils';
 import { Project } from '@/types/project';
+import { ProjectCard } from '@/types/projectCard';
 import { PortableText } from '@portabletext/react';
+import { Metadata, ResolvingMetadata } from 'next';
 import Link from 'next/link';
+
+type Props = { params: { slug: string } };
+
+export async function generateMetadata(
+	{ params }: Props,
+	parent: ResolvingMetadata,
+): Promise<Metadata> {
+	const slug = params.slug;
+	const projectCard: ProjectCard = await fetchProjectCardBySlug(slug);
+
+	return {
+		title: projectCard.name,
+		description: projectCard.excerpt,
+	};
+}
 
 export async function generateStaticParams() {
 	const slugs = await fetchProjectSlugs();
 	return slugs.map((slug: string) => ({ slug }));
 }
 
-export default async function Page({ params }: { params: { slug: string } }) {
+export default async function Page({ params }: Props) {
 	const slug: string = params.slug;
 	const project: Project = await fetchProjetBySlug(slug);
 

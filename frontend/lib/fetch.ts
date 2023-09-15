@@ -3,6 +3,7 @@ import {
 	clientProjectsQuery,
 	personalProjectsQuery,
 	projectBySlugQuery,
+	projectCardQuery,
 	projectsSlugsQuery,
 } from './queries';
 
@@ -20,4 +21,8 @@ export const fetchPersonalProjects = async () => {
 
 export const fetchClientProjects = async () => {
 	return await client.fetch(clientProjectsQuery);
+};
+
+export const fetchProjectCardBySlug = async (slug: string) => {
+	return await client.fetch(projectCardQuery, { slug });
 };
