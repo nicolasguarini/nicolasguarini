@@ -6,15 +6,11 @@ import { Metadata } from 'next';
 
 export const metadata: Metadata = {
 	title: 'About',
-	description: 'Descrizione',
 };
 
 const About = () => {
 	return (
 		<Layout>
-			<Head>
-				<title>About | Nicolas Guarini</title>
-			</Head>
 			<Container>
 				<h1 className="text-2xl font-bold wow fadeInUp">about me</h1>
 				<div
