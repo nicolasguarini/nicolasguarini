@@ -27,5 +27,8 @@
     "typescript": "5.2.2",
     "typewriter-effect": "2.19.0",
     "wow.js": "^1.2.2"
+  },
+  "devDependencies": {
+    "@netlify/plugin-nextjs": "^4.29.5-appdir.0"
   }
 }
