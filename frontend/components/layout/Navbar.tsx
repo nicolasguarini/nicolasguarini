@@ -33,9 +33,9 @@ const Navbar = () => {
 					className="inline-flex items-center p-2 ml-3 md:hidden"
 					onClick={() => setOpen(!open)}>
 					<span className="sr-only">Open main menu</span>
-					<span className="" data-wow-delay="0.08s">
-						menu
-					</span>
+					<FadeInUpText delay={0.08}>
+						<span>menu</span>
+					</FadeInUpText>
 				</button>
 
 				<div className="hidden w-full md:block md:w-auto">

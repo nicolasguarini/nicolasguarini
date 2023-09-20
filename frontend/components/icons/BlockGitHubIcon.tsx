@@ -2,7 +2,7 @@ import React from 'react';
 
 const BlockGitHubIcon = () => {
 	return (
-		<div className="flex justify-center mt-10 wow fadeInUp">
+		<div className="flex justify-center mt-10 ">
 			<span className="sr-only">Nicolas Guarini on GitHub</span>
 			<svg
 				viewBox="0 0 16 16"

@@ -4,10 +4,7 @@ type Props = {
 
 const GitHubIcon = ({ delay }: Props) => {
 	return (
-		<div
-			className="wow fadeInUp"
-			data-wow-duration="0.8s"
-			data-wow-delay={delay + 's'}>
+		<div>
 			<span className="sr-only">Nicolas Guarini on GitHub</span>
 			<svg
 				viewBox="0 0 16 16"

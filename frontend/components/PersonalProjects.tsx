@@ -21,7 +21,7 @@ const PersonalProjects = ({ children }: Props) => {
 
 			<BlockGitHubIcon />
 
-			<div className="flex justify-center wow fadeInUp" data-wow-delay="0.08s">
+			<div className="flex justify-center">
 				<Link className="text-sm pt-3" href="https://github.com/nicolasguarini">
 					<span className="underline">complete list</span>
 					<RightArrowIcon />
