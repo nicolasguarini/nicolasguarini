@@ -1,3 +1,4 @@
+import { Analytics } from '@vercel/analytics/react';
 import '../styles/globals.css';
 import type { Metadata } from 'next';
 
@@ -61,7 +62,10 @@ export default function RootLayout({
 			<head>
 				<link rel="icon" href="/assets/icon.png" type="image/x-icon" />
 			</head>
-			<body className="bg-black text-white font-robotomono">{children}</body>
+			<body className="bg-black text-white font-robotomono">
+				{children}
+				<Analytics />
+			</body>
 		</html>
 	);
 }
