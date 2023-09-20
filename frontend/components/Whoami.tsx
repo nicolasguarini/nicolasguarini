@@ -1,5 +1,3 @@
-import React from 'react';
-
 const Whoami = () => {
 	return (
 		<div className="max-w-xl md:max-w-2xl lg:max-w-4xl m-auto p-7 mb-10">

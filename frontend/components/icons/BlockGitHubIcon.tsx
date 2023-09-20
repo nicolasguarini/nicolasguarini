@@ -1,5 +1,3 @@
-import React from 'react';
-
 const BlockGitHubIcon = () => {
 	return (
 		<div className="flex justify-center mt-10 ">

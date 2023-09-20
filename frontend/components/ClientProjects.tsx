@@ -1,6 +1,5 @@
 import React from 'react';
 import VerticalDivider from './icons/VerticalDivider';
-import Project from './Project';
 
 type Props = {
 	children: React.ReactNode;

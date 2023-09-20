@@ -1,4 +1,3 @@
-import Head from 'next/head';
 import Link from 'next/link';
 import React from 'react';
 import Container from '../../components/layout/Container';

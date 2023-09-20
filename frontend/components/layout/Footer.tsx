@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import FadeInUpText from '../FadeInUpText';
 
 const Footer = () => {
 	return (
@@ -34,10 +33,10 @@ const Footer = () => {
 					<div className="text-lightgray mb-1">say hello</div>
 					<div>
 						<Link
-							href="mailto:nicolasguarini.py@gmail.com"
+							href="mailto:web@nicolasguarini.it"
 							target={'_blank'}
 							rel="noreferrer">
-							nicolasguarini.py@gmail.com
+							web@nicolasguarini.it
 						</Link>
 					</div>
 				</div>

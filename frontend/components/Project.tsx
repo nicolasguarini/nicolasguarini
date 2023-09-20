@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React from 'react';
 import { ProjectCard } from '@/types/projectCard';
 
 const Project = ({ name, excerpt, slug }: ProjectCard) => {

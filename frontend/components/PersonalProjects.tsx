@@ -1,5 +1,4 @@
 import Link from 'next/link';
-import React from 'react';
 import BlockGitHubIcon from './icons/BlockGitHubIcon';
 import RightArrowIcon from './icons/RightArrowIcon';
 import VerticalDivider from './icons/VerticalDivider';

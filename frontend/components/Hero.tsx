@@ -1,5 +1,4 @@
 'use client';
-
 import TypeWriter, { TypewriterClass } from 'typewriter-effect';
 
 const Hero = () => {
