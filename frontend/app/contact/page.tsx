@@ -23,12 +23,10 @@ const contact = () => {
 				</div>
 
 				<form
+					action="https://formspree.io/f/mzbljvpn"
 					method="POST"
-					action="/success"
 					name="contact"
-					data-netlify="true"
 					className="mt-10">
-					<input type="hidden" name="form-name" value="contact" />
 					<div className="wow fadeInUp" data-wow-delay="0s">
 						<label htmlFor="name" className="text-lightgray font-normal block">
 							Name:
