@@ -1,3 +1,4 @@
+import FadeInUpText from '@/components/FadeInUpText';
 import Container from '@/components/layout/Container';
 import Layout from '@/components/layout/Layout';
 import {
@@ -43,40 +44,54 @@ export default async function Page({ params }: Props) {
 				<h1
 					className="text-4xl font-medium mt-10  text-clip"
 					style={{ overflowWrap: 'anywhere' }}>
-					<Link href={project?.url} className="underline">
-						{project?.name}
-					</Link>
+					<FadeInUpText delay={0}>
+						<Link href={project?.url} className="underline">
+							{project?.name}
+						</Link>
+					</FadeInUpText>
 				</h1>
 
 				<div className="grid grid-cols-2 md:grid-cols-4 mt-10">
 					<div className="col-span-2 mb-4 md:mb-0">
-						<div className="text-lightgray">service :</div>
-						<div className="mt-2">{project?.service}</div>
+						<FadeInUpText delay={0.08}>
+							<div className="text-lightgray">service :</div>
+							<div className="mt-2">{project?.service}</div>
+						</FadeInUpText>
 					</div>
+
 					<div className="col-span-1">
-						<div className="text-lightgray">started :</div>
-						<div className="mt-2">{project?.startedDate}</div>
+						<FadeInUpText delay={0.16}>
+							<div className="text-lightgray">started :</div>
+							<div className="mt-2">{project?.startedDate}</div>
+						</FadeInUpText>
 					</div>
+
 					<div className="col-span-1">
-						<div className="text-lightgray">finished :</div>
-						<div className="mt-2">{project?.finishedDate}</div>
+						<FadeInUpText delay={0.24}>
+							<div className="text-lightgray">finished :</div>
+							<div className="mt-2">{project?.finishedDate}</div>
+						</FadeInUpText>
 					</div>
 				</div>
 
 				<div className="text-lightgray mt-8">
 					<div className="prose prose-invert max-w-none m-auto text-gray mt-14">
-						<PortableText value={project?.content} />
+						<FadeInUpText delay={0.32}>
+							<PortableText value={project?.content} />
+						</FadeInUpText>
 					</div>
 				</div>
 
 				<div className="mt-20">
-					{project?.images?.map((image) => {
-						return (
-							<div className="mb-14" key={image._id}>
-								<img src={urlFor(image).url()} alt={project?.name} />
-							</div>
-						);
-					})}
+					<FadeInUpText delay={0.4}>
+						{project?.images?.map((image) => {
+							return (
+								<div className="mb-14" key={image._id}>
+									<img src={urlFor(image).url()} alt={project?.name} />
+								</div>
+							);
+						})}
+					</FadeInUpText>
 				</div>
 			</Container>
 		</Layout>
