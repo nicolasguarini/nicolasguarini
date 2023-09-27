@@ -15,6 +15,8 @@ import Link from 'next/link';
 
 type Props = { params: { slug: string } };
 
+export const revalidate = 3600;
+
 export async function generateMetadata({ params }: Props): Promise<Metadata> {
 	const slug = params.slug;
 	const projectCard: ProjectCard = await fetchProjectCardBySlug(slug);
