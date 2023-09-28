@@ -14,7 +14,8 @@ const navigation: Navigation = [
 	{ name: 'home/', to: '/' },
 	{ name: 'about/', to: '/about' },
 	{ name: 'contact/', to: '/contact' },
-	{ name: 'resume/', to: 'https://www.linkedin.com/in/nicolasguarini/' },
+	{ name: 'notes/', to: 'https://nicolasguarini.notion.site/LT-Informatica-Insubria-67cfd4f828784f89ae83e145594611f8'},
+	//{ name: 'cv/', to: 'https://www.linkedin.com/in/nicolasguarini/' },
 ];
 
 const Navbar = () => {
