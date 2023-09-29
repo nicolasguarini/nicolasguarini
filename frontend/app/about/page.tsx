@@ -19,9 +19,10 @@ const About = () => {
 				<FadeInUpText delay={0.24}>
 					<div className="pt-6 text-lightgray mb-20 ">
 						<div className="prose prose-invert max-w-none m-auto text-gray">
-							I'm Nicolas Guarini and I'm a 21y/o aspiring software engineer
-							currently based in Italy, bachelor's degree student in Computer
-							Science at University of Insubria.
+							I'm Nicolas Guarini and I'm a 22y/o student and occasionally freelancer
+							based in Italy. Graduated in Computer
+							Science at University of Insubria, I'm currently studying for a Master's Degree
+							in Computer Science at University of Milano-Bicocca.
 							<br />
 							<br />
 							I'm also a private teacher of programming and data analysis for
@@ -34,14 +35,15 @@ const About = () => {
 							express.js.
 							<br />
 							<br />
-							During 2023, I will be a university tutor of computer programming
-							and architecture for first year students.
+							During 2023, 
+							I was a contracted university tutor for first-year freshmen, 
+							teaching Computer Programming and Architecture courses
 							<br />
 							<br />
 							In my free time, I love creating and playing music, and I'm
 							extremely passionate to chess and strategy games in general. I've
 							also won a few rubik's cube speedsolving competitions, averaging
-							about 16 seconds of resolution time.
+							about 14 seconds of resolution time.
 						</div>
 					</div>
 				</FadeInUpText>

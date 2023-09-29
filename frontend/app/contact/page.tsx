@@ -22,7 +22,11 @@ const contact = () => {
 				<FadeInUpText delay={0.16}>
 					<div className="max-w-full md:max-w-[80%] lg:max-w-[60%]">
 						<p className="text-lightgray pt-5 ">
-							{`If you have an interesting idea, a job offer, or a project that you would like to start, if you want to ask me anything, or if you just want to say hello, contact me!`}
+							{`If you have an interesting idea, a job offer, 
+							or a project that you would like to start, 
+							if you want to ask me anything, 
+							or if you just want to say hello, 
+							contact me!`}
 						</p>
 					</div>
 				</FadeInUpText>
@@ -78,7 +82,7 @@ const contact = () => {
 						</button>
 						<div className="pt-5 text-lightgray">
 							By continuing, you accept the terms and conditions contained in my{' '}
-							<Link className="underline" href="/privacy-policy">
+							<Link className="underline" href="https://www.iubenda.com/privacy-policy/61020748">
 								Privacy Policy
 							</Link>
 						</div>
