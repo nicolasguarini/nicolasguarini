@@ -25,7 +25,7 @@ const Footer = () => {
 				<div className="pb-12 text-center md:text-right">
 					<div className="text-lightgray mb-1">links</div>
 					<div>
-						<Link href="/privacy-policy">privacy policy</Link>
+						<Link href={'https://www.iubenda.com/privacy-policy/61020748'}>privacy policy</Link>
 					</div>
 				</div>
 
