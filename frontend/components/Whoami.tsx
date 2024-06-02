@@ -4,7 +4,7 @@ const Whoami = () => {
 			<h1 className="text-2xl text-center pb-2 font-semibold ">whoami:</h1>
 			<div className="text-left text-lightgray">
 				<p className="py-2">
-					Computer Science graduate at University of Insubria, private teacher and university tutor of
+					Computer Science graduate, private teacher and university tutor of
 					programming and data analysis for university students, and freelance
 					developer of web solutions for small companies and
 					freelancers. 
