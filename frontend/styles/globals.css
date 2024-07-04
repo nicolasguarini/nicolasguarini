@@ -6,3 +6,8 @@
     font-family: "Roboto Mono";
     src: url("../public/fonts/RobotoMono.ttf");
 }
+
+@font-face {
+    font-family: "Geist";
+    src: url("../public/fonts/Geist-Variable.ttf");
+}

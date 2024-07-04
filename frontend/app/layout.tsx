@@ -1,6 +1,8 @@
 import { Analytics } from '@vercel/analytics/react';
 import '../styles/globals.css';
 import type { Metadata } from 'next';
+import Navbar from '@/components/layout/navbar';
+import Footer from '@/components/layout/footer';
 
 export const metadata: Metadata = {
 	title: {
@@ -36,7 +38,6 @@ export const metadata: Metadata = {
 		'next',
 		'nextjs',
 	],
-	colorScheme: 'dark',
 	creator: 'Nicolas Guarini',
 	openGraph: {
 		title: {
@@ -63,8 +64,17 @@ export default function RootLayout({
 				<link rel="icon" href="/assets/icon.png" type="image/x-icon" />
 				<script async src="https://analytics.eu.umami.is/script.js" data-website-id="f46815ab-ab14-48f0-92bc-c2f871678b7c"></script>
 			</head>
-			<body className="bg-black text-white font-robotomono">
-				{children}
+			<body className="bg-black text-[#EDEDED] font-geist">
+				<div>
+					<Navbar />
+
+					<main className='container m-auto p-2'>
+						{children}
+					</main>
+
+					<Footer />
+				</div>
+
 				<Analytics />
 			</body>
 		</html>

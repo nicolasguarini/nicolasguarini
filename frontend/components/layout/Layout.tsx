@@ -1,6 +1,6 @@
 'use client';
-import Footer from './Footer';
-import Navbar from './Navbar';
+import Footer from './footer';
+import Navbar from './navbar';
 
 type Props = {
 	children: React.ReactNode;
@@ -8,13 +8,11 @@ type Props = {
 
 const Layout = ({ children }: Props) => {
 	return (
-		<>
-			<div className="min-h-screen">
-				<Navbar />
-				<main>{children}</main>
-				<Footer />
-			</div>
-		</>
+		<div className="">
+			<Navbar />
+			<main>{children}</main>
+			<Footer />
+		</div>
 	);
 };
 

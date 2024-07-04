@@ -6,18 +6,14 @@ const config: Config = {
     './components/**/*.{js,ts,jsx,tsx,mdx}',
     './app/**/*.{js,ts,jsx,tsx,mdx}',
   ],
+  darkMode: ["selector", "[data-theme*='dark']"],
   theme: {
     extend: {
       fontFamily: {
-        robotomono: ["Roboto Mono"]
-      }
+        robotomono: ["Roboto Mono"],
+        geist: ["Geist"]
+      },
     },
-    colors: {
-      'black': '#0F0F0F',
-      'white': '#EDEDED',
-      'gray': '#CCCCCC',
-      'lightgray': '#808080'
-    }
   },
   plugins: [
     require('@tailwindcss/typography'),

@@ -1,73 +1,97 @@
-'use client';
-import Link from 'next/link';
+"use client"
 import { useState } from 'react';
-import GitHubIcon from '../icons/GitHubIcon';
-import MobileMenu from './MobileMenu';
-import FadeInUpText from '../FadeInUpText';
-
-export type Navigation = {
-	name: string;
-	to: string;
-}[];
-
-const navigation: Navigation = [
-	{ name: 'home/', to: '/' },
-	{ name: 'about/', to: '/about' },
-	{ name: 'contact/', to: '/contact' },
-	{ name: 'notes/', to: 'https://nicolasguarini.notion.site/LT-Informatica-Insubria-67cfd4f828784f89ae83e145594611f8'},
-	//{ name: 'cv/', to: 'https://www.linkedin.com/in/nicolasguarini/' },
-];
+import Link from 'next/link';
 
 const Navbar = () => {
-	const [open, setOpen] = useState(false);
-	let delay: number = 0;
+  const [isOpen, setIsOpen] = useState(false);
 
-	return (
-		<nav className="bg-black py-5 px-6 md:py-3 fixed min-w-full z-50">
-			<div className="container flex flex-wrap items-center justify-between mx-auto">
-				<Link href="/" className="flex items-center wow fadeIn font-bold">
-					<FadeInUpText delay={0}>nicolas guarini</FadeInUpText>
-				</Link>
+  return (
+    <nav className="bg-black text-white">
+      <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
+        <div className="flex items-center justify-between h-24">
+          <div className="flex items-center">
+            <Link href="/" className="text-2xl font-bold">
+              Nicolas Guarini
+            </Link>
+            <div className="hidden md:block">
+              <div className="ml-10 flex items-baseline space-x-5">
+                <Link href="/" className="text-[#A1A1A1]">
+                  Home
+                </Link>
+                <Link href="/about" className="text-[#A1A1A1]">
+                  About
+                </Link>
+                <Link href="/projects" className="text-[#A1A1A1]">
+                  Projects
+                </Link>
+                <Link href="/blog" className="text-[#A1A1A1]">
+                  Blog
+                </Link>
+                <Link href="/resume" className="text-[#A1A1A1]">
+                  Resume
+                </Link>
+                <Link href="/notes" className="text-[#A1A1A1]">
+                  Notes
+                </Link>
+              </div>
+            </div>
+          </div>
+          <div className="hidden md:block">
+            <Link href="/contact" className="px-5 py-3 border border-[#A1A1A1] rounded-lg hover:bg-white hover:text-black">
+              Contact
+            </Link>
+          </div>
+          <div className="-mr-2 flex md:hidden">
+            <button
+              onClick={() => setIsOpen(!isOpen)}
+              type="button"
+              className="bg-black inline-flex items-center justify-center p-2 rounded-md text-gray-400 hover:text-white hover:bg-gray-700 focus:outline-none focus:ring-2 focus:ring-offset-2 focus:ring-offset-gray-800 focus:ring-white"
+              aria-controls="mobile-menu"
+              aria-expanded="false"
+            >
+              <span className="sr-only">Open main menu</span>
+              {!isOpen ? (
+                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M4 6h16M4 12h16m-7 6h7" />
+                </svg>
+              ) : (
+                <svg className="block h-6 w-6" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              )}
+            </button>
+          </div>
+        </div>
+      </div>
 
-				<button
-					type="button"
-					className="inline-flex items-center p-2 ml-3 md:hidden"
-					onClick={() => setOpen(!open)}>
-					<span className="sr-only">Open main menu</span>
-					<FadeInUpText delay={0.08}>
-						<span>menu</span>
-					</FadeInUpText>
-				</button>
+      <div className={`${isOpen ? 'fixed right-4 border-white' : 'hidden'} md:hidden`} id="mobile-menu">
+        <div className="px-8 pt-2 pb-3 space-y-1 sm:px-5 bg-gray-900">
+			<Link href="/home" className="block px-3 py-2">
+            Home
+          </Link>
 
-				<div className="hidden w-full md:block md:w-auto">
-					<ul className="flex flex-col p-4 mt-4 md:flex-row  md:mt-0 ">
-						{navigation.map((item) => {
-							delay += 0.08;
-							return (
-								<li key={item.name}>
-									<Link href={item.to} className="block py-1 px-8 font-normal">
-										<FadeInUpText delay={delay}>{item.name}</FadeInUpText>
-									</Link>
-								</li>
-							);
-						})}
-
-						<li>
-							<Link
-								href="https://github.com/nicolasguarini"
-								className="block py-1 pl-8 font-normal border-l-[1px] border-[#5E5E5E]">
-								<FadeInUpText delay={delay + 0.08}>
-									<GitHubIcon />
-								</FadeInUpText>
-							</Link>
-						</li>
-					</ul>
-				</div>
-			</div>
-
-			<MobileMenu open={open} setOpen={setOpen} navigation={navigation} />
-		</nav>
-	);
+          <Link href="/about" className="block px-3 py-2">
+            About
+          </Link>
+          <Link href="/projects" className="block px-3 py-2">
+            Projects
+          </Link>
+          <Link href="/blog" className="block px-3 py-2">
+            Blog
+          </Link>
+          <Link href="/resume" className="block px-3 py-2">
+            Resume
+          </Link>
+          <Link href="/notes" className="block px-3 py-2">
+            Notes
+          </Link>
+          <Link href="/contact" className="block px-3 py-2">
+            Contact
+          </Link>
+        </div>
+      </div>
+    </nav>
+  );
 };
 
 export default Navbar;
