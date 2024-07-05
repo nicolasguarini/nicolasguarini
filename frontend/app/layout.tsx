@@ -1,7 +1,7 @@
 import { Analytics } from '@vercel/analytics/react';
 import '../styles/globals.css';
 import type { Metadata } from 'next';
-import Navbar from '@/components/layout/navbar';
+import Navbar from '@/components/layout/navbarcomponent';
 import Footer from '@/components/layout/footer';
 
 export const metadata: Metadata = {
