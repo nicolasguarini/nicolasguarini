@@ -37,7 +37,7 @@ const Navbar = () => {
             </div>
           </div>
           <div className="hidden md:block">
-            <Link href="/contact" className="px-5 py-3 border border-[#A1A1A1] rounded-lg hover:bg-white hover:text-black">
+            <Link href="/contact" className="px-5 py-3 border border-[#333232] rounded-lg">
               Contact
             </Link>
           </div>
