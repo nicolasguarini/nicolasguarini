@@ -10,7 +10,7 @@ export default async function Home() {
 			
 			<div className="flex flex-col md:flex-row gap-4 my-20">
 				<div className="flex flex-col gap-3 basis-2/5">
-					<p>About me</p>
+					<p className="font-medium">About me</p>
 					<h2 className="font-bold text-3xl">My experience and education</h2>
 				</div>
 				<div className="flex flex-col gap-10 basis-3/5" style={{
