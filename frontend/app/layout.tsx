@@ -68,7 +68,7 @@ export default function RootLayout({
 				<div>
 					<Navbar />
 
-					<main className='container m-auto px-2'>
+					<main className='container m-auto px-4'>
 						{children}
 					</main>
 
