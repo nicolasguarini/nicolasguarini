@@ -10,7 +10,7 @@ const Whoami = () => {
 					freelancers. 
 					<br />
 					<br />
-					Currently studying for a Master's Degree in Computer Science at University of Milano-Bicocca.
+					Currently studying for a Master's Degree in Computer Science at University of Milano-Bicocca. For the autumn semester of the 2024/2025 academic year, I will be an Erasmus+ Exchange Student at Stockholm University in Sweden.
 				</p>
 				<p className="py-2">
 					Always passionate about IT and cybersecurity, I have developed several
