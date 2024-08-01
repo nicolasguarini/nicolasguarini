@@ -65,7 +65,11 @@ const Navbar = () => {
       </div>
 
       <div className={`${isOpen ? 'fixed right-4 border-white' : 'hidden'} md:hidden`} id="mobile-menu">
-        <div className="px-8 pt-2 pb-3 space-y-1 sm:px-5 bg-gray-900">
+        <div className="px-8 pt-2 pb-3 space-y-1 sm:px-5 bg-gray-900" style={{
+          'backgroundColor': 'rgb(3, 5, 15, 0.65)', 
+          'backdropFilter': 'blur(8px)', 
+          'WebkitBackdropFilter': 'blur(8px)'
+        }}>
 			<Link href="/home" className="block px-3 py-2">
             Home
           </Link>
