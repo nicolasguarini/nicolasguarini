@@ -94,6 +94,7 @@ export default {
         select: {
             title: 'name',
             subtitle: 'type',
+            media: 'featuredImage',
         },
     },
 }

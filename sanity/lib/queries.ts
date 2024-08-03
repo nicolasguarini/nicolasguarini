@@ -1,7 +1,5 @@
 import { groq }  from 'next-sanity';
 
-export const projectsSlugsQuery = groq`*[_type == "project" && slug.current != null].slug.current`;
-
 export const projectBySlugQuery = groq`*[_type == "project" && slug.current == $slug][0]{
     name,
     "slug": slug.current,
@@ -27,8 +25,27 @@ export const clientProjectsQuery = groq`*[_type == "project" && type == "client"
     excerpt
 }`;
 
-export const projectCardQuery = groq`*[_type == "project" && slug.current == $slug][0] {
+export const latestPersonalProjectsQuery = groq`*[_type == "project" && type == "personal"] | order(startedDate desc)[0..$numOfProjects-1] {
     name,
     "slug": slug.current,
-    excerpt
-} `;
+    categories,
+    excerpt,
+    featuredImage
+  }`;
+
+export const latestClientProjectsQuery = groq`*[_type == "project" && type == "client"] | order(startedDate desc)[0..$numOfProjects-1] {
+  name,
+  "slug": slug.current,
+  categories,
+  excerpt,
+  featuredImage
+}`;
+
+export const latestPostsQuery = groq`*[_type == "post"] | order(publishedAt desc)[0..$numOfPosts-1] {
+  title,
+  "slug": slug.current,
+  categories,
+  publishedAt,
+  excerpt,
+  featuredImage
+}`;
