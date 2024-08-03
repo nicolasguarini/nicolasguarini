@@ -5,6 +5,8 @@ export const projectBySlugQuery = groq`*[_type == "project" && slug.current == $
     "slug": slug.current,
     type,
     excerpt,
+    featuredImage,
+    categories,
     service,
     startedDate,
     finishedDate,
@@ -25,7 +27,7 @@ export const clientProjectsQuery = groq`*[_type == "project" && type == "client"
     excerpt
 }`;
 
-export const latestPersonalProjectsQuery = groq`*[_type == "project" && type == "personal"] | order(startedDate desc)[0..$numOfProjects-1] {
+export const latestPersonalProjectsQuery = groq`*[_type == "project" && type == "personal"] | order(startedDate desc)[0..$numOfProjects] {
     name,
     "slug": slug.current,
     categories,
@@ -33,7 +35,7 @@ export const latestPersonalProjectsQuery = groq`*[_type == "project" && type == 
     featuredImage
   }`;
 
-export const latestClientProjectsQuery = groq`*[_type == "project" && type == "client"] | order(startedDate desc)[0..$numOfProjects-1] {
+export const latestClientProjectsQuery = groq`*[_type == "project" && type == "client"] | order(startedDate desc)[0..$numOfProjects] {
   name,
   "slug": slug.current,
   categories,
@@ -41,7 +43,7 @@ export const latestClientProjectsQuery = groq`*[_type == "project" && type == "c
   featuredImage
 }`;
 
-export const latestPostsQuery = groq`*[_type == "post"] | order(publishedAt desc)[0..$numOfPosts-1] {
+export const latestPostsQuery = groq`*[_type == "post"] | order(publishedAt desc)[0..$numOfPosts] {
   title,
   "slug": slug.current,
   categories,

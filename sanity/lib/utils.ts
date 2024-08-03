@@ -8,3 +8,7 @@ const builder: ImageUrlBuilder = imageUrlBuilder(client);
 export const urlFor = (source: SanityImageSource) => {
 	return builder.image(source);
 };
+
+export const capitalizeFirstLetter = (string: string) => {
+    return string.charAt(0).toUpperCase() + string.slice(1);
+}

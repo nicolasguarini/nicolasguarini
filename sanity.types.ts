@@ -235,12 +235,24 @@ export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette
 export declare const internalGroqTypeReferenceTo: unique symbol;
 // Source: ./sanity/lib/queries.ts
 // Variable: projectBySlugQuery
-// Query: *[_type == "project" && slug.current == $slug][0]{    name,    "slug": slug.current,    type,    excerpt,    service,    startedDate,    finishedDate,    url,    images,    content}
+// Query: *[_type == "project" && slug.current == $slug][0]{    name,    "slug": slug.current,    type,    excerpt,    featuredImage,    categories,    service,    startedDate,    finishedDate,    url,    images,    content}
 export type ProjectBySlugQueryResult = {
   name: string | null;
   slug: string | null;
   type: "client" | "personal" | null;
   excerpt: string | null;
+  featuredImage: {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+  } | null;
+  categories: Array<string> | null;
   service: string | null;
   startedDate: string | null;
   finishedDate: string | null;
