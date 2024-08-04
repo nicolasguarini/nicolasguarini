@@ -30,6 +30,7 @@ export const clientProjectsQuery = groq`*[_type == "project" && type == "client"
 export const latestPersonalProjectsQuery = groq`*[_type == "project" && type == "personal"] | order(startedDate desc)[0..$numOfProjects] {
     name,
     "slug": slug.current,
+    type,
     categories,
     excerpt,
     featuredImage
@@ -38,6 +39,7 @@ export const latestPersonalProjectsQuery = groq`*[_type == "project" && type == 
 export const latestClientProjectsQuery = groq`*[_type == "project" && type == "client"] | order(startedDate desc)[0..$numOfProjects] {
   name,
   "slug": slug.current,
+  type,
   categories,
   excerpt,
   featuredImage

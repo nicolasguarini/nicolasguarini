@@ -39,7 +39,7 @@ export default async function Home() {
 					))}
 				</div>
 
-				<Button href="/portfolio" variant="primary">View more</Button>
+				<Button href="/projects/client" variant="primary">View all</Button>
 			</div>
 
 			<div className="flex flex-col gap-3 pb-32 items-center" style={{
@@ -59,7 +59,7 @@ export default async function Home() {
 					))}
 				</div>
 
-				<Button href="/portfolio" variant="primary">View more</Button>
+				<Button href="/projects/personal" variant="primary">View all</Button>
 			</div>
 
 			<div className="flex flex-col md:flex-row gap-4 gap-y-20 my-20">

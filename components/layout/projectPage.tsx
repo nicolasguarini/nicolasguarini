@@ -4,9 +4,8 @@ import { client } from "@/sanity/lib/client";
 import { projectBySlugQuery } from "@/sanity/lib/queries";
 import { capitalizeFirstLetter, urlFor } from "@/sanity/lib/utils";
 import { PortableText } from "@portabletext/react";
-import { redirect } from "next/dist/server/api-utils";
 
-export default async function Page({params}: { params: { slug: string } }) {
+export default async function ProjectPage({params}: { params: { slug: string } }) {
     const project = await client.fetch<ProjectBySlugQueryResult>(projectBySlugQuery, { slug: params.slug });
 
     if (!project) {
@@ -23,7 +22,7 @@ export default async function Page({params}: { params: { slug: string } }) {
 					}}>
                 <div className="">
                     <div className="flex flex-col gap-1">
-                        <p className="text-[#A1A1A1]">Home {`>`} Projects {`>`} {project.name}</p>
+                        <p className="text-[#A1A1A1]">Home {`>`} Projects {`>`} {capitalizeFirstLetter(project.type ?? "")} {`>`} {project.name}</p>
                         <h1 className="font-bold text-4xl">{project.name}</h1>
                     </div>
                     
