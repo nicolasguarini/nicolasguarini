@@ -49,11 +49,11 @@ const Navbar = () => {
                 <Link href="/blog" className="text-[#A1A1A1]">
                   Blog
                 </Link>
-                <Link href="/resume" className="text-[#A1A1A1]">
-                  Resume
-                </Link>
                 <Link href="/notes" className="text-[#A1A1A1]">
                   Notes
+                </Link>
+                <Link href="https://github.com/nicolasguarini" className="text-[#A1A1A1]">
+                  GitHub
                 </Link>
               </div>
             </div>
