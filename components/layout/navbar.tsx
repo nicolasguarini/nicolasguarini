@@ -1,10 +1,17 @@
 "use client";
-import { useState } from "react";
+import { useEffect, useState } from "react";
 import Link from "next/link";
+import { usePathname } from "next/navigation";
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
+  const pathName = usePathname();
+
+  useEffect(() => {
+    setIsProjectsOpen(false);
+    setIsOpen(false);
+  }, [pathName]);
 
   return (
     <nav className="bg-black text-white">
