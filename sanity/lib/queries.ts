@@ -51,5 +51,6 @@ export const latestPostsQuery = groq`*[_type == "post"] | order(publishedAt desc
   categories,
   publishedAt,
   excerpt,
-  featuredImage
+  featuredImage,
+  "contentLength": length(pt::text(content))
 }`;

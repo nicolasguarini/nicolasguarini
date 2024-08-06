@@ -303,10 +303,11 @@ export type ClientProjectsQueryResult = Array<{
   excerpt: string | null;
 }>;
 // Variable: latestPersonalProjectsQuery
-// Query: *[_type == "project" && type == "personal"] | order(startedDate desc)[0..$numOfProjects] {    name,    "slug": slug.current,    categories,    excerpt,    featuredImage  }
+// Query: *[_type == "project" && type == "personal"] | order(startedDate desc)[0..$numOfProjects] {    name,    "slug": slug.current,    type,    categories,    excerpt,    featuredImage  }
 export type LatestPersonalProjectsQueryResult = Array<{
   name: string | null;
   slug: string | null;
+  type: "client" | "personal" | null;
   categories: Array<string> | null;
   excerpt: string | null;
   featuredImage: {
@@ -322,10 +323,11 @@ export type LatestPersonalProjectsQueryResult = Array<{
   } | null;
 }>;
 // Variable: latestClientProjectsQuery
-// Query: *[_type == "project" && type == "client"] | order(startedDate desc)[0..$numOfProjects] {  name,  "slug": slug.current,  categories,  excerpt,  featuredImage}
+// Query: *[_type == "project" && type == "client"] | order(startedDate desc)[0..$numOfProjects] {  name,  "slug": slug.current,  type,  categories,  excerpt,  featuredImage}
 export type LatestClientProjectsQueryResult = Array<{
   name: string | null;
   slug: string | null;
+  type: "client" | "personal" | null;
   categories: Array<string> | null;
   excerpt: string | null;
   featuredImage: {
@@ -341,7 +343,7 @@ export type LatestClientProjectsQueryResult = Array<{
   } | null;
 }>;
 // Variable: latestPostsQuery
-// Query: *[_type == "post"] | order(publishedAt desc)[0..$numOfPosts] {  title,  "slug": slug.current,  categories,  publishedAt,  excerpt,  featuredImage}
+// Query: *[_type == "post"] | order(publishedAt desc)[0..$numOfPosts] {  title,  "slug": slug.current,  categories,  publishedAt,  excerpt,  featuredImage,  "contentLength": length(pt::text(content))}
 export type LatestPostsQueryResult = Array<{
   title: string | null;
   slug: string | null;
@@ -359,4 +361,5 @@ export type LatestPostsQueryResult = Array<{
     crop?: SanityImageCrop;
     _type: "image";
   } | null;
+  contentLength: number;
 }>;
