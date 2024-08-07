@@ -54,3 +54,14 @@ export const latestPostsQuery = groq`*[_type == "post"] | order(publishedAt desc
   featuredImage,
   "contentLength": length(pt::text(content))
 }`;
+
+export const postBySlugQuery = groq`*[_type == "post" && slug.current == $slug][0]{
+  title,
+  "slug": slug.current,
+  categories,
+  publishedAt,
+  excerpt,
+  featuredImage,
+  "contentLength": length(pt::text(content)),
+  content
+}`;

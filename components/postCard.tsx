@@ -1,7 +1,8 @@
 import Link from "next/link";
 import CategoryTag from "./categoryTag";
 import Image from "next/image";
-import { calculateReadingTime, formatDate } from "@/sanity/lib/utils";
+import { calculateReadingTime, formatDate } from "@/lib/utils";
+import AuthorCard from "./authorCard";
 
 export default function PostCard({ post }: { post: any }) {
 	return (
@@ -18,18 +19,10 @@ export default function PostCard({ post }: { post: any }) {
                             {post.excerpt}
                         </p>
                     </div>
-                    <div className="flex flex-row gap-3 justify-start mt-3">
-                        <Image src={"/assets/propic.jpg"} className="block rounded-full" alt="Propic" width={45} height={45} />
-
-                        <div className="flex flex-col text-sm">
-                            <p className=" font-medium">Nicolas Guarini</p>
-                            <div className="flex flex-row gap-2 text-[#A1A1A1]">
-                                <p>{formatDate(post.publishedAt)}</p>
-                                <p>·</p>
-                                <p>{calculateReadingTime(post.contentLength)} min. read</p>
-                            </div>
-                        </div>
-                    </div>
+                    <AuthorCard 
+                        publishedAt={formatDate(post.publishedAt)} 
+                        minutesRead={calculateReadingTime(post.contentLength)} 
+                    />
             </div>
         </Link> 
 	);
