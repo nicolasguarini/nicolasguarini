@@ -29,7 +29,7 @@ export default function AboutCompact() {
 					</div>
 					<div className="flex flex-row gap-6">
 						<Button href="/about" variant="primary">View more</Button>
-						<Button href="/linkedin" variant="outline">LinkedIn</Button>
+						<Button href="/blog" variant="outline">Blog</Button>
 					</div>
 				</div>
 			</div>

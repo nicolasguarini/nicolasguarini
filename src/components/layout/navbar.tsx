@@ -115,27 +115,26 @@ const Navbar = () => {
             Home
           </Link>
 
-          <Link href="/about" className={linkClasses("/") + " block px-3 py-2"}>
+          <Link href="/about" className={linkClasses("/about") + " block px-3 py-2"}>
             About
           </Link>
-          <Link href="/projects/clients" className={linkClasses("/") + " block px-3 py-2"}>
+          <Link href="/projects/client" className={linkClasses("/projects/client") + " block px-3 py-2"}>
             Client Projects
           </Link>
-          <Link href="/projects/personal" className={linkClasses("/") + " block px-3 py-2"}>
+          <Link href="/projects/personal" className={linkClasses("/projects/personal") + " block px-3 py-2"}>
             Personal Projects
           </Link>
-          <Link href="/blog" className={linkClasses("/") + " block px-3 py-2"}>
+          <Link href="/blog" className={linkClasses("/blog") + " block px-3 py-2"}>
             Blog
           </Link>
-          
-          <Link href="/contact" className={linkClasses("/") + " block px-3 py-2"}>
+          <Link href="/contact" className={linkClasses("/contact") + " block px-3 py-2"}>
             Contact
           </Link>
-          <Link href="https://nicolasguarini.notion.site/Appunti-Universit-e5cefc29fff04a3283799023b7558337?pvs=74" target="_blank" className="block px-3 py-2">
+          <Link href="https://nicolasguarini.notion.site/Appunti-Universit-e5cefc29fff04a3283799023b7558337?pvs=74" target="_blank" className="block px-3 py-2 text-[#A1A1A1]">
             Notes
             <ExternalLink />
           </Link>
-          <Link href="https://github.com/nicolasguarini" target="_blank" className="block px-3 py-2">
+          <Link href="https://github.com/nicolasguarini" target="_blank" className="block px-3 py-2 text-[#A1A1A1]">
             GitHub
             <ExternalLink />
           </Link>

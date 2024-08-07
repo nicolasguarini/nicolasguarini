@@ -1,4 +1,5 @@
 import Button from "./button";
+import ExternalLink from "./icons/externalLink";
 
 export default function Hero() {
     return (
@@ -7,9 +8,9 @@ export default function Hero() {
             <p className="max-w-2xl text-center">
             I design, plan and develop exceptional digital products, supporting my clients in the entire innovation process that includes the development of custom software.
             </p>
-            <div className="flex flex-row items-center justify-center gap-6">
-                <Button href="/portfolio" variant="primary">Portfolio</Button>
-                <Button href="/contact" variant="outline">Contact</Button>
+            <div className="flex flex-wrap items-center justify-center gap-6">
+                <Button href="/projects" variant="primary">My Projects</Button>
+                <Button href="/contact" variant="outline">Contact me</Button>
             </div>
         </div>
     )

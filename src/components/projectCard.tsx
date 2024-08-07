@@ -16,7 +16,7 @@ export default function ProjectCard({ project }: { project: any}) {
                         <CategoryTag key={category} category={category} />
                     ))}
                 </div>
-                <a className="font-medium mt-3" href={`/projects/${project.type}/${project.slug}`}>View project {'>'}</a>
+                <p className="font-medium mt-3">View project {'>'}</p>
             </div>
         </Link>
        

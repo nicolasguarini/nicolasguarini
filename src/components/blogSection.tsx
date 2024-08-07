@@ -4,9 +4,7 @@ import PostCard from "./postCard";
 import { LatestPostsQueryResult } from "@/sanity.types";
 import { latestPostsQuery } from "@/src/sanity/lib/queries";
 
-export default async function BlogSection() {
-    const posts = await client.fetch<LatestPostsQueryResult>(latestPostsQuery, { numOfPosts: 3 });
-    
+export default async function BlogSection({ posts }: { posts: LatestPostsQueryResult }) {
     return (
         <div className="flex flex-col md:flex-row gap-4 gap-y-20 my-20">
             <div className="flex flex-col gap-5 ">
@@ -15,7 +13,7 @@ export default async function BlogSection() {
                     <h2 className="font-bold text-3xl">My Latest Posts</h2>
                 </div>
                 
-                <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+                <p>Thoughts, experiences, and insights on software engineering, tech adventures, and the tools I use.</p>
                 
             </div>
             <div className="flex flex-col gap-14 bg-section">
@@ -25,7 +23,7 @@ export default async function BlogSection() {
                     </div>
                 ))}
                 <div className="w-fit">
-                    <Button href="/blog" variant="primary">View all</Button>
+                    <Button href="/blog" variant="outline">View all posts {'→'}</Button>
                 </div>
                 
             </div>

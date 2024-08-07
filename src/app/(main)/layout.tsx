@@ -46,7 +46,7 @@ export const metadata: Metadata = {
 	openGraph: {
 		title: {
 			template: '%s | Nicolas Guarini',
-			default: 'Nicolas Guarini | Portfolio',
+			default: 'Nicolas Guarini | Personal Website',
 		},
 		description:
 			"Computer Science Master's Degree student, private teacher of programming and data analysis for university students, and freelance developer of web solutions for small and medium-sized companies and freelancers.",
