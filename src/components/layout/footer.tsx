@@ -1,4 +1,6 @@
 import Link from 'next/link';
+import ExternalLink from '../icons/externalLink';
+import { LinkedinIcon } from 'react-share';
 
 const Footer = () => {
 	return (
@@ -7,45 +9,50 @@ const Footer = () => {
 				<div className='flex flex-col gap-4'>
 					<h2 className='text-xl font-bold'>Nicolas Guarini</h2>
 					<p>Join my newsletter to stay up to date on my latest projects and ideas.</p>
-					<form action="" className='flex flex-row gap-2'>
-						<input type="email" placeholder="Email address" className="w-full rounded-lg p-2 text-sm bg-[#EDEDED]" />
-						<button className='bg-transparent rounded-lg p-2 border-[#333232] border-2 py-2 px-6'>Subscribe</button>
+					<form 
+						action="https://formspree.io/f/mblrydkp"
+  						method="POST" 
+						className='flex flex-row gap-2'
+					>
+						<input type="email" placeholder="Your 	Email address" name='email' className="w-full rounded-lg p-2 text-sm bg-[#EDEDED] text-black" />
+						<button type='submit' className='bg-transparent rounded-lg p-2 border-[#333232] border-2 py-2 px-6'>Subscribe</button>
 					</form>
 					<p className='text-sm text-[#A1A1A1]'>
-						By subscribing you agree to with my Privacy Policy.
+						By subscribing you agree to with my <a href="https://www.iubenda.com/privacy-policy/61020748/legal" target='_blank' className='underline'>Privacy Policy</a>.
 					</p>
 				</div>
 
 				<div className='flex flex-wrap gap-x-32 gap-y-8 w-max'>
 					<div className='flex flex-col gap-3 text-[#A1A1A1]'>
-						<p className='underline'>Home</p>
-						<p className='underline'>About</p>
-						<p className='underline'>Client Projects</p>
-						<p className='underline'>Personal Projects</p>
+						<a href="/" className='hover:text-white transition-all'>Home</a>
+						<a href="/about" className='hover:text-white transition-all'>About</a>
+						<a href="/projects/client" className='hover:text-white transition-all'>Client Projects</a>
+						<a href="/projects/personal" className='hover:text-white transition-all'>Personal Projects</a>
 					</div>
 
 					<div className='flex flex-col gap-3 text-[#A1A1A1]'>
-						<p className='underline'>Blog</p>
-						<p className='underline'>Resume</p>
-						<p className='underline'>Contact</p>
-						<p className='underline'>University Notes</p>
+						<a href="/" className='hover:text-white transition-all'>Blog</a>
+						<a href="/contact" className='hover:text-white transition-all'>Contact</a>
+						<a href="https://nicolasguarini.notion.site/Appunti-Universit-e5cefc29fff04a3283799023b7558337?pvs=74" target='_blank' className='hover:text-white transition-all'>University Notes <ExternalLink /></a>
+						<a href="https://www.iubenda.com/privacy-policy/61020748/legal" target='_blank' className='hover:text-white transition-all'>Privacy Policy <ExternalLink /></a>
 					</div>
 
 				</div>
 
 				<div className='flex flex-col gap-3'>
 					<h1 className='text-lg font-medium'>Follow me on</h1>
-					<p className='underline text-[#A1A1A1]'>LinkedIn</p>
+					<Link href="https://www.linkedin.com/in/nicolasguarini/" target='_blank' className=' text-[#A1A1A1] hover:text-white transition-all'>LinkedIn <ExternalLink /></Link>
+					<Link href="https://www.instagram.com/nicolas.guarini/" target='_blank' className=' text-[#A1A1A1] hover:text-white transition-all'>Instagram <ExternalLink /></Link>
+					<Link href="https://github.com/nicolasguarini" target='_blank' className=' text-[#A1A1A1] hover:text-white transition-all'>GitHub <ExternalLink /></Link>
 				</div>
 				
 			</div>
 			
-			<div className='flex flex-wrap justify-between py-10'>
+			<div className='flex flex-wrap justify-between py-10 gap-y-2'>
 				<div>© 2024 Nicolas Guarini. All rights reserved.</div>
 				<div className='flex flex-wrap gap-4'>
-					<Link href="/">Privacy Policy</Link>
-					<Link href="/">Terms of Service</Link>
-					<Link href="/">Cookie Settings</Link>
+					<Link href="https://www.iubenda.com/privacy-policy/61020748/legal" target='_blank'>Privacy Policy</Link>
+					<Link href="https://github.com/nicolasguarini/nicolasguarini" target='_blank'>GitHub</Link>
 				</div>
 			</div>
 		</footer>
