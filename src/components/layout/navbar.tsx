@@ -10,7 +10,6 @@ const Navbar = () => {
   const pathName = usePathname();
 
   useEffect(() => {
-    console.log(pathName); // '/', '/projects/client', '/projects/personal', '/blog', '/about', '/contact', ...
     setIsProjectsOpen(false);
     setIsOpen(false);
   }, [pathName]);
@@ -20,9 +19,6 @@ const Navbar = () => {
 
   const linkClassesContains = (path: string) =>
     pathName.includes(path) ? "text-white" : "text-[#A1A1A1]";
-
-  const linkClassesOr = (path1: string, path2: string) =>
-    pathName === (path1) || pathName.includes(path2) ? "text-white" : "text-[#A1A1A1]";
 
   return (
     <nav className="bg-black text-white">
