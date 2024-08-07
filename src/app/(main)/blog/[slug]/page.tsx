@@ -49,7 +49,7 @@ export default async function BlogPost({params}: { params: { slug: string } }) {
                
             </div>
 
-            <div className="prose prose-invert max-w-5xl mx-auto text-inherit sanity-block-content">
+            <div className="prose prose-invert max-w-5xl mx-auto text-inherit sanity-block-content bg-section">
                 { post.content && (
                     <PortableText value={post.content} />
                 )}

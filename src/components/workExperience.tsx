@@ -1,11 +1,6 @@
 export default function WorkExperience() {
   return (
-    <div className="py-12" style={{
-        backgroundImage: "url('/assets/shapes-bg-2.png')",
-        backgroundSize: "contain",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      }}>
+    <div className="py-12 bg-section">
         <div className="flex flex-col md:flex-row gap-4 gap-y-12">
           <div className="flex flex-col gap-3 basis-1/2">
             <p className="font-medium">Experience</p>

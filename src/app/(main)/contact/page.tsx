@@ -4,13 +4,7 @@ export default function Page() {
     return (
         <div className="flex flex-col items-center">
             <div
-                className="flex flex-col gap-5 py-12 lg:py-24 items-center"
-                style={{
-                backgroundImage: "url('/assets/shapes-bg-2.png')",
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                }}
+                className="flex flex-col gap-5 py-12 lg:py-24 items-center bg-section"
             >
                 <h1 className="font-bold text-4xl text-center">Contact</h1>
                 <p className="text-[#A1A1A1]">Home {`>`} Contact</p>

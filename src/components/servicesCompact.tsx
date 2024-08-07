@@ -4,12 +4,7 @@ import EducationIcon from "./icons/educationIcon";
 
 export default function ServicesCompact() {
     return (
-        <div className="flex flex-col gap-16 py-32" style={{
-                    backgroundImage: "url('/assets/shapes-bg-2.png')",
-                    backgroundSize: "contain",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                }}>
+        <div className="flex flex-col gap-16 py-32 bg-section" >
             <div className="flex flex-col md:flex-row gap-4 ">
                 <div className="flex flex-col gap-3 basis-1/2">
                     <p className="font-medium">Services</p>

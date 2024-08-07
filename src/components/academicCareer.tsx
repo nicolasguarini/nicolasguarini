@@ -1,11 +1,6 @@
 export default function AcademicCareer() {
   return (
-    <div className="py-12" style={{
-        backgroundImage: "url('/assets/shapes-bg.png')",
-        backgroundSize: "contain",
-        backgroundRepeat: "no-repeat",
-        backgroundPosition: "center",
-      }}>
+    <div className="py-12 bg-hero">
         <div className="flex flex-col md:flex-row gap-4 gap-y-12">
           <div className="flex flex-col gap-3 basis-1/2">
             <p className="font-medium">Education</p>

@@ -9,12 +9,7 @@ export default function AboutCompact() {
 					<p className="font-medium">About me</p>
 					<h2 className="font-bold text-3xl">My experience and education</h2>
 				</div>
-				<div className="flex flex-col gap-10 basis-3/5" style={{
-						backgroundImage: "url('/assets/shapes-bg-2.png')",
-						backgroundSize: "contain",
-						backgroundRepeat: "no-repeat",
-						backgroundPosition: "center",
-					}}>
+				<div className="flex flex-col gap-10 basis-3/5 bg-section" >
 					<p>
 						I'm a 22y/o student and occasionally freelancer based in Italy. <br /> 
 						Always passionate about IT and cybersecurity, I have developed several projects in the mobile field, webapps, and machine learning. Although it is not often mentioned, I have also taken care of the UI/UX design of all my projects. <br /> 

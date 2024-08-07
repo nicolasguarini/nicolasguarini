@@ -21,12 +21,7 @@ export default async function Home() {
 
 			<ServicesCompact />
 
-			<div className="flex flex-col gap-3 pb-32 items-center" style={{
-						backgroundImage: "url('/assets/shapes-bg-2.png')",
-						backgroundSize: "contain",
-						backgroundRepeat: "no-repeat",
-						backgroundPosition: "center",
-					}}>
+			<div className="flex flex-col gap-3 pb-32 items-center bg-section">
 				<p className="font-medium">Portfolio</p>
 				<h2 className="font-bold text-3xl mb-10 text-center">Projects I made for cilents</h2>
 
@@ -42,12 +37,7 @@ export default async function Home() {
 				<Button href="/projects/client" variant="primary">View all</Button>
 			</div>
 
-			<div className="flex flex-col gap-3 pb-32 items-center" style={{
-						backgroundImage: "url('/assets/shapes-bg-2.png')",
-						backgroundSize: "contain",
-						backgroundRepeat: "no-repeat",
-						backgroundPosition: "center",
-					}}>
+			<div className="flex flex-col gap-3 pb-32 items-center bg-section">
 				<p className="font-medium">Portfolio</p>
 				<h2 className="font-bold text-3xl mb-10 text-center">My personal projects</h2>
 

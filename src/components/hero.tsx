@@ -2,12 +2,7 @@ import Button from "./button";
 
 export default function Hero() {
     return (
-        <div className="flex flex-col items-center justify-center py-28 lg:py-40 gap-8" style={{
-            backgroundImage: "url('/assets/shapes-bg.png')",
-            backgroundSize: "contain",
-            backgroundRepeat: "no-repeat",
-            backgroundPosition: "center",
-        }}>
+        <div className="flex flex-col items-center justify-center py-28 lg:py-40 gap-8 bg-hero">
             <h1 className="text-4xl font-bold text-center max-w-4xl">I craft Websites, eCommerce, and Apps that deliver results.</h1>
             <p className="max-w-2xl text-center">
                 Experienced freelance developer with a Computer Science degree.

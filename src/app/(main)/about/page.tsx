@@ -5,15 +5,7 @@ import WorkExperience from "@/src/components/workExperience";
 export default function About() {
   return (
     <div className="flex flex-col">
-      <div
-        className="flex flex-col gap-5 py-12 lg:py-24 items-center"
-        style={{
-          backgroundImage: "url('/assets/shapes-bg-2.png')",
-          backgroundSize: "contain",
-          backgroundRepeat: "no-repeat",
-          backgroundPosition: "center",
-        }}
-      >
+      <div className="flex flex-col gap-5 py-12 lg:py-24 items-center bg-section">
         <h1 className="font-bold text-4xl text-center">About</h1>
         <p className="text-[#A1A1A1]">Home {`>`} About</p>
 

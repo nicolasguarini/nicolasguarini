@@ -43,3 +43,38 @@ body{
    -webkit-font-smoothing: antialiased !important;
    -moz-osx-font-smoothing: grayscale !important;
 }
+
+.bg-hero {
+    background-image: url("/assets/shapes-bg.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.bg-section {
+    background-image: url("/assets/shapes-bg-2.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;    
+}
+
+.bg-section-long {
+    background-image: url("/assets/bg-section-long.png");
+    background-size: contain;
+    background-repeat: no-repeat;
+    background-position: center;    
+}
+
+@media (max-width: 768px) {
+    .bg-hero {
+        background-image: url("/assets/hero-bg-portrait.png");
+    }
+
+    .bg-section {
+        background-image: url("/assets/section-bg-portrait.png");
+    }
+
+    .bg-section-long {
+        background-image: url("/assets/bg-section-long-portrait.png");
+    }
+}

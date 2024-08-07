@@ -8,13 +8,7 @@ export default async function Page() {
     return (
         <div>
             <div
-                className="flex flex-col gap-5 py-12 lg:py-24 items-center"
-                style={{
-                backgroundImage: "url('/assets/shapes-bg-2.png')",
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "center",
-                }}
+                className="flex flex-col gap-5 py-12 lg:py-24 items-center bg-section"
             >
                 <h1 className="font-bold text-4xl text-center">Blog</h1>
                 <p className="text-[#A1A1A1]">Home {`>`} Blog</p>
@@ -26,7 +20,7 @@ export default async function Page() {
                 </div>
             </div> 
 
-            <div className="flex flex-wrap gap-14 gap-y-24 items-center justify-center mb-32">
+            <div className="flex flex-wrap gap-14 gap-y-24 items-center justify-center mb-32 bg-hero">
                 {posts.map((post) => (
                     <div key={post.slug} className="max-w-lg">
                         <PostCard post={post}></PostCard>

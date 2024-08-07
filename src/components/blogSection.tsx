@@ -18,12 +18,7 @@ export default async function BlogSection() {
                 <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
                 
             </div>
-            <div className="flex flex-col gap-14" style={{
-                    backgroundImage: "url('/assets/shapes-bg-2.png')",
-                    backgroundSize: "contain",
-                    backgroundRepeat: "no-repeat",
-                    backgroundPosition: "center",
-                }}>
+            <div className="flex flex-col gap-14 bg-section">
                 {posts.map((post) => (
                     <div key={post.slug}>
                         <PostCard post={post} />
