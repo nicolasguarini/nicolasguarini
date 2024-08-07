@@ -3,6 +3,7 @@ import '../../styles/globals.css';
 import type { Metadata } from 'next';
 import Navbar from '@/src/components/layout/navbar';
 import Footer from '@/src/components/layout/footer';
+import { SpeedInsights } from "@vercel/speed-insights/next"
 
 export const metadata: Metadata = {
 	title: {
@@ -87,6 +88,7 @@ export default function RootLayout({
 				</div>
 
 				<Analytics />
+				<SpeedInsights />
 			</body>
 		</html>
 	);
