@@ -2,7 +2,8 @@ import CategoryTag from "@/src/components/categoryTag";
 import { ProjectBySlugQueryResult } from "@/sanity.types";
 import { client } from "@/src/sanity/lib/client";
 import { projectBySlugQuery } from "@/src/sanity/lib/queries";
-import { capitalizeFirstLetter, urlFor } from "@/src/sanity/lib/utils";
+import { capitalizeFirstLetter } from "@/src/lib/utils";
+import { urlFor } from "@/src/sanity/lib/utils";
 import { PortableText } from "@portabletext/react";
 
 export default async function ProjectPage({params}: { params: { slug: string } }) {
