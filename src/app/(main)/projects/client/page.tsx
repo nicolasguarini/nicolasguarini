@@ -2,6 +2,17 @@ import ProjectCard from "@/src/components/projectCard";
 import { LatestClientProjectsQueryResult } from "@/sanity.types";
 import { client } from "@/src/sanity/lib/client";
 import { latestClientProjectsQuery } from "@/src/sanity/lib/queries";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+    title: "Client Projects",
+    description: "A look at the projects I've developed for clients, focusing on web solutions for small businesses and professionals. See the work I've done to help meet their unique needs.",
+
+    openGraph: {
+        title: "Client Projects",
+        description: "A look at the projects I've developed for clients, focusing on web solutions for small businesses and professionals. See the work I've done to help meet their unique needs.",
+    }
+}
 
 export default async function Page() {
     const clientProjects = await client.fetch<LatestClientProjectsQueryResult>(latestClientProjectsQuery, { numOfProjects: 50 });

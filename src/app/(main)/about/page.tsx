@@ -1,6 +1,14 @@
 import AcademicCareer from "@/src/components/academicCareer";
 import BlogSection from "@/src/components/blogSection";
 import WorkExperience from "@/src/components/workExperience";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "About Me",
+  openGraph: {
+    title: "About Me",
+  }
+}
 
 export default function About() {
   return (

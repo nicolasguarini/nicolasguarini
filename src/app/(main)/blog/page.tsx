@@ -2,6 +2,16 @@ import PostCard from "@/src/components/postCard";
 import { LatestPostsQueryResult } from "@/sanity.types";
 import { client } from "@/src/sanity/lib/client";
 import { latestPostsQuery } from "@/src/sanity/lib/queries";
+import { Metadata } from "next";
+
+export const metadata: Metadata = {
+	title: "Blog",
+	description: "Thoughts, experiences, and insights on software engineering, tech adventures, and the tools I use. Join me on my journey through the ever-evolving tech world.",
+	openGraph: {
+		title: "Blog",
+		description: "Thoughts, experiences, and insights on software engineering, tech adventures, and the tools I use. Join me on my journey through the ever-evolving tech world.",
+	},
+}
 
 export default async function Page() {
     const posts = await client.fetch<LatestPostsQueryResult>(latestPostsQuery, { numOfPosts: 100 });
@@ -15,7 +25,7 @@ export default async function Page() {
 
                 <div className="max-w-2xl text-left mx-auto my-12  text-lg font-medium">
                     <p>
-                        Lorem, ipsum dolor sit amet consectetur adipisicing elit. Tenetur ad deserunt perferendis mollitia velit placeat, nihil tempore! Reiciendis, placeat eos? Atque doloremque deserunt molestias totam? Quisquam sit saepe iure alias?
+                    Thoughts, experiences, and insights on software engineering, tech adventures, and the tools I use. Join me on my journey through the ever-evolving tech world.
                     </p>
                 </div>
             </div> 

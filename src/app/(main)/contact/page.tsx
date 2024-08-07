@@ -1,4 +1,14 @@
-import Button from "@/src/components/button";
+import { Metadata } from "next"
+
+export const metadata: Metadata = {
+	title: "Contact",
+    description: "If you have an interesting idea, a job offer, a project that you would like to start, if you want to ask me anything, or if you just want to say hello, contact me!",
+
+    openGraph: {
+        title: "Contact",
+        description: "If you have an interesting idea, a job offer, a project that you would like to start, if you want to ask me anything, or if you just want to say hello, contact me!",
+    }
+}
 
 export default function Page() {
     return (

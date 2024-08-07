@@ -7,8 +7,31 @@ import { client } from "@/src/sanity/lib/client";
 import { postBySlugQuery } from "@/src/sanity/lib/queries";
 import { calculateReadingTime, formatDate } from "@/src/lib/utils";
 import { PortableText } from "@portabletext/react";
-import { TwitterIcon, TwitterShareButton, WhatsappShareButton } from "react-share";
 import WhatsappShare from "@/src/components/icons/whatsappShare";
+import { Metadata } from "next";
+import { urlFor } from "@/src/sanity/lib/utils";
+
+export async function generateMetadata({
+    params,
+}: {
+    params: { slug: string };
+}): Promise<Metadata> {
+    const post = await client.fetch<PostBySlugQueryResult>(postBySlugQuery, {
+        slug: params.slug,
+    });
+
+    if (!post) return {};
+
+    return {
+        title: post.title,
+        description: post.excerpt,
+
+        openGraph: {
+            title: post.title ?? "",
+            description: post.excerpt ?? "",
+        }
+    }
+}
 
 export default async function BlogPost({params}: { params: { slug: string } }) {
     const post = await client.fetch<PostBySlugQueryResult>(postBySlugQuery, { slug: params.slug });;

@@ -7,18 +7,21 @@ import Footer from '@/src/components/layout/footer';
 export const metadata: Metadata = {
 	title: {
 		template: '%s | Nicolas Guarini',
-		default: 'Nicolas Guarini | Portfolio',
+		default: 'Nicolas Guarini | Personal Website',
 	},
 	description:
-		"Computer Science graduate, now studying for a Master's Degree at University of Milano-Bicocca, private teacher of programming and data analysis for university students, and freelance developer of web solutions for small and medium-sized companies and freelancers. I make webapps, mobile apps, UI/UX design, data analysis and more.",
+		"Computer Science Master's Degree student, private teacher of programming and data analysis for university students, and freelance developer of web solutions for small and medium-sized companies and freelancers.",
 	generator: 'Next.js',
-	applicationName: 'Nicolas Guarini | Portfolio',
+	applicationName: 'Nicolas Guarini | Personal Website',
 	referrer: 'origin-when-cross-origin',
 	keywords: [
 		'nicolas guarini',
 		'freelance',
 		'freelancer',
 		'developer',
+		'blog',
+		'articles',
+		'posts',
 		'sito seb',
 		'realizzazione siti web',
 		'sviluppatore',
@@ -45,10 +48,18 @@ export const metadata: Metadata = {
 			default: 'Nicolas Guarini | Portfolio',
 		},
 		description:
-			"Computer Science graduate, now studying for a Master's Degree at University of Milano-Bicocca, private teacher of programming and data analysis for university students, and freelance developer of web solutions for small and medium-sized companies and freelancers. I make webapps, mobile apps, UI/UX design, data analysis and more.",
+			"Computer Science Master's Degree student, private teacher of programming and data analysis for university students, and freelance developer of web solutions for small and medium-sized companies and freelancers.",
 		url: 'https://nicolasguarini.it',
 		locale: 'en-US',
 		type: 'website',
+		images: [
+			{
+				url: '/assets/site-image.jpg',
+				width: 1200,
+				height: 630,
+				alt: 'Nicolas Guarini',
+			},
+		],
 	},
 	metadataBase: new URL('https://nicolasguarini.it'),
 };
