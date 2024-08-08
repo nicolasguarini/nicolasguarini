@@ -5,7 +5,7 @@ import Button from "./button";
 export default async function PersonalProjectsSection({ personalProjects }: { personalProjects: LatestPersonalProjectsQueryResult }) {
     
     return (
-        <div className="flex flex-col gap-3 pb-32 items-center bg-section">
+        <div className="flex flex-col gap-3 pb-24 lg:pb-32 items-center bg-section">
 			<p className="font-medium">Portfolio</p>
 			<h2 className="font-bold text-3xl mb-10 text-center">My personal projects</h2>
 

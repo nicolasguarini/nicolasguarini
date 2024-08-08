@@ -4,7 +4,7 @@ import EducationIcon from "./icons/educationIcon";
 
 export default function AboutCompact() {
     return (
-        <div className="flex flex-col md:flex-row gap-4 my-20">
+        <div className="flex flex-col md:flex-row gap-4 my-16 lg:my-20">
 				<div className="flex flex-col gap-3 basis-2/5">
 					<p className="font-medium">About me</p>
 					<h2 className="font-bold text-3xl">My experience and education</h2>

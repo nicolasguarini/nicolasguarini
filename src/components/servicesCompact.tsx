@@ -8,7 +8,7 @@ import WorldIcon from "./icons/worldIcon";
 
 export default function ServicesCompact() {
     return (
-        <div className="flex flex-col gap-16 py-32 bg-section" >
+        <div className="flex flex-col gap-16 py-28 lg:py-32 bg-section" >
             <div className="flex flex-col md:flex-row gap-4 ">
                 <div className="flex flex-col gap-3 basis-1/2">
                     <p className="font-medium">Services</p>
@@ -18,7 +18,7 @@ export default function ServicesCompact() {
                     <p>
                         I never stop experimenting and learning new technologies. 
                         My stacks are modern and efficient, studied and designed for various and specific use cases. <br />
-                        Some of the technologies I use are React, Next.js, Node.js, Flask, Sanity, PostgreSQL, MongoDB, Netlify, Vercel, and sometimes WordPress (in the right way though).
+                        I design, plan and develop digital products, supporting my clients in the entire innovation process that includes the development of custom software.
                     </p>
                 </div>
             </div>
