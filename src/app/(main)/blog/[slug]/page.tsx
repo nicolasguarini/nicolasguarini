@@ -3,7 +3,7 @@ import CopyLink from "@/src/components/icons/copyLink";
 import TelegramShare from "@/src/components/icons/telegramShare";
 import TwitterShare from "@/src/components/icons/twitterShare";
 import { PostBySlugQueryResult } from "@/sanity.types";
-import { client } from "@/src/sanity/lib/client";
+import { client, sanityFetch } from "@/src/sanity/lib/client";
 import { postBySlugQuery } from "@/src/sanity/lib/queries";
 import { calculateReadingTime, formatDate } from "@/src/lib/utils";
 import { PortableText } from "@portabletext/react";
@@ -17,8 +17,10 @@ export async function generateMetadata({
 }: {
     params: { slug: string };
 }): Promise<Metadata> {
-    const post = await client.fetch<PostBySlugQueryResult>(postBySlugQuery, {
-        slug: params.slug,
+    const post = await sanityFetch<PostBySlugQueryResult>({
+        query: postBySlugQuery,
+        revalidate: 60,
+        params: { slug: params.slug },
     });
 
     if (!post) return {};
@@ -35,7 +37,11 @@ export async function generateMetadata({
 }
 
 export default async function BlogPost({params}: { params: { slug: string } }) {
-    const post = await client.fetch<PostBySlugQueryResult>(postBySlugQuery, { slug: params.slug });;
+    const post = await sanityFetch<PostBySlugQueryResult>({
+        query: postBySlugQuery,
+        revalidate: 60,
+        params: { slug: params.slug },
+    });;
 
     if (!post) {
         return <div>404 Not Found</div>

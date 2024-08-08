@@ -1,6 +1,6 @@
 import ProjectCard from "@/src/components/projectCard";
 import { LatestClientProjectsQueryResult } from "@/sanity.types";
-import { client } from "@/src/sanity/lib/client";
+import { client, sanityFetch } from "@/src/sanity/lib/client";
 import { latestClientProjectsQuery } from "@/src/sanity/lib/queries";
 import { Metadata } from "next";
 
@@ -15,7 +15,11 @@ export const metadata: Metadata = {
 }
 
 export default async function Page() {
-    const clientProjects = await client.fetch<LatestClientProjectsQueryResult>(latestClientProjectsQuery, { numOfProjects: 50 });
+    const clientProjects = await sanityFetch<LatestClientProjectsQueryResult>({
+        query: latestClientProjectsQuery,
+        revalidate: 3600,
+        params: { numOfProjects: 50 },
+    });
     
 	return (
 		<div>

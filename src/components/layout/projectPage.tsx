@@ -1,6 +1,6 @@
 import CategoryTag from "@/src/components/categoryTag";
 import { ProjectBySlugQueryResult } from "@/sanity.types";
-import { client } from "@/src/sanity/lib/client";
+import { client, sanityFetch } from "@/src/sanity/lib/client";
 import { projectBySlugQuery } from "@/src/sanity/lib/queries";
 import { capitalizeFirstLetter } from "@/src/lib/utils";
 import { urlFor } from "@/src/sanity/lib/utils";
@@ -9,7 +9,11 @@ import { SanityImageComponent } from "@/src/sanity/components/image";
 import { CodeBlock } from "@/src/sanity/components/codeBlock";
 
 export default async function ProjectPage({params}: { params: { slug: string } }) {
-    const project = await client.fetch<ProjectBySlugQueryResult>(projectBySlugQuery, { slug: params.slug });
+    const project = await sanityFetch<ProjectBySlugQueryResult>({
+        query: projectBySlugQuery,
+        revalidate: 3600,
+        params: { slug: params.slug },
+    });
 
     if (!project) {
         return <div>404 Not Found</div>
