@@ -9,7 +9,8 @@ import { calculateReadingTime, formatDate } from "@/src/lib/utils";
 import { PortableText } from "@portabletext/react";
 import WhatsappShare from "@/src/components/icons/whatsappShare";
 import { Metadata } from "next";
-import { urlFor } from "@/src/sanity/lib/utils";
+import { SanityImageComponent } from "@/src/sanity/components/image";
+import { CodeBlock } from "@/src/sanity/components/codeBlock";
 
 export async function generateMetadata({
     params,
@@ -74,7 +75,17 @@ export default async function BlogPost({params}: { params: { slug: string } }) {
 
             <div className="prose prose-invert max-w-5xl mx-auto text-inherit sanity-block-content bg-section">
                 { post.content && (
-                    <PortableText value={post.content} />
+                    <PortableText 
+                        value={post.content}  
+                        components={{
+                            types: {
+                                image: SanityImageComponent,
+                                code: ({ value }: any) => {
+                                    return <CodeBlock value={value} />
+                                },
+                            }
+                        }}
+                    />
                 )}
             </div>
         </div>
