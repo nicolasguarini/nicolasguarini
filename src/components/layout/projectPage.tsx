@@ -5,6 +5,8 @@ import { projectBySlugQuery } from "@/src/sanity/lib/queries";
 import { capitalizeFirstLetter } from "@/src/lib/utils";
 import { urlFor } from "@/src/sanity/lib/utils";
 import { PortableText } from "@portabletext/react";
+import { SanityImageComponent } from "@/src/sanity/components/image";
+import { CodeBlock } from "@/src/sanity/components/codeBlock";
 
 export default async function ProjectPage({params}: { params: { slug: string } }) {
     const project = await client.fetch<ProjectBySlugQueryResult>(projectBySlugQuery, { slug: params.slug });
@@ -81,7 +83,17 @@ export default async function ProjectPage({params}: { params: { slug: string } }
 
             <div className="prose prose-invert max-w-5xl mx-auto text-inherit sanity-block-content">
                 { project.content && (
-                    <PortableText value={project.content} />
+                    <PortableText 
+                    value={project.content}  
+                    components={{
+                        types: {
+                            image: SanityImageComponent,
+                            code: ({ value }: any) => {
+                                return <CodeBlock value={value} />
+                            },
+                        }
+                    }}
+                />
                 )}
             </div>
 
