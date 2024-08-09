@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import ExternalLink from '../icons/externalLink';
 import { LinkedinIcon } from 'react-share';
+import NewsletterContactForm from '../newsletterContactForm';
 
 const Footer = () => {
 	return (
@@ -9,14 +10,7 @@ const Footer = () => {
 				<div className='flex flex-col gap-4'>
 					<h2 className='text-xl font-bold'>Nicolas Guarini</h2>
 					<p>Join my newsletter to stay up to date on my latest projects and ideas.</p>
-					<form 
-						action="https://formspree.io/f/mblrydkp"
-  						method="POST" 
-						className='flex flex-row gap-2'
-					>
-						<input type="email" placeholder="Your 	Email address" name='email' className="w-full rounded-lg p-2 text-sm bg-[#EDEDED] text-black" />
-						<button type='submit' className='bg-transparent rounded-lg p-2 border-[#333232] border-2 py-2 px-6'>Subscribe</button>
-					</form>
+					<NewsletterContactForm />
 					<p className='text-sm text-[#A1A1A1]'>
 						By subscribing you agree to with my <a href="https://www.iubenda.com/privacy-policy/61020748/legal" target='_blank' className='underline'>Privacy Policy</a>.
 					</p>

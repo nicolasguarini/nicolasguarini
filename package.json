@@ -10,6 +10,7 @@
     "typegen": "sanity schema extract && sanity typegen generate"
   },
   "dependencies": {
+    "@formspree/react": "^2.5.1",
     "@portabletext/react": "^3.0.7",
     "@sanity/client": "^6.4.11",
     "@sanity/code-input": "^4.1.4",
