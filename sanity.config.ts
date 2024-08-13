@@ -10,8 +10,8 @@ export default defineConfig({
   name: 'default',
   title: 'nicolasguarini.it',
 
-  projectId: projectId,
-  dataset: dataset,
+  projectId: "qtdomht6",
+  dataset: "production",
 
   plugins: [structureTool(), visionTool(), codeInput()],
 

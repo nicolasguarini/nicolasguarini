@@ -3,7 +3,7 @@ import { dataset, projectId } from './src/sanity/env'
 
 export default defineCliConfig({
   api: {
-    projectId: projectId,
-    dataset: dataset
+    projectId: "qtdomht6",
+    dataset: "production"
   }
 })
