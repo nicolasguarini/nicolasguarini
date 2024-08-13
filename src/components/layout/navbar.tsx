@@ -30,16 +30,16 @@ const Navbar = () => {
             </Link>
             <div className="hidden md:block">
               <div className="ml-10 flex items-baseline space-x-5">
-                <Link href="/" className={linkClasses("/")}>
+                <Link href="/" className={linkClasses("/") + " hover:text-white transition-all"}>
                   Home
                 </Link>
-                <Link href="/about" className={linkClasses("/about")}>
+                <Link href="/about" className={linkClasses("/about") + " hover:text-white transition-all"}>
                   About
                 </Link>
                 <div className="relative">
                 <button
                   onClick={() => setIsProjectsOpen(!isProjectsOpen)}
-                  className={linkClassesContains("/projects") + " focus:outline-none flex items-center"}
+                  className={linkClassesContains("/projects") + " focus:outline-none flex items-center hover:text-white transition-all"}
                 >
                   Projects
                   <svg className="ml-1 h-4 w-4" xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke="currentColor" aria-hidden="true">
@@ -53,10 +53,10 @@ const Navbar = () => {
                       WebkitBackdropFilter: "blur(8px)",
                     }}>
                       <div className="py-1">
-                        <Link href="/projects/client" className={"block px-4 py-2 " + linkClasses("/projects/client")}>
+                        <Link href="/projects/client" className={"block px-4 py-2 " + linkClasses("/projects/client") + " hover:text-white transition-all"}>
                           Client Projects
                         </Link>
-                        <Link href="/projects/personal" className={"block px-4 py-2 " + linkClasses("/projects/personal")}>
+                        <Link href="/projects/personal" className={"block px-4 py-2 " + linkClasses("/projects/personal") + " hover:text-white transition-all"}>
                           Personal Projects
                         </Link>
                       </div>
@@ -64,10 +64,10 @@ const Navbar = () => {
                   )}
                 </div>
 
-                <Link href="/blog" className={linkClassesContains("/blog")}>
+                <Link href="/blog" className={linkClassesContains("/blog") + " hover:text-white transition-all"}>
                   Blog
                 </Link>
-                <Link href="https://github.com/nicolasguarini" target="_blank" className="text-[#A1A1A1]">
+                <Link href="https://github.com/nicolasguarini" target="_blank" className="text-[#A1A1A1] hover:text-white transition-all">
                   GitHub
                   <ExternalLink />
                 </Link>
