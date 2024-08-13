@@ -2,8 +2,8 @@ import {defineConfig} from 'sanity'
 import {structureTool} from 'sanity/structure'
 import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './src/sanity/schemas'
-import { dataset, projectId } from './src/sanity/env'
 import {codeInput} from '@sanity/code-input'
+import { structure } from './src/sanity/structure'
 
 export default defineConfig({
   basePath: '/studio',
@@ -13,7 +13,7 @@ export default defineConfig({
   projectId: "qtdomht6",
   dataset: "production",
 
-  plugins: [structureTool(), visionTool(), codeInput()],
+  plugins: [structureTool({ structure }), visionTool(), codeInput()],
 
   schema: {
     types: schemaTypes,

@@ -26,7 +26,7 @@ export default {
             name: 'excerpt',
             type: 'text',
             title: 'Excerpt',
-            validation: (rule: Rule) => rule.required().max(200),
+            validation: (rule: Rule) => rule.required(),
         },
         {
             name: 'featuredImage',
