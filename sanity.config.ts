@@ -4,6 +4,7 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './src/sanity/schemas'
 import {codeInput} from '@sanity/code-input'
 import { structure } from './src/sanity/structure'
+import { vercelDeployTool } from 'sanity-plugin-vercel-deploy'
 
 export default defineConfig({
   basePath: '/studio',
@@ -13,7 +14,7 @@ export default defineConfig({
   projectId: "qtdomht6",
   dataset: "production",
 
-  plugins: [structureTool({ structure }), visionTool(), codeInput()],
+  plugins: [structureTool({ structure }), visionTool(), codeInput(), vercelDeployTool()],
 
   schema: {
     types: schemaTypes,
