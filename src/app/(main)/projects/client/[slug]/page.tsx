@@ -1,7 +1,7 @@
-import { ProjectBySlugQueryResult } from "@/sanity.types";
+import { AllClientProjectsSlugsQueryResult, ProjectBySlugQueryResult } from "@/sanity.types";
 import ProjectPage from "@/src/components/layout/projectPage";
 import { client, sanityFetch } from "@/src/sanity/lib/client";
-import { projectBySlugQuery } from "@/src/sanity/lib/queries";
+import { allClientProjectsSlugsQuery, projectBySlugQuery } from "@/src/sanity/lib/queries";
 import { urlFor } from "@/src/sanity/lib/utils";
 import { Metadata } from "next";
 
@@ -32,6 +32,15 @@ export async function generateMetadata({
             ]
         }
     }
+}
+
+export async function generateStaticParams() {
+    const slugs = await sanityFetch<AllClientProjectsSlugsQueryResult>({
+        query: allClientProjectsSlugsQuery,
+        revalidate: 60,
+    });
+
+    return slugs.map((slug) => ({ slug }));
 }
 
 export default ProjectPage;

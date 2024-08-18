@@ -2,9 +2,9 @@ import AuthorCard from "@/src/components/authorCard";
 import CopyLink from "@/src/components/icons/copyLink";
 import TelegramShare from "@/src/components/icons/telegramShare";
 import TwitterShare from "@/src/components/icons/twitterShare";
-import { PostBySlugQueryResult } from "@/sanity.types";
+import { AllPostsSlugsQueryResult, PostBySlugQueryResult } from "@/sanity.types";
 import { client, sanityFetch } from "@/src/sanity/lib/client";
-import { postBySlugQuery } from "@/src/sanity/lib/queries";
+import { allPostsSlugsQuery, postBySlugQuery } from "@/src/sanity/lib/queries";
 import { calculateReadingTime, formatDate } from "@/src/lib/utils";
 import { PortableText } from "@portabletext/react";
 import WhatsappShare from "@/src/components/icons/whatsappShare";
@@ -34,6 +34,15 @@ export async function generateMetadata({
             description: post.excerpt ?? "",
         }
     }
+}
+
+export async function generateStaticParams() {
+    const slugs = await sanityFetch<AllPostsSlugsQueryResult>({
+        query: allPostsSlugsQuery,
+        revalidate: 60,
+    });
+
+    return slugs.map((slug) => ({ slug }));
 }
 
 export default async function BlogPost({params}: { params: { slug: string } }) {

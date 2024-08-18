@@ -107,7 +107,20 @@ export type Post = {
     level?: number;
     _type: "block";
     _key: string;
-  }>;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  } | ({
+    _key: string;
+  } & Code)>;
 };
 
 export type Project = {
@@ -165,7 +178,20 @@ export type Project = {
     level?: number;
     _type: "block";
     _key: string;
-  }>;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
+  } | ({
+    _key: string;
+  } & Code)>;
 };
 
 export type SanityImageCrop = {
@@ -231,9 +257,17 @@ export type Slug = {
   source?: string;
 };
 
-export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Post | Project | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug;
+export type Code = {
+  _type: "code";
+  language?: string;
+  filename?: string;
+  code?: string;
+  highlightedLines?: Array<number>;
+};
+
+export type AllSanitySchemaTypes = SanityImagePaletteSwatch | SanityImagePalette | SanityImageDimensions | SanityFileAsset | Geopoint | Post | Project | SanityImageCrop | SanityImageHotspot | SanityImageAsset | SanityAssetSourceData | SanityImageMetadata | Slug | Code;
 export declare const internalGroqTypeReferenceTo: unique symbol;
-// Source: ./sanity/lib/queries.ts
+// Source: ./src/sanity/lib/queries.ts
 // Variable: projectBySlugQuery
 // Query: *[_type == "project" && slug.current == $slug][0]{    name,    "slug": slug.current,    type,    excerpt,    featuredImage,    categories,    service,    startedDate,    finishedDate,    url,    images,    content}
 export type ProjectBySlugQueryResult = {
@@ -269,7 +303,9 @@ export type ProjectBySlugQueryResult = {
     _type: "image";
     _key: string;
   }> | null;
-  content: Array<{
+  content: Array<({
+    _key: string;
+  } & Code) | {
     children?: Array<{
       marks?: Array<string>;
       text?: string;
@@ -285,6 +321,17 @@ export type ProjectBySlugQueryResult = {
     }>;
     level?: number;
     _type: "block";
+    _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
     _key: string;
   }> | null;
 } | null;
@@ -383,7 +430,9 @@ export type PostBySlugQueryResult = {
     _type: "image";
   } | null;
   contentLength: number;
-  content: Array<{
+  content: Array<({
+    _key: string;
+  } & Code) | {
     children?: Array<{
       marks?: Array<string>;
       text?: string;
@@ -400,5 +449,25 @@ export type PostBySlugQueryResult = {
     level?: number;
     _type: "block";
     _key: string;
+  } | {
+    asset?: {
+      _ref: string;
+      _type: "reference";
+      _weak?: boolean;
+      [internalGroqTypeReferenceTo]?: "sanity.imageAsset";
+    };
+    hotspot?: SanityImageHotspot;
+    crop?: SanityImageCrop;
+    _type: "image";
+    _key: string;
   }> | null;
 } | null;
+// Variable: allPostsSlugsQuery
+// Query: *[_type == "post"][].slug.current
+export type AllPostsSlugsQueryResult = Array<string | null>;
+// Variable: allClientProjectsSlugsQuery
+// Query: *[_type == "project" && type == "client"][].slug.current
+export type AllClientProjectsSlugsQueryResult = Array<string | null>;
+// Variable: allPersonalProjectsSlugsQuery
+// Query: *[_type == "project" && type == "personal"][].slug.current
+export type AllPersonalProjectsSlugsQueryResult = Array<string | null>;

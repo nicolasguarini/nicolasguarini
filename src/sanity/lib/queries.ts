@@ -65,3 +65,10 @@ export const postBySlugQuery = groq`*[_type == "post" && slug.current == $slug][
   "contentLength": length(pt::text(content)),
   content
 }`;
+
+export const allPostsSlugsQuery = groq`*[_type == "post"][].slug.current`;
+
+export const allClientProjectsSlugsQuery = groq`*[_type == "project" && type == "client"][].slug.current`;
+
+export const allPersonalProjectsSlugsQuery = groq`*[_type == "project" && type == "personal"][].slug.current`;
+
