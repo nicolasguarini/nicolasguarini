@@ -58,7 +58,8 @@ export default {
             of: [
                 {type: 'block'},
                 {type: 'image'},
-                {type: 'code'}
+                {type: 'code'},
+                {type: 'latex'}
             ]
         }
     ],

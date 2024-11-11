@@ -11,6 +11,10 @@ import WhatsappShare from "@/src/components/icons/whatsappShare";
 import { Metadata } from "next";
 import { SanityImageComponent } from "@/src/sanity/components/image";
 import { CodeBlock } from "@/src/sanity/components/codeBlock";
+import { MathBlock } from "@/src/sanity/components/mathBlock";
+import 'katex/dist/katex.min.css';
+import { LatexPreview } from "sanity-plugin-latex-input";
+import Latex from 'react-latex-next';
 
 export async function generateMetadata({
     params,
@@ -61,10 +65,10 @@ export default async function BlogPost({params}: { params: { slug: string } }) {
             <div
                 className="flex flex-col gap-5 py-12 lg:py-24 items-start"
                 style={{
-                backgroundImage: "url('/assets/shapes-bg-2.png')",
-                backgroundSize: "contain",
-                backgroundRepeat: "no-repeat",
-                backgroundPosition: "left",
+                    backgroundImage: "url('/assets/shapes-bg-2.png')",
+                    backgroundSize: "contain",
+                    backgroundRepeat: "no-repeat",
+                    backgroundPosition: "left",
                 }}
             >
                 <p className="text-[#A1A1A1]">Blog {`>`} {post.categories ? post.categories[0] : post.title}</p>
@@ -98,6 +102,9 @@ export default async function BlogPost({params}: { params: { slug: string } }) {
                                 code: ({ value }: any) => {
                                     return <CodeBlock value={value} />
                                 },
+                                latex: ({ value }: any) => {
+                                    return <Latex>$${value.body}$$</Latex>
+                                }
                             }
                         }}
                     />
