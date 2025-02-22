@@ -3,7 +3,7 @@ import CopyLink from "@/src/components/icons/copyLink";
 import TelegramShare from "@/src/components/icons/telegramShare";
 import TwitterShare from "@/src/components/icons/twitterShare";
 import { AllPostsSlugsQueryResult, PostBySlugQueryResult } from "@/sanity.types";
-import { client, sanityFetch } from "@/src/sanity/lib/client";
+import { sanityFetch } from "@/src/sanity/lib/client";
 import { allPostsSlugsQuery, postBySlugQuery } from "@/src/sanity/lib/queries";
 import { calculateReadingTime, formatDate } from "@/src/lib/utils";
 import { PortableText } from "@portabletext/react";
@@ -11,9 +11,7 @@ import WhatsappShare from "@/src/components/icons/whatsappShare";
 import { Metadata } from "next";
 import { SanityImageComponent } from "@/src/sanity/components/image";
 import { CodeBlock } from "@/src/sanity/components/codeBlock";
-import { MathBlock } from "@/src/sanity/components/mathBlock";
 import 'katex/dist/katex.min.css';
-import { LatexPreview } from "sanity-plugin-latex-input";
 import Latex from 'react-latex-next';
 
 export async function generateMetadata({

@@ -7,6 +7,7 @@ import { urlFor } from "@/src/sanity/lib/utils";
 import { PortableText } from "@portabletext/react";
 import { SanityImageComponent } from "@/src/sanity/components/image";
 import { CodeBlock } from "@/src/sanity/components/codeBlock";
+import Latex from 'react-latex-next';
 
 export default async function ProjectPage({params}: { params: { slug: string } }) {
     const project = await sanityFetch<ProjectBySlugQueryResult>({
@@ -95,6 +96,9 @@ export default async function ProjectPage({params}: { params: { slug: string } }
                             code: ({ value }: any) => {
                                 return <CodeBlock value={value} />
                             },
+                            latex: ({ value }: any) => {
+                                return <Latex>$${value.body}$$</Latex>
+                            }
                         }
                     }}
                 />

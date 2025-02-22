@@ -78,3 +78,7 @@ body{
         background-image: url("/assets/bg-section-long-portrait.png");
     }
 }
+
+.katex-html {
+    display: none;
+}
