@@ -8,6 +8,7 @@ import { PortableText } from "@portabletext/react";
 import { SanityImageComponent } from "@/src/sanity/components/image";
 import { CodeBlock } from "@/src/sanity/components/codeBlock";
 import Latex from 'react-latex-next';
+import Link from "next/link";
 
 export default async function ProjectPage({params}: { params: { slug: string } }) {
     const project = await sanityFetch<ProjectBySlugQueryResult>({
@@ -62,7 +63,9 @@ export default async function ProjectPage({params}: { params: { slug: string } }
                     <div className="flex flex-row gap-12 mt-8">
                         <div className="flex flex-col gap-1">
                             <p className="text-[#A1A1A1]">Link</p>
-                            <p className="underline">{project.url}</p>
+                            <Link href={project.url ?? "/"} target="_blank" className="underline">
+                                {project.url}
+                            </Link>
                         </div>
                     </div>
 
