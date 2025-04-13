@@ -11,7 +11,7 @@ export const metadata: Metadata = {
 		default: 'Nicolas Guarini | Personal Website',
 	},
 	description:
-		"Computer Science Master's Degree student, private teacher of programming and data analysis for university students, and freelance developer of web solutions for small and medium-sized companies and freelancers.",
+		"Computer Science Master's Degree student, Software Engineer Intern, private teacher of programming and data analysis for university students, and freelance developer of web solutions for small and medium-sized companies and freelancers.",
 	generator: 'Next.js',
 	applicationName: 'Nicolas Guarini | Personal Website',
 	referrer: 'origin-when-cross-origin',
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
 			default: 'Nicolas Guarini | Personal Website',
 		},
 		description:
-			"Computer Science Master's Degree student, private teacher of programming and data analysis for university students, and freelance developer of web solutions for small and medium-sized companies and freelancers.",
+			"Computer Science Master's Degree student, Software Engineer Intern, private teacher of programming and data analysis for university students, and freelance developer of web solutions for small and medium-sized companies and freelancers.",
 		url: 'https://nicolasguarini.it',
 		locale: 'en-US',
 		type: 'website',

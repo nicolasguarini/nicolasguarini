@@ -11,15 +11,15 @@ export default function AboutCompact() {
 				</div>
 				<div className="flex flex-col gap-10 basis-3/5 bg-section" >
 					<p>
-						I'm a 22y/o student and occasionally freelancer based in Italy. <br /> 
+						I'm a 23y/o student currently working as a Software Engineer Intern, and occasionally working as a freelancer. <br /> 
 						Always passionate about IT and cybersecurity, I have developed several projects in the mobile field, webapps, and machine learning. Although it is not often mentioned, I have also taken care of the UI/UX design of all my projects. <br /> 
-						I am also fond of music, guitars, chess, and I can solve rubiks cubes in under 14 seconds!
+						I am also fond of music, guitars, chess, and I can solve rubiks cubes in under 12 seconds!
 					</p>
 					<div className="flex flex-col xs:flex-row gap-4" >
 						<div className="flex flex-col gap-3">
 							<BagIcon />
 							<h3 className="font-bold text-xl">Experience</h3>
-							<p>I do freelance jobs for small companies and professionals, and i'm also a university tutor of programming, data analysis, and computer architecture courses.</p>
+							<p>I’m currently interning as a Software Engineer. I also do freelance jobs for small companies and professionals, and I’m a university tutor for programming, data analysis, and computer architecture courses.</p>
 						</div>
 						<div className="flex flex-col gap-3">
 							<EducationIcon />

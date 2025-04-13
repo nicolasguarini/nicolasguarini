@@ -12,7 +12,7 @@ export default function ServicesCompact() {
             <div className="flex flex-col md:flex-row gap-4 ">
                 <div className="flex flex-col gap-3 basis-1/2">
                     <p className="font-medium">Services</p>
-                    <h2 className="font-bold text-3xl">The main services I can deliver</h2>
+                    <h2 className="font-bold text-3xl">The main services I deliver</h2>
                 </div>
                 <div className="flex flex-col gap-10 basis-1/2">
                     <p>
