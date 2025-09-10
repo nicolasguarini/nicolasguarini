@@ -1,10 +1,10 @@
 <h1  align="center">Hi 👋, I'm Nicolas Guarini</h1>
-<h3  align="center">I'm Nicolas Guarini, a 23-year old IT enthusiast who does web, desktop and mobile development, security research, UI/UX design and speedcubing. Passionate to learn new things and create challenging projects.</h3>
+<h3  align="center">I'm Nicolas Guarini, a 24-year old IT enthusiast who does web, desktop and mobile development, security research, UI/UX design and speedcubing. Passionate to learn new things and create challenging projects.</h3>
 
 <p  align="left">  <img  src="https://komarev.com/ghpvc/?username=nicolasguarini"  alt="nicolasguarini"  />  </p>
 
 - 🔭 I’m currently working on [pitview](https://github.com/nicolasguarini/pitview)
-- 🌱 I’m currently learning **Swift and Express.js**
+- 🌱 I’m currently learning **Django Rest Framework and Kubernetes**
 - 👨‍💻 All of my projects are available at [nicolasguarini.it ](https://nicolasguarini.it)
 - 📫 How to reach me: **web@nicolasguarini.it**
 
