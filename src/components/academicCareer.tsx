@@ -27,7 +27,8 @@ export default function AcademicCareer() {
                   University of Milano-Bicocca, Italy. 2023 - Current
                 </time>
                 <p className="text-base font-normal text-gray-300">
-                  Expected graduation in 2025; <br />
+                  <b>Experimental Thesis</b>: Innovative Management of Service Requests: From a Distributed Monolith to a Large-Scale Microservices Architecture, with RAG-Enhanced Recommendation System; <br />
+                  <b>Final Degree Mark</b>: 110/110 (GPA 4.0/4.0); <br />
                   <b>Erasmus+</b> Exchange at Stockholm University, Sweden; <br />
                   <b>Main Courses</b>: Theory of computation, Virtual and Augmented Reality, Scientific Computing Methods, Telecommunications Systems and Services, Data Architectures.
                 </p>

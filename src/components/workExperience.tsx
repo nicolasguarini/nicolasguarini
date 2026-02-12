@@ -21,10 +21,38 @@ export default function WorkExperience() {
                 </svg>
               </span>
               <h3 className="mb-2 text-lg font-semibold text-white">
+                Software Engineer
+              </h3>
+              <time className="block mb-5 text-sm font-normal leading-none text-gray-400">
+                Elmec Informatica; Varese, Italy; Oct 2025 - Current
+              </time>
+              <p className="text-base font-normal text-gray-300">
+                I maintain, develop, and optimize enterprise applications built mainly with Django and Go, deployed on a microservices architecture based on Kubernetes and Docker.
+                As part of the Innovation team, I also engage in R&D activities to modernize legacy systems and introduce new technologies into existing processes.
+                <br /><br />
+                Since February 2026, I've been part of the DevOps subgroup, where I maintain and develop CI/CD pipelines, perform troubleshooting, and provide training to colleagues on DevOps practices and implementations.
+                <br /><br />
+                <b>Technologies</b>: Django REST Framework; Go; Kubernetes; Vue.js; PostgreSQL; RabbitMQ; Redis; Ansible; Grafana; Prometheus; DevOps;
+              </p>
+            </li>
+
+            <li className="mb-12 ms-6">
+              <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -start-3 ring-8  ring-gray-900 bg-blue-900">
+                <svg
+                  className="w-2.5 h-2.5 text-blue-300"
+                  aria-hidden="true"
+                  xmlns="http://www.w3.org/2000/svg"
+                  fill="currentColor"
+                  viewBox="0 0 20 20"
+                >
+                  <path d="M20 4a2 2 0 0 0-2-2h-2V1a1 1 0 0 0-2 0v1h-3V1a1 1 0 0 0-2 0v1H6V1a1 1 0 0 0-2 0v1H2a2 2 0 0 0-2 2v2h20V4ZM0 18a2 2 0 0 0 2 2h16a2 2 0 0 0 2-2V8H0v10Zm5-8h10a1 1 0 0 1 0 2H5a1 1 0 0 1 0-2Z" />
+                </svg>
+              </span>
+              <h3 className="mb-2 text-lg font-semibold text-white">
                 Software Engineer Internship
               </h3>
               <time className="block mb-5 text-sm font-normal leading-none text-gray-400">
-                Elmec Informatica; Varese, Italy; 2025 - Current
+                Elmec Informatica; Varese, Italy; Apr 2025 - Oct 2025
               </time>
               <p className="text-base font-normal text-gray-300">
                 Design and development of a modular and scalable system for
@@ -33,7 +61,7 @@ export default function WorkExperience() {
                 generation, and integration with an automation engine for
                 handling repeatable tasks via preconfigured scripts. <br /> <br />
                 <b>Tech Stack</b>: Django REST Framework; Vue.js; PostgreSQL; Docker;
-                Kubernetes; Ansible / Terraform.
+                Kubernetes; Redis; RabbitMQ; Ansible.
               </p>
             </li>
 
