@@ -6,6 +6,7 @@ import Footer from '@/src/components/layout/footer';
 import { SpeedInsights } from "@vercel/speed-insights/next"
 import { SITE_DESCRIPTION, personSchema, websiteSchema } from '@/src/lib/seo';
 import { baseUrl } from '@/src/lib/env';
+import { geist } from '@/src/lib/fonts';
 import JsonLd from '@/src/components/jsonLd';
 
 export const metadata: Metadata = {
@@ -88,7 +89,7 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
+		<html lang="en" className={geist.variable}>
 			<head>
 				<link rel="icon" href="/assets/site-icon.jpg" type="image/x-icon" />
 				<script async src="https://analytics.eu.umami.is/script.js" data-website-id="f46815ab-ab14-48f0-92bc-c2f871678b7c"></script>

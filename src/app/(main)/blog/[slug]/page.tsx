@@ -97,7 +97,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
             <div
                 className="flex flex-col gap-5 py-12 lg:py-24 items-start"
                 style={{
-                    backgroundImage: "url('/assets/shapes-bg-2.png')",
+                    backgroundImage: "url('/assets/shapes-bg-2.webp')",
                     backgroundSize: "contain",
                     backgroundRepeat: "no-repeat",
                     backgroundPosition: "left",

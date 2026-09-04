@@ -5,7 +5,9 @@ export const client: SanityClient = createClient({
 	projectId,
 	dataset,
 	apiVersion,
-	useCdn: false,
+	// Contenuti pubblici serviti con ISR: la CDN di Sanity e' la scelta giusta
+	useCdn: true,
+	perspective: 'published',
 });
 
 export async function sanityFetch<QueryResponse>({

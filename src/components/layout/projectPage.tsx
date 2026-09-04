@@ -9,6 +9,7 @@ import { SanityImageComponent } from "@/src/sanity/components/image";
 import { CodeBlock } from "@/src/sanity/components/codeBlock";
 import { LatexBlock } from "@/src/sanity/components/latexBlock";
 import Link from "next/link";
+import Image from "next/image";
 import Breadcrumbs from "@/src/components/breadcrumbs";
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
@@ -27,7 +28,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     return (
         <div className="flex flex-col gap-20 py-12 lg:py-24">
             <div className="flex flex-col-reverse w-full lg:flex-row justify-between max-w-6xl mx-auto gap-12" style={{
-						backgroundImage: "url('/assets/shapes-bg-2.png')",
+						backgroundImage: "url('/assets/shapes-bg-2.webp')",
 						backgroundSize: "contain",
 						backgroundRepeat: "no-repeat",
 						backgroundPosition: "center",
@@ -96,7 +97,15 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
                 <div className="">
                     { project.featuredImage && (
-                        <img src={urlFor(project.featuredImage).url()} className="block mx-auto object-cover w-full lg:max-w-xl rounded-lg" alt="Featured Image" />
+                        <Image
+                            src={urlFor(project.featuredImage).width(1024).fit("max").auto("format").url()}
+                            alt={`${project.name ?? "Project"} — featured image`}
+                            width={1024}
+                            height={768}
+                            priority
+                            sizes="(max-width: 1024px) 100vw, 576px"
+                            className="block mx-auto object-cover w-full h-auto lg:max-w-xl rounded-lg"
+                        />
                     )}
                 </div>
             </div>
@@ -123,7 +132,15 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
             <div className="flex flex-col gap-12 max-w-5xl mx-auto">
                 {project?.images?.map((image) => (
                     <div className="" key={image._key}>
-                        <img src={urlFor(image).url()} alt={project.name ?? "Project Images"} />
+                        <Image
+                            src={urlFor(image).width(1280).fit("max").auto("format").url()}
+                            alt={image.alt ?? `${project.name ?? "Project"} screenshot`}
+                            width={1280}
+                            height={960}
+                            loading="lazy"
+                            sizes="(max-width: 1024px) 100vw, 1024px"
+                            className="w-full h-auto rounded-lg"
+                        />
                     </div>
                 ))}
             </div>
