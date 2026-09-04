@@ -9,7 +9,7 @@ export default function AcademicCareer() {
           <div className="flex flex-col gap-10 basis-1/2">
             <ol className="relative border-s border-gray-700">
               <li className="mb-12 ms-6">
-                <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -start-3 ring-8  ring-gray-900 bg-blue-900">
+                <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -inset-s-3 ring-8  ring-gray-900 bg-blue-900">
                   <svg
                     className="w-2.5 h-2.5 text-blue-300"
                     aria-hidden="true"
@@ -35,7 +35,7 @@ export default function AcademicCareer() {
               </li>
 
               <li className="mb-12 ms-6">
-                <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -start-3 ring-8  ring-gray-900 bg-blue-900">
+                <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -inset-s-3 ring-8  ring-gray-900 bg-blue-900">
                   <svg
                     className="w-2.5 h-2.5 text-blue-300"
                     aria-hidden="true"
@@ -60,7 +60,7 @@ export default function AcademicCareer() {
               </li>
 
               <li className="ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -start-3 ring-8  ring-gray-900 bg-blue-900">
+              <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -inset-s-3 ring-8  ring-gray-900 bg-blue-900">
                   <svg
                     className="w-2.5 h-2.5 text-blue-300"
                     aria-hidden="true"
