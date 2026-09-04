@@ -1,11 +1,14 @@
+import SectionHeading from "./sectionHeading";
+
 export default function WorkExperience() {
   return (
-    <div className="py-12 bg-section">
+    <div className="py-20 lg:py-28 bg-section">
       <div className="flex flex-col md:flex-row gap-4 gap-y-12">
-        <div className="flex flex-col gap-3 basis-1/2">
-          <p className="font-medium">Experience</p>
-          <h2 className="font-bold text-3xl">My Work Experience</h2>
-        </div>
+        <SectionHeading
+          label="Experience"
+          title="My Work Experience"
+          className="basis-1/2"
+        />
         <div className="flex flex-col gap-10 basis-1/2">
           <ol className="relative border-s border-gray-700">
             <li className="mb-12 ms-6">

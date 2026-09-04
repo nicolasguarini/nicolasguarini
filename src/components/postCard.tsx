@@ -8,24 +8,29 @@ type Post = LatestPostsQueryResult[number];
 
 export default function PostCard({ post }: { post: Post }) {
 	return (
-        <Link href={`/blog/${post.slug}`}>
-            <div className="flex flex-col gap-3 rounded-lg shadow-md">
-                    <div className="flex flex-row gap-3">
-                        {post.categories?.map((category: string) => (
-                            <CategoryTag key={category} category={category} />
-                        ))}
-                    </div>
-                    <div className="flex flex-col gap-3">
-                        <h3 className="font-bold text-2xl">{post.title}</h3>
-                        <p>
-                            {post.excerpt}
-                        </p>
-                    </div>
-                    <AuthorCard 
-                        publishedAt={formatDate(post.publishedAt ?? "")} 
-                        minutesRead={calculateReadingTime(post.contentLength)} 
-                    />
+        <Link
+            href={`/blog/${post.slug}`}
+            className="group block rounded-lg focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-black"
+        >
+            <div className="flex flex-col gap-3">
+                <div className="flex flex-row flex-wrap gap-2">
+                    {post.categories?.map((category: string) => (
+                        <CategoryTag key={category} category={category} />
+                    ))}
+                </div>
+
+                <div className="flex flex-col gap-3">
+                    <h3 className="font-bold text-2xl decoration-muted underline-offset-4 group-hover:underline">
+                        {post.title}
+                    </h3>
+                    <p className="text-muted">{post.excerpt}</p>
+                </div>
+
+                <AuthorCard
+                    publishedAt={formatDate(post.publishedAt ?? "")}
+                    minutesRead={calculateReadingTime(post.contentLength)}
+                />
             </div>
-        </Link> 
+        </Link>
 	);
 }

@@ -114,18 +114,18 @@ const Navbar = () => {
                     >
                       <div className="py-1">
                         <Link
-                          href="/projects/client"
-                          aria-current={current(isActive("/projects/client"))}
-                          className={`block px-4 py-2 ${linkClasses(isActive("/projects/client"))}`}
-                        >
-                          Client Projects
-                        </Link>
-                        <Link
                           href="/projects/personal"
                           aria-current={current(isActive("/projects/personal"))}
                           className={`block px-4 py-2 ${linkClasses(isActive("/projects/personal"))}`}
                         >
                           Personal Projects
+                        </Link>
+                        <Link
+                          href="/projects/client"
+                          aria-current={current(isActive("/projects/client"))}
+                          className={`block px-4 py-2 ${linkClasses(isActive("/projects/client"))}`}
+                        >
+                          Client Projects
                         </Link>
                       </div>
                     </div>
@@ -185,7 +185,7 @@ const Navbar = () => {
         </div>
       </div>
 
-      <div className={`${isOpen ? "fixed right-4 z-50" : "hidden"} md:hidden`} id="mobile-menu">
+      <div className={`${isOpen ? "fixed top-24 right-4 z-50" : "hidden"} md:hidden`} id="mobile-menu">
         <div
           className="px-8 pt-2 pb-3 space-y-1 sm:px-5 rounded-lg"
           style={{
@@ -200,11 +200,11 @@ const Navbar = () => {
           <Link href="/about" aria-current={current(isActive("/about"))} className={`block px-3 py-2 ${linkClasses(isActive("/about"))}`}>
             About
           </Link>
-          <Link href="/projects/client" aria-current={current(isActive("/projects/client"))} className={`block px-3 py-2 ${linkClasses(isActive("/projects/client"))}`}>
-            Client Projects
-          </Link>
           <Link href="/projects/personal" aria-current={current(isActive("/projects/personal"))} className={`block px-3 py-2 ${linkClasses(isActive("/projects/personal"))}`}>
             Personal Projects
+          </Link>
+          <Link href="/projects/client" aria-current={current(isActive("/projects/client"))} className={`block px-3 py-2 ${linkClasses(isActive("/projects/client"))}`}>
+            Client Projects
           </Link>
           <Link href="/blog" aria-current={current(isWithin("/blog"))} className={`block px-3 py-2 ${linkClasses(isWithin("/blog"))}`}>
             Blog

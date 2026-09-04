@@ -36,8 +36,8 @@ const Footer = () => {
 					<div className="flex flex-col gap-3 text-muted">
 						<Link href="/" className={internalLink}>Home</Link>
 						<Link href="/about" className={internalLink}>About</Link>
-						<Link href="/projects/client" className={internalLink}>Client Projects</Link>
 						<Link href="/projects/personal" className={internalLink}>Personal Projects</Link>
+						<Link href="/projects/client" className={internalLink}>Client Projects</Link>
 					</div>
 
 					<div className="flex flex-col gap-3 text-muted">

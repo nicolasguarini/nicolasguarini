@@ -36,9 +36,9 @@ export default async function Home() {
 
 			<ServicesCompact />
 
-			<ClientProjectsSection clientProjects={clientProjects} />
-
 			<PersonalProjectsSection personalProjects={personalProjects} />
+
+			<ClientProjectsSection clientProjects={clientProjects} />
 
 			<BlogSection posts={posts} />
 		</div>

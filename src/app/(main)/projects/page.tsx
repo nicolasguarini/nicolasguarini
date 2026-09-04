@@ -18,16 +18,18 @@ export const metadata: Metadata = {
 }
 
 export default async function Projects() {
-    const clientProjects = await sanityFetch<LatestClientProjectsQueryResult>({
-        query: latestClientProjectsQuery,
-        revalidate: 3600,
-        params: { numOfProjects: 3 },
-    });
-	const personalProjects = await sanityFetch<LatestPersonalProjectsQueryResult>({
-        query: latestPersonalProjectsQuery,
-        revalidate: 3600,
-        params: { numOfProjects: 3 },
-    });
+    const [personalProjects, clientProjects] = await Promise.all([
+        sanityFetch<LatestPersonalProjectsQueryResult>({
+            query: latestPersonalProjectsQuery,
+            revalidate: 3600,
+            params: { numOfProjects: 3 },
+        }),
+        sanityFetch<LatestClientProjectsQueryResult>({
+            query: latestClientProjectsQuery,
+            revalidate: 3600,
+            params: { numOfProjects: 3 },
+        }),
+    ]);
     
     return (
         <div>
@@ -44,9 +46,9 @@ export default async function Projects() {
                 </div>
             </div>
 
-            <ClientProjectsSection clientProjects={clientProjects} />
+            <PersonalProjectsSection personalProjects={personalProjects} />
 
-			<PersonalProjectsSection personalProjects={personalProjects} />
+			<ClientProjectsSection clientProjects={clientProjects} />
         </div>
     )
 }

@@ -1,14 +1,16 @@
 import Button from "./button";
 import BagIcon from "./icons/bagIcon";
 import EducationIcon from "./icons/educationIcon";
+import SectionHeading from "./sectionHeading";
 
 export default function AboutCompact() {
     return (
-        <div className="flex flex-col md:flex-row gap-4 my-16 lg:my-20">
-				<div className="flex flex-col gap-3 basis-2/5">
-					<p className="font-medium">About me</p>
-					<h2 className="font-bold text-3xl">My experience and education</h2>
-				</div>
+        <div className="flex flex-col md:flex-row gap-4 py-20 lg:py-28">
+				<SectionHeading
+					label="About me"
+					title="My experience and education"
+					className="basis-2/5"
+				/>
 				<div className="flex flex-col gap-10 basis-3/5 bg-section" >
 					<div className="flex flex-col gap-4">
 						<p>
