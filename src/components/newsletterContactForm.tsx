@@ -23,12 +23,12 @@ export default function NewsletterContactForm() {
                     autoComplete="email"
                     required
                     placeholder="Your email address"
-                    className="w-full rounded-lg p-2 text-sm bg-[#EDEDED] text-black"
+                    className="w-full rounded-lg p-2 text-sm bg-ink text-black"
                 />
                 <button
                     type="submit"
                     disabled={state.submitting}
-                    className="bg-transparent rounded-lg border-[#333232] border-2 py-2 px-6 whitespace-nowrap transition-colors hover:border-white disabled:cursor-not-allowed disabled:opacity-60"
+                    className="bg-transparent rounded-lg border-line border-2 py-2 px-6 whitespace-nowrap transition-colors hover:border-white disabled:cursor-not-allowed disabled:opacity-60"
                 >
                     {state.submitting ? "..." : "Subscribe"}
                 </button>

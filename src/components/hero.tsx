@@ -1,5 +1,4 @@
 import Button from "./button";
-import ExternalLink from "./icons/externalLink";
 
 export default function Hero() {
     return (

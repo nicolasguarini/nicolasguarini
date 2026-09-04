@@ -2,8 +2,16 @@ import { urlFor } from "@/src/sanity/lib/utils";
 import CategoryTag from "./categoryTag";
 import Link from "next/link";
 import Image from "next/image";
+import type {
+    LatestClientProjectsQueryResult,
+    LatestPersonalProjectsQueryResult,
+} from "@/sanity.types";
 
-export default function ProjectCard({ project }: { project: any }) {
+type Project =
+    | LatestPersonalProjectsQueryResult[number]
+    | LatestClientProjectsQueryResult[number];
+
+export default function ProjectCard({ project }: { project: Project }) {
     return (
         <Link href={`/projects/${project.type}/${project.slug}`}>
             <div className="flex flex-col gap-3 max-w-sm xl:max-w-md">

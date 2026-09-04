@@ -1,6 +1,6 @@
 import ProjectCard from "@/src/components/projectCard";
 import { LatestPersonalProjectsQueryResult } from "@/sanity.types";
-import { client, sanityFetch } from "@/src/sanity/lib/client";
+import { sanityFetch } from "@/src/sanity/lib/client";
 import { latestPersonalProjectsQuery } from "@/src/sanity/lib/queries";
 import { Metadata } from "next";
 import Breadcrumbs from "@/src/components/breadcrumbs";

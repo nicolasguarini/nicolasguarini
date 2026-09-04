@@ -1,10 +1,12 @@
 import Link from "next/link";
 import CategoryTag from "./categoryTag";
-import Image from "next/image";
 import { calculateReadingTime, formatDate } from "@/src/lib/utils";
 import AuthorCard from "./authorCard";
+import type { LatestPostsQueryResult } from "@/sanity.types";
 
-export default function PostCard({ post }: { post: any }) {
+type Post = LatestPostsQueryResult[number];
+
+export default function PostCard({ post }: { post: Post }) {
 	return (
         <Link href={`/blog/${post.slug}`}>
             <div className="flex flex-col gap-3 rounded-lg shadow-md">
@@ -20,7 +22,7 @@ export default function PostCard({ post }: { post: any }) {
                         </p>
                     </div>
                     <AuthorCard 
-                        publishedAt={formatDate(post.publishedAt)} 
+                        publishedAt={formatDate(post.publishedAt ?? "")} 
                         minutesRead={calculateReadingTime(post.contentLength)} 
                     />
             </div>

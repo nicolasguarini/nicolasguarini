@@ -11,6 +11,11 @@
   --breakpoint-2xl: 1536px;
 
   --font-geist: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* Palette del sito: prima era ripetuta come hex inline in 50 posti */
+  --color-ink: #ededed;
+  --color-muted: #a1a1a1;
+  --color-line: #333232;
 }
 
 /*

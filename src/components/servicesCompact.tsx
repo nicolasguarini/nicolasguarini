@@ -1,9 +1,7 @@
 import Button from "./button";
 import AppIcon from "./icons/appIcon";
-import BagIcon from "./icons/bagIcon";
 import CartIcon from "./icons/cartIcon";
 import DesignIcon from "./icons/designIcon";
-import EducationIcon from "./icons/educationIcon";
 import WorldIcon from "./icons/worldIcon";
 
 export default function ServicesCompact() {

@@ -15,11 +15,16 @@ const Navbar = () => {
   const [isProjectsOpen, setIsProjectsOpen] = useState(false);
   const pathName = usePathname();
   const projectsRef = useRef<HTMLDivElement>(null);
+  const [lastPath, setLastPath] = useState(pathName);
 
-  useEffect(() => {
-    setIsProjectsOpen(false);
+  // Reset dei menu al cambio rotta. Aggiustare lo stato in fase di render e'
+  // il pattern raccomandato da React: setState dentro un useEffect innesca
+  // un render a cascata.
+  if (lastPath !== pathName) {
+    setLastPath(pathName);
     setIsOpen(false);
-  }, [pathName]);
+    setIsProjectsOpen(false);
+  }
 
   // Chiude il dropdown con Escape o cliccando fuori
   useEffect(() => {
@@ -48,7 +53,7 @@ const Navbar = () => {
   const isWithin = (path: string) => pathName.startsWith(path);
 
   const linkClasses = (active: boolean) =>
-    `${active ? "text-white" : "text-[#A1A1A1]"} hover:text-white transition-colors ${focusRing}`;
+    `${active ? "text-white" : "text-muted"} hover:text-white transition-colors ${focusRing}`;
 
   const current = (active: boolean) => (active ? ("page" as const) : undefined);
 
@@ -151,7 +156,7 @@ const Navbar = () => {
             <Link
               href="/contact"
               aria-current={current(isActive("/contact"))}
-              className={`px-5 py-3 border border-[#333232] hover:border-[#A1A1A1] rounded-lg transition-colors ${focusRing}`}
+              className={`px-5 py-3 border border-line hover:border-muted rounded-lg transition-colors ${focusRing}`}
             >
               Contact
             </Link>

@@ -1,9 +1,7 @@
 import { LatestClientProjectsQueryResult, LatestPersonalProjectsQueryResult } from "@/sanity.types";
-import Button from "@/src/components/button";
 import ClientProjectsSection from "@/src/components/clientProjectsSection";
 import PersonalProjectsSection from "@/src/components/personalProjectsSection";
-import ProjectCard from "@/src/components/projectCard";
-import { client, sanityFetch } from "@/src/sanity/lib/client";
+import { sanityFetch } from "@/src/sanity/lib/client";
 import { latestClientProjectsQuery, latestPersonalProjectsQuery } from "@/src/sanity/lib/queries";
 import { Metadata } from "next";
 import Breadcrumbs from "@/src/components/breadcrumbs";

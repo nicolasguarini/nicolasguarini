@@ -30,7 +30,7 @@ export default function Breadcrumbs({
 	};
 
 	return (
-		<nav aria-label="Breadcrumb" className={`text-[#A1A1A1] ${className}`}>
+		<nav aria-label="Breadcrumb" className={`text-muted ${className}`}>
 			<ol className="flex flex-wrap items-center gap-x-2">
 				{trail.map((crumb, index) => {
 					const isLast = index === trail.length - 1;

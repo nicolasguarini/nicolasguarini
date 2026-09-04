@@ -1,6 +1,6 @@
 import CategoryTag from "@/src/components/categoryTag";
 import { ProjectBySlugQueryResult } from "@/sanity.types";
-import { client, sanityFetch } from "@/src/sanity/lib/client";
+import { sanityFetch } from "@/src/sanity/lib/client";
 import { projectBySlugQuery } from "@/src/sanity/lib/queries";
 import { capitalizeFirstLetter } from "@/src/lib/utils";
 import { urlFor } from "@/src/sanity/lib/utils";
@@ -51,31 +51,31 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                     
                     <div className="flex flex-row gap-12 mt-8">
                         <div className="flex flex-col gap-1">
-                            <p className="text-[#A1A1A1]">Type</p>
+                            <p className="text-muted">Type</p>
                             <p>{capitalizeFirstLetter(project.type ?? "")}</p>
                         </div>
 
                         <div className="flex flex-col gap-1">
-                            <p className="text-[#A1A1A1]">Service</p>
+                            <p className="text-muted">Service</p>
                             <p>{project.service}</p>
                         </div>
                     </div>
 
                     <div className="flex flex-row gap-12 mt-8">
                         <div className="flex flex-col gap-1">
-                            <p className="text-[#A1A1A1]">Started</p>
+                            <p className="text-muted">Started</p>
                             <p>{project.startedDate}</p>
                         </div>
 
                         <div className="flex flex-col gap-1">
-                            <p className="text-[#A1A1A1]">Finished</p>
+                            <p className="text-muted">Finished</p>
                             <p>{project.finishedDate}</p>
                         </div>
                     </div>
 
                     <div className="flex flex-row gap-12 mt-8">
                         <div className="flex flex-col gap-1">
-                            <p className="text-[#A1A1A1]">Link</p>
+                            <p className="text-muted">Link</p>
                             <Link href={project.url ?? "/"} target="_blank" className="underline">
                                 {project.url}
                             </Link>
@@ -84,7 +84,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 
                     <div className="flex flex-row gap-12 mt-8">
                         <div className="flex flex-col gap-2">
-                            <p className="text-[#A1A1A1]">Tags</p>
+                            <p className="text-muted">Tags</p>
                             <div className="flex flex-wrap gap-2">
                                 {project?.categories?.map((category, index) => (
                                     <CategoryTag key={index} category={category} />
@@ -117,12 +117,8 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                     components={{
                         types: {
                             image: SanityImageComponent,
-                            code: ({ value }: any) => {
-                                return <CodeBlock value={value} />
-                            },
-                            latex: ({ value }: any) => {
-                                return <LatexBlock value={value} />
-                            }
+                            code: ({ value }) => <CodeBlock value={value} />,
+                            latex: ({ value }) => <LatexBlock value={value} />,
                         }
                     }}
                 />

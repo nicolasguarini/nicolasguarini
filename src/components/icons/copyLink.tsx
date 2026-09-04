@@ -1,30 +1,45 @@
 "use client";
 
-import React, { useState } from "react";
+import { useState } from "react";
 import { baseUrl } from "@/src/lib/env";
 import { usePathname } from "next/navigation";
 
-export default function CopyLink({ url }: { url: string }) {
+export default function CopyLink() {
     const [copied, setCopied] = useState(false);
     const pathName = usePathname();
 
-    const handleCopy = () => {
-        navigator.clipboard.writeText(baseUrl + pathName);
-        setCopied(true);
-        setTimeout(() => setCopied(false), 2000); // Mostra "Copied!" per 2 secondi
+    const handleCopy = async () => {
+        try {
+            await navigator.clipboard.writeText(baseUrl + pathName);
+            setCopied(true);
+            setTimeout(() => setCopied(false), 2000);
+        } catch {
+            // clipboard negata (permessi o contesto non sicuro): non facciamo nulla
+        }
     };
 
     return (
-        <div 
-            className="rounded-full bg-gray-700 text-center align-middle p-[7px] cursor-pointer" 
+        <button
+            type="button"
             onClick={handleCopy}
+            aria-label={copied ? "Link copied" : "Copy link to this page"}
+            className="rounded-full bg-gray-700 text-center align-middle p-[7px] cursor-pointer transition-colors hover:bg-gray-600 focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-2 focus-visible:ring-offset-black"
         >
             {copied ? (
                 <span className="text-white text-sm px-1 py-0">{'✓'} Copied!</span>
             ) : (
-                <svg version="1.1" id="Layer_1" xmlns="http://www.w3.org/2000/svg" x="0px" y="0px"
-                    width="20px" height="20px" viewBox="0 0 512 512" enableBackground="new 0 0 512 512">
-                    <path fill="#fff" d="M459.654,233.373l-90.531,90.5c-49.969,50-131.031,50-181,0c-7.875-7.844-14.031-16.688-19.438-25.813
+                <svg
+                    aria-hidden="true"
+                    focusable="false"
+                    version="1.1"
+                    xmlns="http://www.w3.org/2000/svg"
+                    x="0px"
+                    y="0px"
+                    width="20px"
+                    height="20px"
+                    viewBox="0 0 512 512"
+                >
+                    <path fill="currentColor" d="M459.654,233.373l-90.531,90.5c-49.969,50-131.031,50-181,0c-7.875-7.844-14.031-16.688-19.438-25.813
                         l42.063-42.063c2-2.016,4.469-3.172,6.828-4.531c2.906,9.938,7.984,19.344,15.797,27.156c24.953,24.969,65.563,24.938,90.5,0
                         l90.5-90.5c24.969-24.969,24.969-65.563,0-90.516c-24.938-24.953-65.531-24.953-90.5,0l-32.188,32.219
                         c-26.109-10.172-54.25-12.906-81.641-8.891l68.578-68.578c50-49.984,131.031-49.984,181.031,0
@@ -35,6 +50,6 @@ export default function CopyLink({ url }: { url: string }) {
                         C274.561,395.092,246.42,392.342,220.326,382.186z"/>
                 </svg>
             )}
-        </div>
+        </button>
     );
 }

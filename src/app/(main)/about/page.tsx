@@ -2,7 +2,7 @@ import { LatestPostsQueryResult } from "@/sanity.types";
 import AcademicCareer from "@/src/components/academicCareer";
 import BlogSection from "@/src/components/blogSection";
 import WorkExperience from "@/src/components/workExperience";
-import { client, sanityFetch } from "@/src/sanity/lib/client";
+import { sanityFetch } from "@/src/sanity/lib/client";
 import { latestPostsQuery } from "@/src/sanity/lib/queries";
 import { Metadata } from "next";
 import Breadcrumbs from "@/src/components/breadcrumbs";

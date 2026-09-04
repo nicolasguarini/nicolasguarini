@@ -94,7 +94,7 @@ export default function RootLayout({
 				<link rel="icon" href="/assets/site-icon.jpg" type="image/x-icon" />
 				<script async src="https://analytics.eu.umami.is/script.js" data-website-id="f46815ab-ab14-48f0-92bc-c2f871678b7c"></script>
 			</head>
-			<body className="bg-black text-[#EDEDED] font-geist">
+			<body className="bg-black text-ink font-geist">
 				<div>
 					<Navbar />
 

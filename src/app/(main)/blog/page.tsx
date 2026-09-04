@@ -1,6 +1,6 @@
 import PostCard from "@/src/components/postCard";
 import { LatestPostsQueryResult } from "@/sanity.types";
-import { client, sanityFetch } from "@/src/sanity/lib/client";
+import { sanityFetch } from "@/src/sanity/lib/client";
 import { latestPostsQuery } from "@/src/sanity/lib/queries";
 import { Metadata } from "next";
 import Breadcrumbs from "@/src/components/breadcrumbs";

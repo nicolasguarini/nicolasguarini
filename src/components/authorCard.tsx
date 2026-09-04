@@ -13,7 +13,7 @@ export default function AuthorCard({ publishedAt, minutesRead }: { publishedAt: 
 
             <div className="flex flex-col text-sm">
                 <p className=" font-medium">Nicolas Guarini</p>
-                <div className="flex flex-row gap-2 text-[#A1A1A1]">
+                <div className="flex flex-row gap-2 text-muted">
                     <p>{publishedAt}</p>
                     <p>·</p>
                     <p>{minutesRead} min. read</p>

@@ -1,8 +1,6 @@
-import { client } from "@/src/sanity/lib/client";
 import Button from "./button";
 import PostCard from "./postCard";
 import { LatestPostsQueryResult } from "@/sanity.types";
-import { latestPostsQuery } from "@/src/sanity/lib/queries";
 
 export default async function BlogSection({ posts }: { posts: LatestPostsQueryResult }) {
     return (

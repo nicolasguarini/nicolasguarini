@@ -1,6 +1,6 @@
 import { AllPersonalProjectsSlugsQueryResult, ProjectBySlugQueryResult } from "@/sanity.types";
 import ProjectPage from "@/src/components/layout/projectPage";
-import { client, sanityFetch } from "@/src/sanity/lib/client";
+import { sanityFetch } from "@/src/sanity/lib/client";
 import { allPersonalProjectsSlugsQuery, projectBySlugQuery } from "@/src/sanity/lib/queries";
 import { urlFor } from "@/src/sanity/lib/utils";
 import { Metadata } from "next";

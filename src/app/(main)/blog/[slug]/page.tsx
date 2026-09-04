@@ -114,7 +114,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                     />
 
                     <div className="flex flex-row gap-3 h-fit self-end">
-                        <CopyLink url={""} />
+                        <CopyLink />
                         <WhatsappShare />
                         <TwitterShare />
                         <TelegramShare />
@@ -131,12 +131,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                         components={{
                             types: {
                                 image: SanityImageComponent,
-                                code: ({ value }: any) => {
-                                    return <CodeBlock value={value} />
-                                },
-                                latex: ({ value }: any) => {
-                                    return <LatexBlock value={value} />
-                                }
+                                code: ({ value }) => <CodeBlock value={value} />,
+                                latex: ({ value }) => <LatexBlock value={value} />,
                             }
                         }}
                     />
