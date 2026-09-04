@@ -9,6 +9,7 @@ import { SanityImageComponent } from "@/src/sanity/components/image";
 import { CodeBlock } from "@/src/sanity/components/codeBlock";
 import { LatexBlock } from "@/src/sanity/components/latexBlock";
 import Link from "next/link";
+import Breadcrumbs from "@/src/components/breadcrumbs";
 
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
@@ -33,7 +34,16 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
 					}}>
                 <div className="">
                     <div className="flex flex-col gap-1">
-                        <p className="text-[#A1A1A1]">Home {`>`} Projects {`>`} {capitalizeFirstLetter(project.type ?? "")} {`>`} {project.name}</p>
+                        <Breadcrumbs
+                            items={[
+                                { label: "Projects", href: "/projects" },
+                                {
+                                    label: capitalizeFirstLetter(project.type ?? ""),
+                                    href: project.type ? `/projects/${project.type}` : undefined,
+                                },
+                                { label: project.name ?? "Project" },
+                            ]}
+                        />
                         <h1 className="font-bold text-4xl">{project.name}</h1>
                     </div>
                     

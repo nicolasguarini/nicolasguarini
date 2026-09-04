@@ -13,6 +13,10 @@ import { SanityImageComponent } from "@/src/sanity/components/image";
 import { CodeBlock } from "@/src/sanity/components/codeBlock";
 import 'katex/dist/katex.min.css';
 import { LatexBlock } from "@/src/sanity/components/latexBlock";
+import Breadcrumbs from "@/src/components/breadcrumbs";
+import JsonLd from "@/src/components/jsonLd";
+import { blogPostingSchema } from "@/src/lib/seo";
+import { urlFor } from "@/src/sanity/lib/utils";
 
 export async function generateMetadata({
     params,
@@ -28,14 +32,29 @@ export async function generateMetadata({
 
     if (!post) return {};
 
+    const ogImage = post.featuredImage
+        ? urlFor(post.featuredImage).width(1200).height(630).fit("crop").url()
+        : undefined;
+
     return {
         title: post.title,
         description: post.excerpt,
+        alternates: { canonical: `/blog/${slug}` },
 
         openGraph: {
+            type: "article",
             title: post.title ?? "",
             description: post.excerpt ?? "",
-        }
+            url: `/blog/${slug}`,
+            publishedTime: post.publishedAt ?? undefined,
+            ...(ogImage ? { images: [{ url: ogImage, width: 1200, height: 630 }] } : {}),
+        },
+        twitter: {
+            card: "summary_large_image",
+            title: post.title ?? "",
+            description: post.excerpt ?? "",
+            ...(ogImage ? { images: [ogImage] } : {}),
+        },
     }
 }
 
@@ -61,8 +80,20 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
         return <div>404 Not Found</div>
     }
 
+    const postSchema = blogPostingSchema({
+        title: post.title ?? "",
+        description: post.excerpt ?? undefined,
+        slug,
+        publishedAt: post.publishedAt ?? undefined,
+        imageUrl: post.featuredImage
+            ? urlFor(post.featuredImage).width(1200).height(630).fit("crop").url()
+            : undefined,
+        categories: post.categories ?? undefined,
+    });
+
     return (
         <div className="max-w-5xl mx-auto mb-32" >
+            <JsonLd id="blogposting-jsonld" data={postSchema} />
             <div
                 className="flex flex-col gap-5 py-12 lg:py-24 items-start"
                 style={{
@@ -72,7 +103,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                     backgroundPosition: "left",
                 }}
             >
-                <p className="text-[#A1A1A1]">Blog {`>`} {post.categories ? post.categories[0] : post.title}</p>
+                <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: post.title ?? "Post" }]} />
 
                 <h1 className="font-bold text-4xl mb-3">{post.title}</h1>
 

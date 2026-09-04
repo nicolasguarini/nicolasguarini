@@ -5,12 +5,24 @@ import WorkExperience from "@/src/components/workExperience";
 import { client, sanityFetch } from "@/src/sanity/lib/client";
 import { latestPostsQuery } from "@/src/sanity/lib/queries";
 import { Metadata } from "next";
+import Breadcrumbs from "@/src/components/breadcrumbs";
+
+const ABOUT_DESCRIPTION =
+	"Software Engineer at Elmec Informatica with an MSc in Computer Science. My work experience, academic career, and what I do outside of code.";
 
 export const metadata: Metadata = {
 	title: "About Me",
-  openGraph: {
-    title: "About Me",
-  }
+	description: ABOUT_DESCRIPTION,
+	alternates: { canonical: "/about" },
+	openGraph: {
+		title: "About Me",
+		description: ABOUT_DESCRIPTION,
+		url: "/about",
+	},
+	twitter: {
+		title: "About Me",
+		description: ABOUT_DESCRIPTION,
+	},
 }
 
 export default async function About() {
@@ -24,7 +36,7 @@ export default async function About() {
     <div className="flex flex-col">
       <div className="flex flex-col gap-5 py-12 lg:py-24 items-center bg-section">
         <h1 className="font-bold text-4xl text-center">About</h1>
-        <p className="text-[#A1A1A1]">Home {`>`} About</p>
+        <Breadcrumbs items={[{ label: "About" }]} />
 
         <div className="max-w-2xl text-left mx-auto my-12  text-lg font-medium">
           <p>

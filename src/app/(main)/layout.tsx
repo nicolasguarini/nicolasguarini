@@ -4,6 +4,9 @@ import type { Metadata } from 'next';
 import Navbar from '@/src/components/layout/navbar';
 import Footer from '@/src/components/layout/footer';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SITE_DESCRIPTION, personSchema, websiteSchema } from '@/src/lib/seo';
+import { baseUrl } from '@/src/lib/env';
+import JsonLd from '@/src/components/jsonLd';
 
 export const metadata: Metadata = {
 	title: {
@@ -49,7 +52,7 @@ export const metadata: Metadata = {
 			default: 'Nicolas Guarini | Personal Website',
 		},
 		description: 'Software Engineer at Elmec Informatica and freelance web developer. MSc in Computer Science. I build web apps, mobile apps, and data-driven products.',
-		url: 'https://nicolasguarini.it',
+		url: baseUrl,
 		locale: 'en-US',
 		type: 'website',
 		images: [
@@ -61,7 +64,22 @@ export const metadata: Metadata = {
 			},
 		],
 	},
-	metadataBase: new URL('https://nicolasguarini.it'),
+	twitter: {
+		card: 'summary_large_image',
+		title: {
+			template: '%s | Nicolas Guarini',
+			default: 'Nicolas Guarini | Personal Website',
+		},
+		description: SITE_DESCRIPTION,
+		images: ['/assets/site-image.jpg'],
+	},
+	alternates: {
+		canonical: '/',
+		types: {
+			'application/rss+xml': '/feed.xml',
+		},
+	},
+	metadataBase: new URL(baseUrl),
 };
 
 export default function RootLayout({
@@ -85,6 +103,9 @@ export default function RootLayout({
 
 					<Footer />
 				</div>
+
+				<JsonLd id="person-jsonld" data={personSchema} />
+				<JsonLd id="website-jsonld" data={websiteSchema} />
 
 				<Analytics />
 				<SpeedInsights />
