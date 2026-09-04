@@ -30,7 +30,7 @@ export default function AboutCompact() {
 						<div className="flex flex-col gap-3">
 							<EducationIcon />
 							<h3 className="font-bold text-xl">Education</h3>
-							<p>I earned my Bachelor's Degree in Computer Science at the University of Insubria in 2023, and my Master's Degree in Computer Science at the University of Milano-Bicocca with a final mark of 110/110.</p>
+							<p>I earned my Bachelor's Degree in Computer Science at the University of Insubria in 2023, and my Master's Degree in Computer Science at the University of Milano-Bicocca in February 2026, with a final mark of 110/110 with honours.</p>
 						</div>
 					</div>
 					<div className="flex flex-row gap-6">

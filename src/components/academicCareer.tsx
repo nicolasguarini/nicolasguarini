@@ -24,11 +24,11 @@ export default function AcademicCareer() {
                   Master's Degree in Computer Science
                 </h3>
                 <time className="block mb-5 text-sm font-normal leading-none text-gray-400">
-                  University of Milano-Bicocca, Italy. 2023 - Current
+                  University of Milano-Bicocca, Italy. 2023 - Feb 2026
                 </time>
                 <p className="text-base font-normal text-gray-300">
                   <b>Experimental Thesis</b>: Innovative Management of Service Requests: From a Distributed Monolith to a Large-Scale Microservices Architecture, with RAG-Enhanced Recommendation System; <br />
-                  <b>Final Degree Mark</b>: 110/110 (GPA 4.0/4.0); <br />
+                  <b>Final Degree Mark</b>: 110/110 with honours (GPA 4.0/4.0); <br />
                   <b>Erasmus+</b> Exchange at Stockholm University, Sweden; <br />
                   <b>Main Courses</b>: Theory of computation, Virtual and Augmented Reality, Scientific Computing Methods, Telecommunications Systems and Services, Data Architectures.
                 </p>
