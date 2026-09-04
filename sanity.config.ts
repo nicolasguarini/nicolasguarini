@@ -4,7 +4,6 @@ import {visionTool} from '@sanity/vision'
 import {schemaTypes} from './src/sanity/schemas'
 import {codeInput} from '@sanity/code-input'
 import { structure } from './src/sanity/structure'
-import { vercelDeployTool } from 'sanity-plugin-vercel-deploy'
 import { latexInput } from 'sanity-plugin-latex-input'
 
 export default defineConfig({
@@ -18,8 +17,7 @@ export default defineConfig({
   plugins: [
     structureTool({ structure }), 
     visionTool(), 
-    codeInput(), 
-    vercelDeployTool(),
+    codeInput(),
     latexInput(),
   ],
 

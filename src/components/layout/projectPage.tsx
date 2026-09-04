@@ -7,14 +7,16 @@ import { urlFor } from "@/src/sanity/lib/utils";
 import { PortableText } from "@portabletext/react";
 import { SanityImageComponent } from "@/src/sanity/components/image";
 import { CodeBlock } from "@/src/sanity/components/codeBlock";
-import Latex from 'react-latex-next';
+import { LatexBlock } from "@/src/sanity/components/latexBlock";
 import Link from "next/link";
 
-export default async function ProjectPage({params}: { params: { slug: string } }) {
+export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+
     const project = await sanityFetch<ProjectBySlugQueryResult>({
         query: projectBySlugQuery,
         revalidate: 3600,
-        params: { slug: params.slug },
+        params: { slug },
     });
 
     if (!project) {
@@ -100,7 +102,7 @@ export default async function ProjectPage({params}: { params: { slug: string } }
                                 return <CodeBlock value={value} />
                             },
                             latex: ({ value }: any) => {
-                                return <Latex>$${value.body}$$</Latex>
+                                return <LatexBlock value={value} />
                             }
                         }
                     }}

@@ -57,7 +57,19 @@ export default {
             title: 'Content', 
             of: [
                 {type: 'block'},
-                {type: 'image'},
+                {
+                    type: 'image',
+                    options: { hotspot: true },
+                    fields: [
+                        {
+                            name: 'alt',
+                            type: 'string',
+                            title: 'Alternative text',
+                            description: 'Describes the image for screen readers and search engines.',
+                            validation: (Rule: any) => Rule.required().warning('Add alt text to keep the page accessible.'),
+                        },
+                    ],
+                },
                 {type: 'code'},
                 {type: 'latex'}
             ]

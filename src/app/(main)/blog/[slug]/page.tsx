@@ -12,17 +12,18 @@ import { Metadata } from "next";
 import { SanityImageComponent } from "@/src/sanity/components/image";
 import { CodeBlock } from "@/src/sanity/components/codeBlock";
 import 'katex/dist/katex.min.css';
-import Latex from 'react-latex-next';
+import { LatexBlock } from "@/src/sanity/components/latexBlock";
 
 export async function generateMetadata({
     params,
 }: {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+    const { slug } = await params;
     const post = await sanityFetch<PostBySlugQueryResult>({
         query: postBySlugQuery,
         revalidate: 60,
-        params: { slug: params.slug },
+        params: { slug },
     });
 
     if (!post) return {};
@@ -47,12 +48,14 @@ export async function generateStaticParams() {
     return slugs.map((slug) => ({ slug }));
 }
 
-export default async function BlogPost({params}: { params: { slug: string } }) {
+export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
+    const { slug } = await params;
+
     const post = await sanityFetch<PostBySlugQueryResult>({
         query: postBySlugQuery,
         revalidate: 60,
-        params: { slug: params.slug },
-    });;
+        params: { slug },
+    });
 
     if (!post) {
         return <div>404 Not Found</div>
@@ -101,7 +104,7 @@ export default async function BlogPost({params}: { params: { slug: string } }) {
                                     return <CodeBlock value={value} />
                                 },
                                 latex: ({ value }: any) => {
-                                    return <Latex>$${value.body}$$</Latex>
+                                    return <LatexBlock value={value} />
                                 }
                             }
                         }}
