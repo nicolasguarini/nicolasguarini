@@ -80,7 +80,7 @@ export default function AcademicCareer() {
                 <p className="text-base font-normal text-gray-300">
                   <b>Final Degree Mark</b>: 107/110 (GPA 3.9/4.0);<br />
                   <b>Experimental Thesis</b>: "Blockchain and decentralized file storage for reliable tracking of autovehicles lifecycle."; <br />
-                  <b>Recognitions</b>: Scolaship for merit in Academic Year 2021-22 and 2022-23; <br />
+                  <b>Recognitions</b>: Scholarship for merit in Academic Year 2021-22 and 2022-23; <br />
                   <b>Main Courses</b>: Big Data, Algorithms and Data Structures, Computer Architecture, Operating Systems, Statistics, Programming for Mobile Devices, Software Design,
                   Concurrent and Distributed Programming. <br />
                 </p>

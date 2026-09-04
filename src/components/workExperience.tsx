@@ -85,9 +85,9 @@ export default function WorkExperience() {
               </time>
               <p className="text-base font-normal text-gray-300">
                 Creation and redesign of web solutions for small companies and
-                freelances, from design and content planning to development
+                freelancers, from design and content planning to development
                 using modern approaches, and occasionally handling conception /
-                creation of advertisemnt campaigns. <br />
+                creation of advertisement campaigns. <br />
                 I've developed 15+ projects that have helped my clients increase
                 their revenue and have a better online presence, generating
                 thousands of visits and dozens of contacts every month.

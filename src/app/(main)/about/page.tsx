@@ -28,14 +28,15 @@ export default async function About() {
 
         <div className="max-w-2xl text-left mx-auto my-12  text-lg font-medium">
           <p>
-            Computer Science Master's Degree student, Software Engineer Intern, private teacher of
-            programming and data analysis for university students, and freelance
-            developer of web solutions for small and medium-sized companies and
-            freelancers.
-          </p> <br />
+            Software Engineer at Elmec Informatica, where I work in the Innovation
+            team and the DevOps subgroup. I hold an MSc in Computer Science from the
+            University of Milano-Bicocca, I have tutored programming and data
+            analysis for university students, and I develop web solutions as a
+            freelancer for small and medium-sized companies and professionals.
+          </p>
 
-          <p>
-          In my free time, I love creating and playing music, and I'm extremely passionate to chess and strategy games in general. I've also won a few rubik's cube speedsolving competitions, averaging about 13 seconds of resolution time.
+          <p className="mt-6">
+            In my free time, I love creating and playing music, and I'm extremely passionate about chess and strategy games in general. I've also won a few Rubik's cube speedsolving competitions, averaging about 13 seconds of resolution time.
           </p>
         </div>
       </div>

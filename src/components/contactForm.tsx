@@ -12,19 +12,48 @@ export default function ContactForm() {
         <form className="w-full max-w-lg flex flex-col gap-7 items-center mb-32" onSubmit={handleSubmit}>
             <div className="w-full flex flex-col gap-2">
                 <label htmlFor="name" className="text-sm font-medium text-left self-start">Name</label>
-                <input className="w-full bg-transparent border border-[#A1A1A1] px-4 py-3 rounded-md" type="text" name="name" placeholder="Your name" />
+                <input
+                    id="name"
+                    className="w-full bg-transparent border border-[#A1A1A1] px-4 py-3 rounded-md focus:outline-none focus:border-white transition-colors"
+                    type="text"
+                    name="name"
+                    autoComplete="name"
+                    required
+                    placeholder="Your name"
+                />
             </div>
 
             <div className="w-full flex flex-col gap-2">
                 <label htmlFor="email" className="text-sm font-medium text-left self-start">Email</label>
-                <input className="w-full bg-transparent border border-[#A1A1A1] px-4 py-3 rounded-md" type="text" name="email" placeholder="Your email" />
+                <input
+                    id="email"
+                    className="w-full bg-transparent border border-[#A1A1A1] px-4 py-3 rounded-md focus:outline-none focus:border-white transition-colors"
+                    type="email"
+                    name="email"
+                    autoComplete="email"
+                    required
+                    placeholder="Your email"
+                />
             </div>
             
             <div className="w-full flex flex-col gap-2">
                 <label htmlFor="message" className="text-sm font-medium text-left self-start">Message</label>
-                <textarea className="w-full bg-transparent border border-[#A1A1A1] px-4 py-3 rounded-md" name="message" rows={5} placeholder="Your message"></textarea>
+                <textarea
+                    id="message"
+                    className="w-full bg-transparent border border-[#A1A1A1] px-4 py-3 rounded-md focus:outline-none focus:border-white transition-colors"
+                    name="message"
+                    rows={5}
+                    required
+                    placeholder="Your message"
+                ></textarea>
             </div>
-            <button type="submit" className="w-full bg-white text-black px-4 py-3 font-medium rounded-md border cursor-pointer">Send</button>
+            <button
+                type="submit"
+                disabled={state.submitting}
+                className="w-full bg-white text-black px-4 py-3 font-medium rounded-md border cursor-pointer transition-opacity hover:opacity-90 disabled:cursor-not-allowed disabled:opacity-60"
+            >
+                {state.submitting ? "Sending..." : "Send"}
+            </button>
 
             <ValidationError errors={state.errors} />
             
@@ -33,7 +62,7 @@ export default function ContactForm() {
                     By sending this form, you agree to my <a href="https://www.iubenda.com/privacy-policy/61020748/legal" className="underline">Privacy Policy</a>.
                 </p>
                 <p className="text-sm text-[#A1A1A1] text-left">
-                    You can also send me an email at <a href="mailto:web@nicolsguarini.it" className="underline">web@nicolsguarini.it</a>.
+                    You can also send me an email at <a href="mailto:web@nicolasguarini.it" className="underline">web@nicolasguarini.it</a>.
                 </p>
             </div>
 

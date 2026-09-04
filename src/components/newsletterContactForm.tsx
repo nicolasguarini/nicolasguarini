@@ -15,8 +15,23 @@ export default function NewsletterContactForm() {
             onSubmit={handleSubmit}
         >
             <div className="flex flex-row gap-2">
-                <input type="email" placeholder="Your 	Email address" name='email' className="w-full rounded-lg p-2 text-sm bg-[#EDEDED] text-black" />
-                <button type='submit' className='bg-transparent rounded-lg p-2 border-[#333232] border-2 py-2 px-6 transition-all hover:border-white'>Subscribe</button>
+                <label htmlFor="newsletter-email" className="sr-only">Email address</label>
+                <input
+                    id="newsletter-email"
+                    type="email"
+                    name="email"
+                    autoComplete="email"
+                    required
+                    placeholder="Your email address"
+                    className="w-full rounded-lg p-2 text-sm bg-[#EDEDED] text-black"
+                />
+                <button
+                    type="submit"
+                    disabled={state.submitting}
+                    className="bg-transparent rounded-lg border-[#333232] border-2 py-2 px-6 whitespace-nowrap transition-colors hover:border-white disabled:cursor-not-allowed disabled:opacity-60"
+                >
+                    {state.submitting ? "..." : "Subscribe"}
+                </button>
             </div>
             
             <ValidationError className="text-red-500" errors={state.errors} />

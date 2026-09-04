@@ -10,21 +10,27 @@ export default function AboutCompact() {
 					<h2 className="font-bold text-3xl">My experience and education</h2>
 				</div>
 				<div className="flex flex-col gap-10 basis-3/5 bg-section" >
-					<p>
-						I'm a 24 y/o student currently working as a Software Engineer Intern, and occasionally working as a freelancer. <br /> 
-						Always passionate about IT and cybersecurity, I have developed several projects in the mobile field, webapps, and machine learning. Although it is not often mentioned, I have also taken care of the UI/UX design of all my projects. <br /> 
-						I am also fond of music, guitars, chess, and I can solve rubiks cubes in under 12 seconds!
-					</p>
+					<div className="flex flex-col gap-4">
+						<p>
+							I'm a Software Engineer at Elmec Informatica, and I occasionally take on freelance work.
+						</p>
+						<p>
+							Always passionate about IT and cybersecurity, I have developed several projects in the mobile field, webapps, and machine learning. Although it is not often mentioned, I have also taken care of the UI/UX design of all my projects.
+						</p>
+						<p>
+							I am also fond of music, guitars, chess, and I can solve a Rubik's cube in about 13 seconds!
+						</p>
+					</div>
 					<div className="flex flex-col xs:flex-row gap-4" >
 						<div className="flex flex-col gap-3">
 							<BagIcon />
 							<h3 className="font-bold text-xl">Experience</h3>
-							<p>I'm currently interning as a Software Engineer. I also do freelance jobs for small companies and professionals, and I’m a university tutor for programming, data analysis, and computer architecture courses.</p>
+							<p>I work as a Software Engineer at Elmec Informatica, in the Innovation team and the DevOps subgroup. I also do freelance jobs for small companies and professionals, and I’ve been a university tutor for programming, data analysis, and computer architecture courses.</p>
 						</div>
 						<div className="flex flex-col gap-3">
 							<EducationIcon />
 							<h3 className="font-bold text-xl">Education</h3>
-							<p>I graduated in Computer Science in 2023, and currently studying for a Master's Degree in Computer Science at the University of Milano-Bicocca.</p>
+							<p>I earned my Bachelor's Degree in Computer Science at the University of Insubria in 2023, and my Master's Degree in Computer Science at the University of Milano-Bicocca with a final mark of 110/110.</p>
 						</div>
 					</div>
 					<div className="flex flex-row gap-6">
