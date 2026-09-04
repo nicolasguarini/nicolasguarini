@@ -8,17 +8,18 @@ export default function Hero() {
                     aria-hidden="true"
                     className="inline-block h-2 w-2 rounded-full bg-emerald-400"
                 />
-                Open to consulting and selected projects
+                Open to freelance work
             </p>
 
             <h1 className="text-4xl font-bold text-center max-w-4xl">
-                Software Engineer. I build and modernize systems that run in production.
+                I build backend services and the infrastructure they run on.
             </h1>
 
             <p className="max-w-2xl text-center text-lg text-muted">
-                At Elmec Informatica I work on microservices, Kubernetes and CI/CD within the
-                Innovation and DevOps teams. Outside of that I design and build web and mobile
-                products end to end — backend, frontend and UI/UX.
+                I&apos;m a software engineer at Elmec Informatica, working on Django and Go
+                services deployed on Kubernetes, and on the CI/CD pipelines behind them.
+                I spent six years freelancing before that, and I still take on projects
+                when something interesting comes along.
             </p>
 
             <div className="flex flex-wrap items-center justify-center gap-6">

@@ -2,7 +2,7 @@ import { baseUrl } from './env';
 
 export const SITE_NAME = 'Nicolas Guarini';
 export const SITE_DESCRIPTION =
-	'Software Engineer at Elmec Informatica and freelance web developer. MSc in Computer Science. I build web apps, mobile apps, and data-driven products.';
+	'Software engineer at Elmec Informatica, working on backend services and the infrastructure they run on. MSc in Computer Science. Open to freelance work.';
 
 export const SOCIAL_PROFILES = [
 	'https://github.com/nicolasguarini',
