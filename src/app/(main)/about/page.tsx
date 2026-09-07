@@ -5,7 +5,7 @@ import WorkExperience from "@/src/components/workExperience";
 import { sanityFetch } from "@/src/sanity/lib/client";
 import { latestPostsQuery } from "@/src/sanity/lib/queries";
 import { Metadata } from "next";
-import Breadcrumbs from "@/src/components/breadcrumbs";
+import PageHeader from "@/src/components/layout/pageHeader";
 
 const ABOUT_DESCRIPTION =
 	"Software Engineer at Elmec Informatica with an MSc in Computer Science. My work experience, academic career, and what I do outside of code.";
@@ -34,24 +34,23 @@ export default async function About() {
 
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col gap-5 py-12 lg:py-24 items-center bg-section">
-        <h1 className="font-bold text-4xl text-center">About</h1>
-        <Breadcrumbs items={[{ label: "About" }]} />
+      <PageHeader title="About" breadcrumbs={[{ label: "About" }]}>
+        <p>
+          I&apos;m a software engineer at Elmec Informatica, in the Innovation team and
+          the DevOps subgroup. I studied Computer Science at the University of Insubria
+          and then at Milano-Bicocca, with a semester at Stockholm University in
+          between. Before that I spent six years building websites and apps for small
+          businesses as a freelancer, and I tutored programming and data analysis at
+          university.
+        </p>
 
-        <div className="max-w-2xl text-left mx-auto my-12  text-lg font-medium">
-          <p>
-            Software Engineer at Elmec Informatica, where I work in the Innovation
-            team and the DevOps subgroup. I hold an MSc in Computer Science from the
-            University of Milano-Bicocca, I have tutored programming and data
-            analysis for university students, and I develop web solutions as a
-            freelancer for small and medium-sized companies and professionals.
-          </p>
-
-          <p className="mt-6">
-            In my free time, I love creating and playing music, and I'm extremely passionate about chess and strategy games in general. I've also won a few Rubik's cube speedsolving competitions, averaging about 13 seconds of resolution time.
-          </p>
-        </div>
-      </div>
+        <p>
+          In my free time, I love creating and playing music, and I&apos;m extremely
+          passionate about chess and strategy games in general. I&apos;ve also won a few
+          Rubik&apos;s cube speedsolving competitions, averaging about 13 seconds of
+          resolution time.
+        </p>
+      </PageHeader>
 
       <WorkExperience />
 

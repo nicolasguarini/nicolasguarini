@@ -11,7 +11,7 @@ export const formatDate = (dateString: string): string => {
       year: 'numeric',
     };
     
-    return date.toLocaleDateString('en-GB', options).replace(/ /g, ' ');
+    return date.toLocaleDateString('en-GB', options);
 }
 
 export const calculateReadingTime = (contentLength: number): number => {

@@ -9,6 +9,7 @@ import { SanityImageComponent } from "@/src/sanity/components/image";
 import { CodeBlock } from "@/src/sanity/components/codeBlock";
 import { LatexBlock } from "@/src/sanity/components/latexBlock";
 import Link from "next/link";
+import { notFound } from "next/navigation";
 import Image from "next/image";
 import Breadcrumbs from "@/src/components/breadcrumbs";
 
@@ -22,7 +23,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
     });
 
     if (!project) {
-        return <div>404 Not Found</div>
+        notFound();
     }
 
     return (

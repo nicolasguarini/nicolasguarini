@@ -9,6 +9,7 @@ import { calculateReadingTime, formatDate } from "@/src/lib/utils";
 import { PortableText } from "@portabletext/react";
 import WhatsappShare from "@/src/components/icons/whatsappShare";
 import { Metadata } from "next";
+import { notFound } from "next/navigation";
 import { SanityImageComponent } from "@/src/sanity/components/image";
 import { CodeBlock } from "@/src/sanity/components/codeBlock";
 import 'katex/dist/katex.min.css';
@@ -77,7 +78,7 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
     });
 
     if (!post) {
-        return <div>404 Not Found</div>
+        notFound();
     }
 
     const postSchema = blogPostingSchema({

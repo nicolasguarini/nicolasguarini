@@ -4,7 +4,7 @@ import PersonalProjectsSection from "@/src/components/personalProjectsSection";
 import { sanityFetch } from "@/src/sanity/lib/client";
 import { latestClientProjectsQuery, latestPersonalProjectsQuery } from "@/src/sanity/lib/queries";
 import { Metadata } from "next";
-import Breadcrumbs from "@/src/components/breadcrumbs";
+import PageHeader from "@/src/components/layout/pageHeader";
 
 export const metadata: Metadata = {
 	alternates: { canonical: "/projects" },
@@ -33,18 +33,11 @@ export default async function Projects() {
     
     return (
         <div>
-            <div
-                className="flex flex-col gap-5 py-12 lg:py-24 items-center bg-section"
-            >
-                <h1 className="font-bold text-4xl text-center">Projects</h1>
-                <Breadcrumbs items={[{ label: "Projects" }]} />
-
-                <div className="max-w-2xl text-left mx-auto my-12  text-lg font-medium">
-                    <p>
-                    Explore my latest work, featuring both personal projects and client collaborations. You can dive deeper into each category and discover more.
-                    </p>
-                </div>
-            </div>
+            <PageHeader
+            	title="Projects"
+            	breadcrumbs={[{ label: "Projects" }]}
+            	intro="Explore my latest work, featuring both personal projects and client collaborations. You can dive deeper into each category and discover more."
+            />
 
             <PersonalProjectsSection personalProjects={personalProjects} />
 

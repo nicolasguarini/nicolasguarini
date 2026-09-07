@@ -3,7 +3,7 @@ import { LatestPersonalProjectsQueryResult } from "@/sanity.types";
 import { sanityFetch } from "@/src/sanity/lib/client";
 import { latestPersonalProjectsQuery } from "@/src/sanity/lib/queries";
 import { Metadata } from "next";
-import Breadcrumbs from "@/src/components/breadcrumbs";
+import PageHeader from "@/src/components/layout/pageHeader";
 
 export const metadata: Metadata = {
 	alternates: { canonical: "/projects/personal" },
@@ -25,10 +25,10 @@ export default async function Page() {
     
 	return (
 		<div>
-			<div className="flex flex-col gap-5 py-24 items-center bg-section">
-                <h1 className="font-bold text-4xl text-center">Personal Projects</h1>
-                <Breadcrumbs items={[{ label: "Projects", href: "/projects" }, { label: "Personal" }]} />
-            </div>
+			<PageHeader
+				title="Personal Projects"
+				breadcrumbs={[{ label: "Projects", href: "/projects" }, { label: "Personal" }]}
+			/>
 
             <div className="flex flex-wrap gap-10 gap-y-16 items-start justify-center pb-32 bg-section-long">
                 {personalProjects.map((project) => (
