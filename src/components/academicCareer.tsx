@@ -1,15 +1,18 @@
+import SectionHeading from "./sectionHeading";
+
 export default function AcademicCareer() {
   return (
-    <div className="py-12 bg-hero">
+    <div className="py-20 lg:py-28 bg-hero">
         <div className="flex flex-col md:flex-row gap-4 gap-y-12">
-          <div className="flex flex-col gap-3 basis-1/2">
-            <p className="font-medium">Education</p>
-            <h2 className="font-bold text-3xl">My Academic Career</h2>
-          </div>
+          <SectionHeading
+            label="Education"
+            title="My Academic Career"
+            className="basis-1/2"
+          />
           <div className="flex flex-col gap-10 basis-1/2">
             <ol className="relative border-s border-gray-700">
               <li className="mb-12 ms-6">
-                <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -start-3 ring-8  ring-gray-900 bg-blue-900">
+                <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -inset-s-3 ring-8  ring-gray-900 bg-blue-900">
                   <svg
                     className="w-2.5 h-2.5 text-blue-300"
                     aria-hidden="true"
@@ -24,18 +27,18 @@ export default function AcademicCareer() {
                   Master's Degree in Computer Science
                 </h3>
                 <time className="block mb-5 text-sm font-normal leading-none text-gray-400">
-                  University of Milano-Bicocca, Italy. 2023 - Current
+                  University of Milano-Bicocca, Italy. 2023 - Feb 2026
                 </time>
                 <p className="text-base font-normal text-gray-300">
                   <b>Experimental Thesis</b>: Innovative Management of Service Requests: From a Distributed Monolith to a Large-Scale Microservices Architecture, with RAG-Enhanced Recommendation System; <br />
-                  <b>Final Degree Mark</b>: 110/110 (GPA 4.0/4.0); <br />
+                  <b>Final Degree Mark</b>: 110/110 with honours (GPA 4.0/4.0); <br />
                   <b>Erasmus+</b> Exchange at Stockholm University, Sweden; <br />
                   <b>Main Courses</b>: Theory of computation, Virtual and Augmented Reality, Scientific Computing Methods, Telecommunications Systems and Services, Data Architectures.
                 </p>
               </li>
 
               <li className="mb-12 ms-6">
-                <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -start-3 ring-8  ring-gray-900 bg-blue-900">
+                <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -inset-s-3 ring-8  ring-gray-900 bg-blue-900">
                   <svg
                     className="w-2.5 h-2.5 text-blue-300"
                     aria-hidden="true"
@@ -60,7 +63,7 @@ export default function AcademicCareer() {
               </li>
 
               <li className="ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -start-3 ring-8  ring-gray-900 bg-blue-900">
+              <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -inset-s-3 ring-8  ring-gray-900 bg-blue-900">
                   <svg
                     className="w-2.5 h-2.5 text-blue-300"
                     aria-hidden="true"
@@ -80,7 +83,7 @@ export default function AcademicCareer() {
                 <p className="text-base font-normal text-gray-300">
                   <b>Final Degree Mark</b>: 107/110 (GPA 3.9/4.0);<br />
                   <b>Experimental Thesis</b>: "Blockchain and decentralized file storage for reliable tracking of autovehicles lifecycle."; <br />
-                  <b>Recognitions</b>: Scolaship for merit in Academic Year 2021-22 and 2022-23; <br />
+                  <b>Recognitions</b>: Scholarship for merit in Academic Year 2021-22 and 2022-23; <br />
                   <b>Main Courses</b>: Big Data, Algorithms and Data Structures, Computer Architecture, Operating Systems, Statistics, Programming for Mobile Devices, Software Design,
                   Concurrent and Distributed Programming. <br />
                 </p>

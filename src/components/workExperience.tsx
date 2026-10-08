@@ -1,15 +1,18 @@
+import SectionHeading from "./sectionHeading";
+
 export default function WorkExperience() {
   return (
-    <div className="py-12 bg-section">
+    <div className="py-20 lg:py-28 bg-section">
       <div className="flex flex-col md:flex-row gap-4 gap-y-12">
-        <div className="flex flex-col gap-3 basis-1/2">
-          <p className="font-medium">Experience</p>
-          <h2 className="font-bold text-3xl">My Work Experience</h2>
-        </div>
+        <SectionHeading
+          label="Experience"
+          title="My Work Experience"
+          className="basis-1/2"
+        />
         <div className="flex flex-col gap-10 basis-1/2">
           <ol className="relative border-s border-gray-700">
             <li className="mb-12 ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -start-3 ring-8  ring-gray-900 bg-blue-900">
+              <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -inset-s-3 ring-8  ring-gray-900 bg-blue-900">
                 <svg
                   className="w-2.5 h-2.5 text-blue-300"
                   aria-hidden="true"
@@ -37,7 +40,7 @@ export default function WorkExperience() {
             </li>
 
             <li className="mb-12 ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -start-3 ring-8  ring-gray-900 bg-blue-900">
+              <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -inset-s-3 ring-8  ring-gray-900 bg-blue-900">
                 <svg
                   className="w-2.5 h-2.5 text-blue-300"
                   aria-hidden="true"
@@ -66,7 +69,7 @@ export default function WorkExperience() {
             </li>
 
             <li className="mb-12 ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -start-3 ring-8  ring-gray-900 bg-blue-900">
+              <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -inset-s-3 ring-8  ring-gray-900 bg-blue-900">
                 <svg
                   className="w-2.5 h-2.5 text-blue-300"
                   aria-hidden="true"
@@ -85,9 +88,9 @@ export default function WorkExperience() {
               </time>
               <p className="text-base font-normal text-gray-300">
                 Creation and redesign of web solutions for small companies and
-                freelances, from design and content planning to development
+                freelancers, from design and content planning to development
                 using modern approaches, and occasionally handling conception /
-                creation of advertisemnt campaigns. <br />
+                creation of advertisement campaigns. <br />
                 I've developed 15+ projects that have helped my clients increase
                 their revenue and have a better online presence, generating
                 thousands of visits and dozens of contacts every month.
@@ -95,7 +98,7 @@ export default function WorkExperience() {
             </li>
 
             <li className=" ms-6">
-              <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -start-3 ring-8  ring-gray-900 bg-blue-900">
+              <span className="absolute flex items-center justify-center w-6 h-6  rounded-full -inset-s-3 ring-8  ring-gray-900 bg-blue-900">
                 <svg
                   className="w-2.5 h-2.5 text-blue-300"
                   aria-hidden="true"

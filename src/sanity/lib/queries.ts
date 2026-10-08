@@ -72,3 +72,23 @@ export const allClientProjectsSlugsQuery = groq`*[_type == "project" && type == 
 
 export const allPersonalProjectsSlugsQuery = groq`*[_type == "project" && type == "personal"][].slug.current`;
 
+export const sitemapEntriesQuery = groq`{
+  "posts": *[_type == "post" && defined(slug.current)]{
+    "slug": slug.current,
+    "lastModified": coalesce(_updatedAt, publishedAt)
+  },
+  "projects": *[_type == "project" && defined(slug.current)]{
+    "slug": slug.current,
+    type,
+    "lastModified": coalesce(_updatedAt, finishedDate, startedDate)
+  }
+}`;
+
+export const feedPostsQuery = groq`*[_type == "post" && defined(slug.current)] | order(publishedAt desc)[0...20]{
+  title,
+  "slug": slug.current,
+  excerpt,
+  publishedAt,
+  categories,
+  "lastModified": coalesce(_updatedAt, publishedAt)
+}`;

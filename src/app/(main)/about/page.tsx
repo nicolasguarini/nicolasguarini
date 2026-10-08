@@ -2,15 +2,27 @@ import { LatestPostsQueryResult } from "@/sanity.types";
 import AcademicCareer from "@/src/components/academicCareer";
 import BlogSection from "@/src/components/blogSection";
 import WorkExperience from "@/src/components/workExperience";
-import { client, sanityFetch } from "@/src/sanity/lib/client";
+import { sanityFetch } from "@/src/sanity/lib/client";
 import { latestPostsQuery } from "@/src/sanity/lib/queries";
 import { Metadata } from "next";
+import PageHeader from "@/src/components/layout/pageHeader";
+
+const ABOUT_DESCRIPTION =
+	"Software Engineer at Elmec Informatica with an MSc in Computer Science. My work experience, academic career, and what I do outside of code.";
 
 export const metadata: Metadata = {
 	title: "About Me",
-  openGraph: {
-    title: "About Me",
-  }
+	description: ABOUT_DESCRIPTION,
+	alternates: { canonical: "/about" },
+	openGraph: {
+		title: "About Me",
+		description: ABOUT_DESCRIPTION,
+		url: "/about",
+	},
+	twitter: {
+		title: "About Me",
+		description: ABOUT_DESCRIPTION,
+	},
 }
 
 export default async function About() {
@@ -22,23 +34,23 @@ export default async function About() {
 
   return (
     <div className="flex flex-col">
-      <div className="flex flex-col gap-5 py-12 lg:py-24 items-center bg-section">
-        <h1 className="font-bold text-4xl text-center">About</h1>
-        <p className="text-[#A1A1A1]">Home {`>`} About</p>
+      <PageHeader title="About" breadcrumbs={[{ label: "About" }]}>
+        <p>
+          I&apos;m a software engineer at Elmec Informatica, in the Innovation team and
+          the DevOps subgroup. I studied Computer Science at the University of Insubria
+          and then at Milano-Bicocca, with a semester at Stockholm University in
+          between. Before that I spent six years building websites and apps for small
+          businesses as a freelancer, and I tutored programming and data analysis at
+          university.
+        </p>
 
-        <div className="max-w-2xl text-left mx-auto my-12  text-lg font-medium">
-          <p>
-            Computer Science Master's Degree student, Software Engineer Intern, private teacher of
-            programming and data analysis for university students, and freelance
-            developer of web solutions for small and medium-sized companies and
-            freelancers.
-          </p> <br />
-
-          <p>
-          In my free time, I love creating and playing music, and I'm extremely passionate to chess and strategy games in general. I've also won a few rubik's cube speedsolving competitions, averaging about 13 seconds of resolution time.
-          </p>
-        </div>
-      </div>
+        <p>
+          In my free time, I love creating and playing music, and I&apos;m extremely
+          passionate about chess and strategy games in general. I&apos;ve also won a few
+          Rubik&apos;s cube speedsolving competitions, averaging about 13 seconds of
+          resolution time.
+        </p>
+      </PageHeader>
 
       <WorkExperience />
 

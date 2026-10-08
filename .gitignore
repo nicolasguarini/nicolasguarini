@@ -45,3 +45,5 @@ jspm_packages
 
 # Sanity temp folders
 .sanity
+# TypeScript incremental build info
+*.tsbuildinfo

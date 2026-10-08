@@ -1,65 +1,62 @@
-@tailwind base;
-@tailwind components;
-@tailwind utilities;
+@import 'tailwindcss';
+@plugin '@tailwindcss/typography';
 
-@font-face {
-    font-family: "Roboto Mono";
-    src: url("../../public/fonts/RobotoMono.ttf");
+@theme {
+  --breakpoint-*: initial;
+  --breakpoint-xs: 475px;
+  --breakpoint-sm: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-lg: 1024px;
+  --breakpoint-xl: 1280px;
+  --breakpoint-2xl: 1536px;
+
+  --font-geist: var(--font-geist-sans), ui-sans-serif, system-ui, sans-serif;
+
+  /* Palette del sito: prima era ripetuta come hex inline in 50 posti */
+  --color-ink: #ededed;
+  --color-muted: #a1a1a1;
+  --color-line: #333232;
 }
 
-@font-face {
-    font-family: "Geist";
-    src: url("../../public/fonts/Geist/Geist-Regular.ttf");
-    font-weight: 400;
+/*
+  The default border color has changed to `currentcolor` in Tailwind CSS v4,
+  so we've added these compatibility styles to make sure everything still
+  looks the same as it did with Tailwind CSS v3.
+
+  If we ever want to remove these styles, we need to add an explicit border
+  color utility to any element that depends on these defaults.
+*/
+@layer base {
+  *,
+  ::after,
+  ::before,
+  ::backdrop,
+  ::file-selector-button {
+    border-color: var(--color-gray-200, currentcolor);
+  }
 }
 
-@font-face {
-    font-family: "Geist";
-    src: url("../../public/fonts/Geist/Geist-Medium.ttf");
-    font-weight: 500;
-}
-
-@font-face {
-    font-family: "Geist";
-    src: url("../../public/fonts/Geist/Geist-SemiBold.ttf");
-    font-weight: 600;
-}
-
-@font-face {
-    font-family: "Geist";
-    src: url("../../public/fonts/Geist/Geist-Bold.ttf");
-    font-weight: 700;
-}
-
-@font-face {
-    font-family: "Geist";
-    src: url("../../public/fonts/Geist/Geist-Black.ttf");
-    font-weight: 800;
-}
-
-body{
-    text-rendering: geometricPrecision !important;
-   -webkit-font-smoothing: subpixel-antialiased !important;
-   -webkit-font-smoothing: antialiased !important;
-   -moz-osx-font-smoothing: grayscale !important;
+body {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
 }
 
 .bg-hero {
-    background-image: url("/assets/shapes-bg.png");
+    background-image: url("/assets/shapes-bg.webp");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;
 }
 
 .bg-section {
-    background-image: url("/assets/shapes-bg-2.png");
+    background-image: url("/assets/shapes-bg-2.webp");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;    
 }
 
 .bg-section-long {
-    background-image: url("/assets/bg-section-long.png");
+    background-image: url("/assets/bg-section-long.webp");
     background-size: contain;
     background-repeat: no-repeat;
     background-position: center;    
@@ -67,15 +64,15 @@ body{
 
 @media (max-width: 768px) {
     .bg-hero {
-        background-image: url("/assets/hero-bg-portrait.png");
+        background-image: url("/assets/hero-bg-portrait.webp");
     }
 
     .bg-section {
-        background-image: url("/assets/section-bg-portrait.png");
+        background-image: url("/assets/section-bg-portrait.webp");
     }
 
     .bg-section-long {
-        background-image: url("/assets/bg-section-long-portrait.png");
+        background-image: url("/assets/bg-section-long-portrait.webp");
     }
 }
 

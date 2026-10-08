@@ -4,14 +4,17 @@ import type { Metadata } from 'next';
 import Navbar from '@/src/components/layout/navbar';
 import Footer from '@/src/components/layout/footer';
 import { SpeedInsights } from "@vercel/speed-insights/next"
+import { SITE_DESCRIPTION, personSchema, websiteSchema } from '@/src/lib/seo';
+import { baseUrl } from '@/src/lib/env';
+import { geist } from '@/src/lib/fonts';
+import JsonLd from '@/src/components/jsonLd';
 
 export const metadata: Metadata = {
 	title: {
 		template: '%s | Nicolas Guarini',
 		default: 'Nicolas Guarini | Personal Website',
 	},
-	description:
-		"Computer Science Master's Degree student, Software Engineer Intern, private teacher of programming and data analysis for university students, and freelance developer of web solutions for small and medium-sized companies and freelancers.",
+	description: SITE_DESCRIPTION,
 	generator: 'Next.js',
 	applicationName: 'Nicolas Guarini | Personal Website',
 	referrer: 'origin-when-cross-origin',
@@ -23,21 +26,22 @@ export const metadata: Metadata = {
 		'blog',
 		'articles',
 		'posts',
-		'sito seb',
+		'sito web',
 		'realizzazione siti web',
 		'sviluppatore',
 		'portfolio',
 		'insubria',
 		'bicocca',
+		'elmec',
 		'software engineer',
-		'netlify',
-		'hugo',
+		'devops',
 		'computer science',
 		'university',
 		'università',
 		'data science',
-		'java',
-		'kotlin',
+		'django',
+		'golang',
+		'kubernetes',
 		'typescript',
 		'next',
 		'nextjs',
@@ -48,9 +52,8 @@ export const metadata: Metadata = {
 			template: '%s | Nicolas Guarini',
 			default: 'Nicolas Guarini | Personal Website',
 		},
-		description:
-			"Computer Science Master's Degree student, Software Engineer Intern, private teacher of programming and data analysis for university students, and freelance developer of web solutions for small and medium-sized companies and freelancers.",
-		url: 'https://nicolasguarini.it',
+		description: SITE_DESCRIPTION,
+		url: baseUrl,
 		locale: 'en-US',
 		type: 'website',
 		images: [
@@ -62,7 +65,22 @@ export const metadata: Metadata = {
 			},
 		],
 	},
-	metadataBase: new URL('https://nicolasguarini.it'),
+	twitter: {
+		card: 'summary_large_image',
+		title: {
+			template: '%s | Nicolas Guarini',
+			default: 'Nicolas Guarini | Personal Website',
+		},
+		description: SITE_DESCRIPTION,
+		images: ['/assets/site-image.jpg'],
+	},
+	alternates: {
+		canonical: '/',
+		types: {
+			'application/rss+xml': '/feed.xml',
+		},
+	},
+	metadataBase: new URL(baseUrl),
 };
 
 export default function RootLayout({
@@ -71,12 +89,12 @@ export default function RootLayout({
 	children: React.ReactNode;
 }) {
 	return (
-		<html lang="en">
+		<html lang="en" className={geist.variable}>
 			<head>
 				<link rel="icon" href="/assets/site-icon.jpg" type="image/x-icon" />
 				<script async src="https://analytics.eu.umami.is/script.js" data-website-id="f46815ab-ab14-48f0-92bc-c2f871678b7c"></script>
 			</head>
-			<body className="bg-black text-[#EDEDED] font-geist">
+			<body className="bg-black text-ink font-geist">
 				<div>
 					<Navbar />
 
@@ -86,6 +104,9 @@ export default function RootLayout({
 
 					<Footer />
 				</div>
+
+				<JsonLd id="person-jsonld" data={personSchema} />
+				<JsonLd id="website-jsonld" data={websiteSchema} />
 
 				<Analytics />
 				<SpeedInsights />

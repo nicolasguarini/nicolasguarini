@@ -1,6 +1,6 @@
 import { AllClientProjectsSlugsQueryResult, ProjectBySlugQueryResult } from "@/sanity.types";
 import ProjectPage from "@/src/components/layout/projectPage";
-import { client, sanityFetch } from "@/src/sanity/lib/client";
+import { sanityFetch } from "@/src/sanity/lib/client";
 import { allClientProjectsSlugsQuery, projectBySlugQuery } from "@/src/sanity/lib/queries";
 import { urlFor } from "@/src/sanity/lib/utils";
 import { Metadata } from "next";
@@ -8,12 +8,13 @@ import { Metadata } from "next";
 export async function generateMetadata({
     params,
 }: {
-    params: { slug: string };
+    params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
+    const { slug } = await params;
     const project = await sanityFetch<ProjectBySlugQueryResult>({
         query: projectBySlugQuery,
         revalidate: 3600,
-        params: { slug: params.slug },
+        params: { slug },
     });
 
     if (!project) return {

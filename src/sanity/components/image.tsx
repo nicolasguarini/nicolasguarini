@@ -1,12 +1,27 @@
-import { PortableTextTypeComponent } from "next-sanity"
+import type { PortableTextTypeComponentProps } from "next-sanity"
+import Image from "next/image"
 import { urlFor } from "../lib/utils"
 
-export const SanityImageComponent = ({value}: {value: PortableTextTypeComponent}) => {
+type SanityImageValue = {
+    alt?: string
+    asset?: { _ref: string; _type: "reference" }
+}
+
+export const SanityImageComponent = ({
+    value,
+}: PortableTextTypeComponentProps<SanityImageValue>) => {
+    if (!value?.asset) return null
+
+    const url = urlFor(value).width(1600).fit("max").auto("format").url()
+
     return (
-      <img
-        src={urlFor(value).url()}
-        loading="lazy"
-        className="max-w-full w-auto object-cover"
-      />
+        <Image
+            src={url}
+            alt={value.alt ?? ""}
+            width={1600}
+            height={900}
+            sizes="(max-width: 1024px) 100vw, 1024px"
+            className="max-w-full h-auto w-auto object-cover"
+        />
     )
-  }
+}

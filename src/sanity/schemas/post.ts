@@ -1,3 +1,5 @@
+import type { Rule as RuleBuilder, SlugValidationContext } from 'sanity';
+
 import { Rule } from '@sanity/types';
 
 export default {
@@ -18,7 +20,8 @@ export default {
             options: {
                 source: 'title',
                 maxLength: 96,
-                isUnique: (value: string, context: any) => context.defaultIsUnique(value, context),
+                isUnique: (value: string, context: SlugValidationContext) =>
+                    context.defaultIsUnique(value, context),
             },
             validation: (rule: Rule) => rule.required(),
         },
@@ -57,7 +60,19 @@ export default {
             title: 'Content', 
             of: [
                 {type: 'block'},
-                {type: 'image'},
+                {
+                    type: 'image',
+                    options: { hotspot: true },
+                    fields: [
+                        {
+                            name: 'alt',
+                            type: 'string',
+                            title: 'Alternative text',
+                            description: 'Describes the image for screen readers and search engines.',
+                            validation: (Rule: RuleBuilder) => Rule.required().warning('Add alt text to keep the page accessible.'),
+                        },
+                    ],
+                },
                 {type: 'code'},
                 {type: 'latex'}
             ]
