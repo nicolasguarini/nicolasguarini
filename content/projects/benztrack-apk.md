@@ -7,7 +7,7 @@ startedDate: "2022-04-22"
 finishedDate: "2022-06-23"
 url: "https://github.com/nicolasguarini/benztrack"
 updatedAt: "2024-08-13T14:39:14Z"
-featuredImage: "/content/benztrack-apk/5da868f11d4e3398ed615ac6039c80e7271ad1d0.png"
+featuredImage: "/content/benztrack-apk/github-card.png"
 images: [{"src":"/content/benztrack-apk/07925b31ab774467c6d0e4eb501b67a6f2a4bbd2.png"}]
 ---
 

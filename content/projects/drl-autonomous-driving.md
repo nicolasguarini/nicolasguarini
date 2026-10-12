@@ -8,7 +8,7 @@ startedDate: "2024-11-01"
 finishedDate: "2025-01-19"
 url: "https://github.com/nicolasguarini/drl-autonomous-driving-evaluation"
 updatedAt: "2025-06-03T07:51:50Z"
-featuredImage: "/content/drl-autonomous-driving/d70cf8f070c833b3b83a8b9e376ddf1b483738df.png"
+featuredImage: "/content/drl-autonomous-driving/github-card.png"
 ---
 
 ### Evaluation of Deep Reinforcement Learning methods in Autonomous Driving tasks

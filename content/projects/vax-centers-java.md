@@ -7,7 +7,7 @@ startedDate: "2021-06-17"
 finishedDate: "2022-09-09"
 url: "https://github.com/nicolasguarini/vax-centers"
 updatedAt: "2024-08-13T14:39:05Z"
-featuredImage: "/content/vax-centers-java/a89fe31413d265a75bf4b524c5bbca0740362076.png"
+featuredImage: "/content/vax-centers-java/github-card.png"
 images: [{"src":"/content/vax-centers-java/16446f315f4db9763ad53f70675df92a6f32ddcf.png"},{"src":"/content/vax-centers-java/e9bd2f24b7bd76658ae7d2b24bb0b3d4e93a2a32.png"},{"src":"/content/vax-centers-java/4fcd18c3b5bbb34ffcec4944546bad8720272ef2.png"},{"src":"/content/vax-centers-java/26dbb72684a8af0c5234ee2863818596c8fd6e6f.png"},{"src":"/content/vax-centers-java/964b52e9d4c41071b1422bcf5daa0e05baf71eb0.png"},{"src":"/content/vax-centers-java/9f5aa6d645ce98a27494eb87ecf3537369a51474.png"}]
 ---
 

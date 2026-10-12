@@ -7,7 +7,7 @@ startedDate: "2022-07-07"
 finishedDate: "2022-09-16"
 url: "https://github.com/nicolasguarini/worldwide-internet-adoption-study"
 updatedAt: "2024-08-13T14:39:01Z"
-featuredImage: "/content/internet-adoption-study/699aebd26ac2c61f94a8951e6a8699d446d711b9.png"
+featuredImage: "/content/internet-adoption-study/github-card.png"
 ---
 
 This project is based on a study about the Internet adoption around the world and how the price, speed and country's development affects this data.

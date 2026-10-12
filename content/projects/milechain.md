@@ -8,7 +8,7 @@ startedDate: "2023-03-03"
 finishedDate: "2023-06-24"
 url: "https://github.com/nicolasguarini/milechain"
 updatedAt: "2024-08-13T14:39:46Z"
-featuredImage: "/content/milechain/fc9a6da60bdd069496230915c62b897be0b4768f.png"
+featuredImage: "/content/milechain/github-card.png"
 images: [{"src":"/content/milechain/01565134a62a8132c9f95ecb04a254fb9c89f1bc.jpg"},{"src":"/content/milechain/ee608e110457ea19633a839afc3b835e541297d0.jpg"},{"src":"/content/milechain/8853290b196bad4148710417cec5c9f5e42a08e9.jpg"}]
 ---
 

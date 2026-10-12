@@ -8,7 +8,7 @@ startedDate: "2025-01-01"
 finishedDate: "2025-01-26"
 url: "https://github.com/nicolasguarini/qprog-modular-exponentiation"
 updatedAt: "2025-02-22T09:14:17Z"
-featuredImage: "/content/quantum-modular-exponentiation/957606cc4cb0ed56279bc4a2a756b208f3d177b6.png"
+featuredImage: "/content/quantum-modular-exponentiation/github-card.png"
 ---
 
 Modular exponentiation is the problem of computing the value 

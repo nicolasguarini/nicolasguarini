@@ -8,7 +8,7 @@ startedDate: "2022-10-14"
 finishedDate: "2022-11-15"
 url: "https://encryptia.vercel.app/"
 updatedAt: "2024-08-13T14:39:09Z"
-featuredImage: "/content/encryptia/b1a2f9a1b1728766a2b98398f1f0328fc6a09eb8.png"
+featuredImage: "/content/encryptia/github-card.png"
 images: [{"src":"/content/encryptia/3c4ecb4f2e2f3d41efa9003308783709761859bc.png"},{"src":"/content/encryptia/7b1aeaef8df4c2d9e47573dced62d9b271f9b641.png"}]
 ---
 

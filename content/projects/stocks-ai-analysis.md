@@ -8,7 +8,7 @@ startedDate: "2023-07-03"
 finishedDate: "2023-07-20"
 url: "https://github.com/nicolasguarini"
 updatedAt: "2024-08-13T14:39:55Z"
-featuredImage: "/content/stocks-ai-analysis/c503e315003e4d63f323851d0dc5bff576364afb.png"
+featuredImage: "/content/stocks-ai-analysis/github-card.png"
 images: [{"src":"/content/stocks-ai-analysis/4a9e48e6dbff391087d5723563bba90c93dea96d.png"},{"src":"/content/stocks-ai-analysis/ec06e554e8fef2fbbbe90c0b440aa70b139bb6e7.png"},{"src":"/content/stocks-ai-analysis/fe165c2fe6eaccfacbe38a3221e434b467c45f42.png"},{"src":"/content/stocks-ai-analysis/566475abda36dc8c29a7107799ffd25e11fb26e2.png"}]
 ---
 
