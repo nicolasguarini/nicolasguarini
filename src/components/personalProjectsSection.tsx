@@ -1,9 +1,9 @@
-import { LatestPersonalProjectsQueryResult } from "@/sanity.types";
+import type { Project } from "@/src/lib/content";
 import ProjectCard from "./projectCard";
 import Button from "./button";
 import SectionHeading from "./sectionHeading";
 
-export default async function PersonalProjectsSection({ personalProjects }: { personalProjects: LatestPersonalProjectsQueryResult }) {
+export default async function PersonalProjectsSection({ personalProjects }: { personalProjects: Project[] }) {
 	return (
 		<div className="flex flex-col gap-3 py-20 lg:py-28 items-center bg-section">
 			<SectionHeading label="Portfolio" title="My personal projects" align="center" className="mb-10" />

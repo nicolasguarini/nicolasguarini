@@ -1,13 +1,7 @@
 import CategoryTag from "@/src/components/categoryTag";
-import { ProjectBySlugQueryResult } from "@/sanity.types";
-import { sanityFetch } from "@/src/sanity/lib/client";
-import { projectBySlugQuery } from "@/src/sanity/lib/queries";
+import { getProject } from "@/src/lib/content";
 import { capitalizeFirstLetter } from "@/src/lib/utils";
-import { urlFor } from "@/src/sanity/lib/utils";
-import { PortableText } from "@portabletext/react";
-import { SanityImageComponent } from "@/src/sanity/components/image";
-import { CodeBlock } from "@/src/sanity/components/codeBlock";
-import { LatexBlock } from "@/src/sanity/components/latexBlock";
+import Markdown from "@/src/components/markdown";
 import Link from "next/link";
 import { notFound } from "next/navigation";
 import Image from "next/image";
@@ -16,11 +10,7 @@ import Breadcrumbs from "@/src/components/breadcrumbs";
 export default async function ProjectPage({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
 
-    const project = await sanityFetch<ProjectBySlugQueryResult>({
-        query: projectBySlugQuery,
-        revalidate: 3600,
-        params: { slug },
-    });
+    const project = getProject(slug);
 
     if (!project) {
         notFound();
@@ -99,7 +89,7 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 <div className="">
                     { project.featuredImage && (
                         <Image
-                            src={urlFor(project.featuredImage).width(1024).fit("max").auto("format").url()}
+                            src={project.featuredImage}
                             alt={`${project.name ?? "Project"} — featured image`}
                             width={1024}
                             height={768}
@@ -111,26 +101,15 @@ export default async function ProjectPage({ params }: { params: Promise<{ slug: 
                 </div>
             </div>
 
-            <div className="prose prose-invert max-w-5xl mx-auto text-inherit sanity-block-content">
-                { project.content && (
-                    <PortableText 
-                    value={project.content}  
-                    components={{
-                        types: {
-                            image: SanityImageComponent,
-                            code: ({ value }) => <CodeBlock value={value} />,
-                            latex: ({ value }) => <LatexBlock value={value} />,
-                        }
-                    }}
-                />
-                )}
+            <div className="prose prose-invert max-w-5xl mx-auto text-inherit">
+                <Markdown>{project.content}</Markdown>
             </div>
 
             <div className="flex flex-col gap-12 max-w-5xl mx-auto">
                 {project?.images?.map((image) => (
-                    <div className="" key={image._key}>
+                    <div className="" key={image.src}>
                         <Image
-                            src={urlFor(image).width(1280).fit("max").auto("format").url()}
+                            src={image.src}
                             alt={image.alt ?? `${project.name ?? "Project"} screenshot`}
                             width={1280}
                             height={960}

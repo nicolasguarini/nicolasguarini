@@ -1,15 +1,7 @@
-import { urlFor } from "@/src/sanity/lib/utils";
 import CategoryTag from "./categoryTag";
 import Link from "next/link";
 import Image from "next/image";
-import type {
-    LatestClientProjectsQueryResult,
-    LatestPersonalProjectsQueryResult,
-} from "@/sanity.types";
-
-type Project =
-    | LatestPersonalProjectsQueryResult[number]
-    | LatestClientProjectsQueryResult[number];
+import type { Project } from "@/src/lib/content";
 
 export default function ProjectCard({ project }: { project: Project }) {
     return (
@@ -22,8 +14,8 @@ export default function ProjectCard({ project }: { project: Project }) {
                     <div className="overflow-hidden rounded-xl border border-line transition-colors group-hover:border-muted">
                         <Image
                             className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
-                            src={urlFor(project.featuredImage).width(640).fit("max").auto("format").url()}
-                            alt={`${project.name ?? "Project"} — preview`}
+                            src={project.featuredImage}
+                            alt={`${project.name} — preview`}
                             width={640}
                             height={480}
                             loading="lazy"

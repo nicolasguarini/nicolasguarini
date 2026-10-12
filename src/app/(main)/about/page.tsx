@@ -1,9 +1,7 @@
-import { LatestPostsQueryResult } from "@/sanity.types";
 import AcademicCareer from "@/src/components/academicCareer";
 import BlogSection from "@/src/components/blogSection";
 import WorkExperience from "@/src/components/workExperience";
-import { sanityFetch } from "@/src/sanity/lib/client";
-import { latestPostsQuery } from "@/src/sanity/lib/queries";
+import { getPosts } from "@/src/lib/content";
 import { Metadata } from "next";
 import PageHeader from "@/src/components/layout/pageHeader";
 
@@ -26,11 +24,7 @@ export const metadata: Metadata = {
 }
 
 export default async function About() {
-  const posts = await sanityFetch<LatestPostsQueryResult>({
-    query: latestPostsQuery,
-    revalidate: 60,
-    params: { numOfPosts: 3 },
-  });
+  const posts = getPosts(3);
 
   return (
     <div className="flex flex-col">

@@ -1,9 +1,9 @@
-import { LatestClientProjectsQueryResult } from "@/sanity.types";
+import type { Project } from "@/src/lib/content";
 import ProjectCard from "./projectCard";
 import Button from "./button";
 import SectionHeading from "./sectionHeading";
 
-export default async function ClientProjectsSection({ clientProjects }: { clientProjects: LatestClientProjectsQueryResult }) {
+export default async function ClientProjectsSection({ clientProjects }: { clientProjects: Project[] }) {
 	return (
 		<div className="flex flex-col gap-3 pb-20 lg:pb-28 items-center bg-section">
 			<SectionHeading label="Freelance" title="Projects I made for clients" align="center" className="mb-10" />

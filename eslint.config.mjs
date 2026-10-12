@@ -5,7 +5,7 @@ const config = [
 	...coreWebVitals,
 	...typescript,
 	{
-		ignores: ['.next/**', 'node_modules/**', 'sanity.types.ts', 'schema.json'],
+		ignores: ['.next/**', 'node_modules/**'],
 	},
 	{
 		rules: {
@@ -16,8 +16,7 @@ const config = [
 		},
 	},
 	{
-		// Gli schemi Sanity sono per convenzione oggetti anonimi esportati come default
-		files: ['src/sanity/schemas/**/*.ts', 'eslint.config.mjs'],
+		files: ['eslint.config.mjs'],
 		rules: {
 			'import/no-anonymous-default-export': 'off',
 		},

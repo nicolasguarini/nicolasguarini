@@ -1,8 +1,6 @@
-import { LatestClientProjectsQueryResult, LatestPersonalProjectsQueryResult } from "@/sanity.types";
 import ClientProjectsSection from "@/src/components/clientProjectsSection";
 import PersonalProjectsSection from "@/src/components/personalProjectsSection";
-import { sanityFetch } from "@/src/sanity/lib/client";
-import { latestClientProjectsQuery, latestPersonalProjectsQuery } from "@/src/sanity/lib/queries";
+import { getProjects } from "@/src/lib/content";
 import { Metadata } from "next";
 import PageHeader from "@/src/components/layout/pageHeader";
 
@@ -18,18 +16,10 @@ export const metadata: Metadata = {
 }
 
 export default async function Projects() {
-    const [personalProjects, clientProjects] = await Promise.all([
-        sanityFetch<LatestPersonalProjectsQueryResult>({
-            query: latestPersonalProjectsQuery,
-            revalidate: 3600,
-            params: { numOfProjects: 3 },
-        }),
-        sanityFetch<LatestClientProjectsQueryResult>({
-            query: latestClientProjectsQuery,
-            revalidate: 3600,
-            params: { numOfProjects: 3 },
-        }),
-    ]);
+    const [personalProjects, clientProjects] = [
+        getProjects("personal", 3),
+        getProjects("client", 3),
+    ];
     
     return (
         <div>

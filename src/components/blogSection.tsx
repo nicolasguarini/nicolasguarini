@@ -1,9 +1,9 @@
 import Button from "./button";
 import PostCard from "./postCard";
 import SectionHeading from "./sectionHeading";
-import { LatestPostsQueryResult } from "@/sanity.types";
+import type { Post } from "@/src/lib/content";
 
-export default async function BlogSection({ posts }: { posts: LatestPostsQueryResult }) {
+export default async function BlogSection({ posts }: { posts: Post[] }) {
     return (
         <div className="flex flex-col md:flex-row gap-4 gap-y-20 py-20 lg:py-28">
             <div className="flex flex-col gap-5">

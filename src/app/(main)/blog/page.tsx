@@ -1,7 +1,5 @@
 import PostCard from "@/src/components/postCard";
-import { LatestPostsQueryResult } from "@/sanity.types";
-import { sanityFetch } from "@/src/sanity/lib/client";
-import { latestPostsQuery } from "@/src/sanity/lib/queries";
+import { getPosts } from "@/src/lib/content";
 import { Metadata } from "next";
 import PageHeader from "@/src/components/layout/pageHeader";
 
@@ -16,11 +14,7 @@ export const metadata: Metadata = {
 }
 
 export default async function Page() {
-    const posts = await sanityFetch<LatestPostsQueryResult>({
-        query: latestPostsQuery,
-        revalidate: 60,
-        params: { numOfPosts: 100 },
-    });
+    const posts = getPosts(100);
     
     return (
         <div>

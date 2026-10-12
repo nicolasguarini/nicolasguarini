@@ -1,15 +1,6 @@
 import { baseUrl } from '@/src/lib/env';
 import { SITE_DESCRIPTION, SITE_NAME } from '@/src/lib/seo';
-import { sanityFetch } from '@/src/sanity/lib/client';
-import { feedPostsQuery } from '@/src/sanity/lib/queries';
-
-type FeedPost = {
-	title: string | null;
-	slug: string;
-	excerpt: string | null;
-	publishedAt: string | null;
-	categories: string[] | null;
-};
+import { getPosts } from '@/src/lib/content';
 
 const escapeXml = (value: string) =>
 	value
@@ -22,10 +13,7 @@ const escapeXml = (value: string) =>
 export const revalidate = 3600;
 
 export async function GET() {
-	const posts = await sanityFetch<FeedPost[]>({
-		query: feedPostsQuery,
-		revalidate: 3600,
-	});
+	const posts = getPosts(20);
 
 	const items = posts
 		.map((post) => {
@@ -35,10 +23,10 @@ export async function GET() {
 				.join('');
 
 			return `    <item>
-      <title>${escapeXml(post.title ?? '')}</title>
+      <title>${escapeXml(post.title)}</title>
       <link>${url}</link>
       <guid isPermaLink="true">${url}</guid>
-      <description>${escapeXml(post.excerpt ?? '')}</description>
+      <description>${escapeXml(post.excerpt)}</description>
       ${post.publishedAt ? `<pubDate>${new Date(post.publishedAt).toUTCString()}</pubDate>` : ''}
       ${categories}
     </item>`;

@@ -1,8 +1,5 @@
-import { AllClientProjectsSlugsQueryResult, ProjectBySlugQueryResult } from "@/sanity.types";
 import ProjectPage from "@/src/components/layout/projectPage";
-import { sanityFetch } from "@/src/sanity/lib/client";
-import { allClientProjectsSlugsQuery, projectBySlugQuery } from "@/src/sanity/lib/queries";
-import { urlFor } from "@/src/sanity/lib/utils";
+import { getProject, getProjects } from "@/src/lib/content";
 import { Metadata } from "next";
 
 export async function generateMetadata({
@@ -11,11 +8,7 @@ export async function generateMetadata({
     params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
     const { slug } = await params;
-    const project = await sanityFetch<ProjectBySlugQueryResult>({
-        query: projectBySlugQuery,
-        revalidate: 3600,
-        params: { slug },
-    });
+    const project = getProject(slug);
 
     if (!project) return {
         title: "404 Not Found"
@@ -26,22 +19,15 @@ export async function generateMetadata({
         description: project.excerpt,
 
         openGraph: {
-            title: project.name!,
-            description: project.excerpt!,
-            images: [
-                urlFor(project.featuredImage!).url(),
-            ]
+            title: project.name,
+            description: project.excerpt ?? "",
+            ...(project.featuredImage ? { images: [project.featuredImage] } : {})
         }
     }
 }
 
 export async function generateStaticParams() {
-    const slugs = await sanityFetch<AllClientProjectsSlugsQueryResult>({
-        query: allClientProjectsSlugsQuery,
-        revalidate: 60,
-    });
-
-    return slugs.map((slug) => ({ slug }));
+    return getProjects("client").map(({ slug }) => ({ slug }));
 }
 
 export default ProjectPage;

@@ -2,9 +2,7 @@ import Link from "next/link";
 import CategoryTag from "./categoryTag";
 import { calculateReadingTime, formatDate } from "@/src/lib/utils";
 import AuthorCard from "./authorCard";
-import type { LatestPostsQueryResult } from "@/sanity.types";
-
-type Post = LatestPostsQueryResult[number];
+import type { Post } from "@/src/lib/content";
 
 export default function PostCard({ post }: { post: Post }) {
 	return (
@@ -27,7 +25,7 @@ export default function PostCard({ post }: { post: Post }) {
                 </div>
 
                 <AuthorCard
-                    publishedAt={formatDate(post.publishedAt ?? "")}
+                    publishedAt={formatDate(post.publishedAt)}
                     minutesRead={calculateReadingTime(post.contentLength)}
                 />
             </div>

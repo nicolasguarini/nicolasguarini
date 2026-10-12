@@ -2,22 +2,16 @@ import AuthorCard from "@/src/components/authorCard";
 import CopyLink from "@/src/components/icons/copyLink";
 import TelegramShare from "@/src/components/icons/telegramShare";
 import TwitterShare from "@/src/components/icons/twitterShare";
-import { AllPostsSlugsQueryResult, PostBySlugQueryResult } from "@/sanity.types";
-import { sanityFetch } from "@/src/sanity/lib/client";
-import { allPostsSlugsQuery, postBySlugQuery } from "@/src/sanity/lib/queries";
+import { getPost, getPosts } from "@/src/lib/content";
 import { calculateReadingTime, formatDate } from "@/src/lib/utils";
-import { PortableText } from "@portabletext/react";
+import Markdown from "@/src/components/markdown";
 import WhatsappShare from "@/src/components/icons/whatsappShare";
 import { Metadata } from "next";
 import { notFound } from "next/navigation";
-import { SanityImageComponent } from "@/src/sanity/components/image";
-import { CodeBlock } from "@/src/sanity/components/codeBlock";
-import 'katex/dist/katex.min.css';
-import { LatexBlock } from "@/src/sanity/components/latexBlock";
 import Breadcrumbs from "@/src/components/breadcrumbs";
 import JsonLd from "@/src/components/jsonLd";
+import { baseUrl } from "@/src/lib/env";
 import { blogPostingSchema } from "@/src/lib/seo";
-import { urlFor } from "@/src/sanity/lib/utils";
 
 export async function generateMetadata({
     params,
@@ -25,16 +19,12 @@ export async function generateMetadata({
     params: Promise<{ slug: string }>;
 }): Promise<Metadata> {
     const { slug } = await params;
-    const post = await sanityFetch<PostBySlugQueryResult>({
-        query: postBySlugQuery,
-        revalidate: 60,
-        params: { slug },
-    });
+    const post = getPost(slug);
 
     if (!post) return {};
 
     const ogImage = post.featuredImage
-        ? urlFor(post.featuredImage).width(1200).height(630).fit("crop").url()
+        ? post.featuredImage
         : undefined;
 
     return {
@@ -44,52 +34,41 @@ export async function generateMetadata({
 
         openGraph: {
             type: "article",
-            title: post.title ?? "",
-            description: post.excerpt ?? "",
+            title: post.title,
+            description: post.excerpt,
             url: `/blog/${slug}`,
-            publishedTime: post.publishedAt ?? undefined,
+            publishedTime: post.publishedAt,
             ...(ogImage ? { images: [{ url: ogImage, width: 1200, height: 630 }] } : {}),
         },
         twitter: {
             card: "summary_large_image",
-            title: post.title ?? "",
-            description: post.excerpt ?? "",
+            title: post.title,
+            description: post.excerpt,
             ...(ogImage ? { images: [ogImage] } : {}),
         },
     }
 }
 
 export async function generateStaticParams() {
-    const slugs = await sanityFetch<AllPostsSlugsQueryResult>({
-        query: allPostsSlugsQuery,
-        revalidate: 60,
-    });
-
-    return slugs.map((slug) => ({ slug }));
+    return getPosts().map(({ slug }) => ({ slug }));
 }
 
 export default async function BlogPost({ params }: { params: Promise<{ slug: string }> }) {
     const { slug } = await params;
 
-    const post = await sanityFetch<PostBySlugQueryResult>({
-        query: postBySlugQuery,
-        revalidate: 60,
-        params: { slug },
-    });
+    const post = getPost(slug);
 
     if (!post) {
         notFound();
     }
 
     const postSchema = blogPostingSchema({
-        title: post.title ?? "",
-        description: post.excerpt ?? undefined,
+        title: post.title,
+        description: post.excerpt,
         slug,
-        publishedAt: post.publishedAt ?? undefined,
-        imageUrl: post.featuredImage
-            ? urlFor(post.featuredImage).width(1200).height(630).fit("crop").url()
-            : undefined,
-        categories: post.categories ?? undefined,
+        publishedAt: post.publishedAt,
+        imageUrl: post.featuredImage ? `${baseUrl}${post.featuredImage}` : undefined,
+        categories: post.categories,
     });
 
     return (
@@ -104,13 +83,13 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                     backgroundPosition: "left",
                 }}
             >
-                <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: post.title ?? "Post" }]} />
+                <Breadcrumbs items={[{ label: "Blog", href: "/blog" }, { label: post.title }]} />
 
                 <h1 className="font-bold text-4xl mb-3">{post.title}</h1>
 
                 <div className="flex flex-wrap gap-y-5 w-full justify-between">
                     <AuthorCard 
-                        publishedAt={formatDate(post.publishedAt ?? "")} 
+                        publishedAt={formatDate(post.publishedAt)} 
                         minutesRead={calculateReadingTime(post.contentLength)} 
                     />
 
@@ -125,19 +104,8 @@ export default async function BlogPost({ params }: { params: Promise<{ slug: str
                
             </div>
 
-            <div className="prose prose-invert max-w-5xl mx-auto text-inherit sanity-block-content bg-section">
-                { post.content && (
-                    <PortableText 
-                        value={post.content}  
-                        components={{
-                            types: {
-                                image: SanityImageComponent,
-                                code: ({ value }) => <CodeBlock value={value} />,
-                                latex: ({ value }) => <LatexBlock value={value} />,
-                            }
-                        }}
-                    />
-                )}
+            <div className="prose prose-invert max-w-5xl mx-auto text-inherit bg-section">
+                <Markdown>{post.content}</Markdown>
             </div>
         </div>
     )
