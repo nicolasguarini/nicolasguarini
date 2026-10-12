@@ -17,8 +17,8 @@ export const metadata: Metadata = {
 
 export default async function Projects() {
     const [personalProjects, clientProjects] = [
-        getProjects("personal", 3),
-        getProjects("client", 3),
+        getProjects("personal", 4),
+        getProjects("client", 4),
     ];
     
     return (

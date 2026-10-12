@@ -8,9 +8,9 @@ import PersonalProjectsSection from "@/src/components/personalProjectsSection";
 
 export default async function Home() {
 	const [clientProjects, personalProjects, posts] = [
-		getProjects("client", 3),
-		getProjects("personal", 3),
-		getPosts(3),
+		getProjects("client", 4),
+		getProjects("personal", 4),
+		getPosts(4),
 	];
 
 	return (

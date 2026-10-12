@@ -7,11 +7,11 @@ export default function ProjectCard({ project }: { project: Project }) {
     return (
         <Link
             href={`/projects/${project.type}/${project.slug}`}
-            className="group block max-w-sm xl:max-w-md rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-black"
+            className="group block w-sm max-w-full xl:w-md rounded-xl focus:outline-none focus-visible:ring-2 focus-visible:ring-white focus-visible:ring-offset-4 focus-visible:ring-offset-black"
         >
             <div className="flex flex-col gap-3">
                 {project.featuredImage && (
-                    <div className="overflow-hidden rounded-xl border border-line transition-colors group-hover:border-muted">
+                    <div className="aspect-[2/1] overflow-hidden rounded-xl border border-line transition-colors group-hover:border-muted">
                         <Image
                             className="h-full w-full object-cover transition-transform duration-500 ease-in-out group-hover:scale-105"
                             src={project.featuredImage}

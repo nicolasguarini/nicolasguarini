@@ -24,7 +24,7 @@ export const metadata: Metadata = {
 }
 
 export default async function About() {
-  const posts = getPosts(3);
+  const posts = getPosts(4);
 
   return (
     <div className="flex flex-col">
