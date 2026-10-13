@@ -4,15 +4,16 @@ excerpt: "Quantum Programming is one of the most exciting courses I’m taking i
 publishedAt: "2024-11-11T09:51:00.000Z"
 updatedAt: "2025-03-09T18:14:17Z"
 categories: ["University"]
+draft: true
 ---
 
 One of the courses I’m attending during my Erasmus in Stockholm is Quantum Programming, which turned out to be one of the most exciting classes I’ve ever taken. Quantum computing is a field that’s been creating a lot of hype, and for good reason: it transform the way we approach computing and complex problems.
 
 
 
-The core difference between quantum and classical computers lies in the fundamental unit of data they use. While classical computers rely on bits, units that represent either a 0 or a 1, quantum computers use *qubits*, which can represent 0, 1, or any combination of both at the same time. This property, known as **superposition**, allows quantum computers to explore multiple possibilities simultaneously. 
+The core difference between quantum and classical computers lies in the fundamental unit of data they use. While classical computers rely on bits, units that represent either a 0 or a 1, quantum computers use *qubits*, which can represent 0, 1, or any combination of both at the same time. This property, known as **superposition**, allows quantum computers to explore multiple possibilities simultaneously.
 
-Mathematically, a qubit’s state can be expressed as 
+Mathematically, a qubit’s state can be expressed as
 
 $$
 |\psi\rangle = \alpha|0\rangle + \beta|1\rangle
