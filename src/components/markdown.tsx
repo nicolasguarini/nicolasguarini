@@ -5,6 +5,7 @@ import remarkGfm from 'remark-gfm';
 import remarkMath from 'remark-math';
 import 'katex/dist/katex.min.css';
 import { CodeBlock } from './codeBlock';
+import { Mermaid } from './mermaid';
 
 export default function Markdown({ children }: { children: string }) {
 	return (
@@ -18,6 +19,7 @@ export default function Markdown({ children }: { children: string }) {
 					// Senza classe e senza a-capo e' codice inline; altrimenti e' un fence
 					if (!className && !text.includes('\n')) return <code>{children}</code>;
 					const language = /language-(\S+)/.exec(className ?? '')?.[1];
+					if (language === 'mermaid') return <Mermaid chart={text} />;
 					return <CodeBlock value={{ code: text.replace(/\n$/, ''), language }} />;
 				},
 				img: ({ src, alt }) =>

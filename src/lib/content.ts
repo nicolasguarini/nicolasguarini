@@ -37,10 +37,15 @@ function readAll<T>(dir: string): T[] {
 	const base = path.join(ROOT, dir);
 	return fs.readdirSync(base)
 		.filter((f) => f.endsWith('.md'))
-		.map((f) => {
-			const { data, content } = matter(fs.readFileSync(path.join(base, f), 'utf8'));
-			return { ...data, slug: f.replace(/\.md$/, ''), contentLength: content.length, content } as T;
-		});
+		.map((f) => ({ f, ...matter(fs.readFileSync(path.join(base, f), 'utf8')) }))
+		// `draft: true` nel frontmatter nasconde il contenuto dal sito
+		.filter(({ data }) => !data.draft)
+		.map(({ f, data, content }) => ({
+			...data,
+			slug: f.replace(/\.md$/, ''),
+			contentLength: content.length,
+			content,
+		}) as T);
 }
 
 const byDateDesc = <T,>(key: (x: T) => string | undefined) => (a: T, b: T) =>

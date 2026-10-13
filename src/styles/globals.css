@@ -79,3 +79,8 @@ body {
 .katex-html {
     display: none;
 }
+/* Typography aggiunge i backtick attorno al codice inline: non servono */
+.prose code::before,
+.prose code::after {
+    content: none;
+}
