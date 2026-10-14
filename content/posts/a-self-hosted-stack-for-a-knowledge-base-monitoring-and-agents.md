@@ -22,11 +22,13 @@ flowchart TB
         dash["Life Dashboard"]
         netdata["Netdata"]
         webui["OpenWeb UI"]
+        paperless["Paperless-ngx"]
         vault[("Obsidian vault (git)")]
         k3s --> flux
         flux --> dash
         flux --> netdata
         flux --> webui
+        flux --> paperless
         dash --> vault
     end
 
@@ -40,6 +42,7 @@ flowchart TB
     dash --> netbird
     netdata --> netbird
     webui --> netbird
+    paperless --> netbird
     netbird --> mobile
     netbird --> laptop
 ```
@@ -75,6 +78,25 @@ It is a static site served from the cluster, built into a container image by Git
 The direction of the data flow is the point. The dashboard owns nothing: it reads from the vault and renders a static site. If it is deleted, the next run of the job rebuilds it from the notes. If a number looks wrong, the fix happens in the note, not in the dashboard. The vault remains the single source, and the dashboard is one more way of looking at it.
 
 Access to all services is protected by HTTP Basic authentication on the local network. For remote access, [NetBird](https://netbird.io) provides a WireGuard-based overlay VPN that assigns a static private IP to the server, so every service is reachable from outside without exposing ports on the router. A private domain name points at that overlay IP, so a name is used instead of an address; it resolves only to something reachable from devices on the NetBird network, and it is plain HTTP, since the tunnel is already encrypted. Separately, OpenWeb UI provides a browser interface for chatting with a model; it is mentioned for completeness, since it is a convenience rather than a load-bearing part of the system.
+
+## Paperless-ngx, the document archive
+
+The vault holds notes, not scans. Contracts, invoices, tax forms and medical reports are PDFs and photos, and they used to sit in folders where nothing could find them. [Paperless-ngx](https://docs.paperless-ngx.com/) is the component that fixes this: it ingests a file, runs OCR on it (Italian and English), and makes the text searchable, with tags, correspondents and document types on top.
+
+It runs as a single pod, declared like everything else in the GitOps repository. Redis, which Paperless uses only as an internal task queue, is a sidecar in the same pod without persistence, and the database is SQLite rather than Postgres: for a personal archive, one fewer service to run is the better trade-off. All state lives on one persistent volume: the database, the search index and the documents.
+
+The storage model is what makes it easy to trust. Originals are saved untouched, as ordinary files (the same PDF or JPG that was uploaded, renamed with a numeric ID), and the OCR'd PDF/A copies and thumbnails are derived from them and can be regenerated. Titles, tags and the extracted text live in the database. Original files plus the database are therefore enough to rebuild the whole archive.
+
+Like the dashboard, it runs on the host network so that it is reachable through NetBird, on its own port, and is accessed by name or IP indifferently.
+
+## Backups
+
+Both stateful services take a backup every day, with a Kubernetes CronJob each:
+
+- **Life Dashboard** copies its SQLite database with `sqlite3 .backup`, which gives a consistent snapshot while the service is running, and keeps the last fourteen.
+- **Paperless** does the same for its database, and additionally mirrors the original documents incrementally. Deletions are deliberately not propagated, so removing a document by mistake does not remove its backup. Derived data (OCR archives, thumbnails, the search index) is not backed up, because it can be rebuilt.
+
+The CronJobs write to a folder on the host. A local copy does not survive the disk failing, so a second stage moves it off the machine: a Hermes cron job, configured as `no_agent`, so that it runs a plain script on a schedule without involving the model, encrypts the backup folders and uploads them to a cloud drive. The encryption happens before the upload, so the drive only ever holds opaque files; the documents are the kind of data that should not be readable by the storage provider. The upload only adds files and never mirrors deletions, for the same reason as above.
 
 ## Hermes Agent, the executive layer
 
